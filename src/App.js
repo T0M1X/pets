@@ -27,24 +27,26 @@ function App() {
             path="/"
             element={
               <>
+
                 <Container>
-                  <p>l</p>
-                  <p>l</p>
-                  <p>l</p>
-                  <p>l</p>
-                  <p>l</p>
-                  <p>l</p>
-                  <p>l</p>
-                  <p>l</p>
-                  <p>l</p>
-                  <p>l</p>
-                  <p>l</p>
-                  <p>l</p>
-                  <p>l</p>
+                  <div>
+                  <p className='blankText'>l</p>
+                  <p className='blankText'>l</p>
+                  <p className='blankText'>l</p>
+                  <p className='blankText'>l</p>
+                  <p className='blankText'>l</p>
+                  <p className='openingText'>Welcome to PetFriends, where all pets are friends here!</p>
+                  <p className='underlyingText'>Book the best sitters and walkers for your furry friends</p>
+                  <p className='blankText'>l</p>
+                  <p className='blankText'>l</p>
+                  <p className='blankText'>l</p>
+                  <p className='blankText'>l</p>
+                  <p className='blankText'>l</p>
+                  </div>
                 </Container>
-                <div>
+
+                <div className='infoDiv'>
                   <p>will contain about me stuff</p>
-                  <p>and other crap</p>
                 </div>
               </>
             }/>

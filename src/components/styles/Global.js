@@ -13,12 +13,21 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
   }
   p {
-    opacity: 0.6;
+    opacity: 0.8;
     line-height: 1.5;
     margin:auto;
   }
   img {
     max-width: 100%;
+
+  br {
+    margin: auto;
+  }                
+
+  .infoDiv {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 `
 
