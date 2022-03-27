@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    max-width: 100%
-    padding: 0 20px;
-    margin-top: 100px;
     background-image: url(cats.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover!important;
 `
