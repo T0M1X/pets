@@ -24,10 +24,7 @@ const GlobalStyles = createGlobalStyle`
     margin: auto;
   }                
 
-  .infoDiv {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
+  
 }
 `
 

@@ -4,6 +4,8 @@ import {Container} from "./components/styles/Container.styled"
 import { ThemeProvider } from 'styled-components'
 import GlobalStyles from './components/styles/Global'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import MainPageWrapper from './components/styles/MainPage.styled'
+
 
 
 const theme = {
@@ -27,7 +29,6 @@ function App() {
             path="/"
             element={
               <>
-
                 <Container>
                   <div>
                   <p className='blankText'>l</p>
@@ -44,10 +45,24 @@ function App() {
                   <p className='blankText'>l</p>
                   </div>
                 </Container>
-
-                <div className='infoDiv'>
-                  <p>will contain about me stuff</p>
+                <MainPageWrapper>
+                <h2 className='infoTitle'>Services for every pet</h2>
+                 <div className='infoDivs'>
+                  <img></img>
+                  <h4>Walking</h4>
+                  <p>We will walk your pet near your area or where ever you feel like! Perfect for your pet to stretch its legs, or wings; whatever they would like.</p>
                 </div>
+                <div className='infoDivs'>
+                    <img></img>
+                    <h4>Drop-in</h4>
+                    <p>Your pet visits your sitter's home to take care, play, feed and have fun with them! </p>
+                </div>
+                <div className='infoDivs'>
+                  <img></img>
+                  <h4>Day Care</h4>
+                  <p>Your sitter takes care of your pets and home, giving your furry friends all the attention and love they need without leaving the home.</p>
+                </div>
+                </MainPageWrapper>
               </>
             }/>
           </Routes>
