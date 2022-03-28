@@ -44,7 +44,7 @@ function App() {
                   <p className='blankText'>l</p>
                   </div>
                 </Container>
-
+                <viewCalendar />
                 <div className='infoDiv'>
                   <p>will contain about me stuff</p>
                 </div>
