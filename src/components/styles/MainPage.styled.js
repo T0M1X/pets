@@ -14,10 +14,28 @@ const MainPageWrapper = styled.div`
         width: 550px;
       }
 
-    img {
+    & .pawImg {
         float: left;
-        padding: 0;
-        margin: 0;
+        margin-top: 35px;
+        margin-right: 20px;
+        height: 130px;
+        width: 130px;
+    }
+
+    & .houseImg {
+        float: left;
+        margin-top: 15px;
+        margin-right: 20px;
+        height: 130px;
+        width: 130px;
+    }
+
+    & .rainbowImg {
+        float: left;
+        margin-right: 20px;
+        margin-left: -169px;
+        height: 200px;
+        width: 150px;
     }
 `;
 
