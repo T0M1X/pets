@@ -4,6 +4,7 @@ import {Container} from "./components/styles/Container.styled"
 import { ThemeProvider } from 'styled-components'
 import GlobalStyles from './components/styles/Global'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Calendar from './components/viewCalendar/viewCalendar';
 
 
 const theme = {
@@ -44,7 +45,7 @@ function App() {
                   <p className='blankText'>l</p>
                   </div>
                 </Container>
-                <viewCalendar />
+                <Calendar />
                 <div className='infoDiv'>
                   <p>will contain about me stuff</p>
                 </div>
