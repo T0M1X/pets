@@ -17,13 +17,14 @@ export const Container = styled.div`
 
     .openingText{
         text-align: center;
-        color: white!important;
+        color: white;
         font-size:40px;
+        
     }
 
     .underlyingText{
         text-align: center;
-        color: white!important;
+        color: white;
         font-size:25px;
         padding: 0px;
 

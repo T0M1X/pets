@@ -8,6 +8,9 @@ import MainPageWrapper from './components/styles/MainPage.styled'
 import pawPrint from './images/pawPrint.png'
 import housePrint from './images/housePrint.png'
 import rainbowPrint from './images/rainbowPrint.png'
+import petCat from './images/petCat.png'
+import petDog from './images/dogHappy.jpeg'
+import petCat2 from './images/petCat2.jpeg'
 
 
 const theme = {
@@ -48,7 +51,13 @@ function App() {
                   </div>
                 </Container>
                 <MainPageWrapper>
+                
                 <h2 className='infoTitle'>Services for every pet</h2>
+                <div className='grid'>
+                  <img className='petCat' src={petCat} ></img>
+                  <img className='petDog' src={petDog} ></img>
+                  <p>Here are some of our satisfied customers!</p>
+                </div>
                  <div className='infoDivs'>
                   <img className = 'pawImg' src={pawPrint}></img>
                   <h4>Walking</h4>
@@ -64,7 +73,9 @@ function App() {
                   <h4>Day Care</h4>
                   <p>Your sitter takes care of your pets and home, giving your furry friends all the attention and love they need without leaving the home.</p>
                 </div>
+                
                 </MainPageWrapper>
+                
               </>
             }/>
           </Routes>

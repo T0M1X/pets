@@ -9,7 +9,7 @@ const MainPageWrapper = styled.div`
 
     & .infoDivs {
         padding-top: 7px;
-        padding-bottom: 10px;
+        padding-bottom: 15px;
         margin-left: 40px;
         width: 550px;
       }
@@ -32,11 +32,37 @@ const MainPageWrapper = styled.div`
 
     & .rainbowImg {
         float: left;
-        margin-right: 20px;
-        margin-left: -169px;
+        margin-right: 18px;
+        margin-left: -18px;
         height: 200px;
         width: 150px;
+
     }
+
+
+
+    & .grid {
+        float: right;
+        margin-top: 110px; 
+        margin-right: 100px;
+        text-align: center;
+    }
+
+
+    & .petCat {
+        height: 300px;
+        width: 250px;
+        padding-right:10px;
+        border-radius: 5px;
+    }
+
+    & .petDog {
+        height: 300px;
+        width: 300px;
+        padding-left: 10px;
+        border-radius: 5px;
+    }
+
 `;
 
 export default MainPageWrapper
