@@ -1,8 +1,31 @@
+:root{
+  font-size: 16px;
+}
+
+
+/* Calendar numbers */
 .fc .fc-daygrid-day-number {
     color: #000000;
   }
   
-  /* override day title color and size */
+  /* Calendar header */
   .fc .fc-col-header-cell-cushion{
     color: #000000;
+  }
+
+
+  .calendar-container{
+    height: 80%;
+    width:90%;
+    margin-top: 5%;
+    margin-bottom:5%;
+    margin-left: auto;
+    margin-right:auto;
+  }
+
+ /* Event colour */
+  .fc-h-event .fc-event-title-container{
+    all:none;
+    color:white;
+    background-color:black;
   }

@@ -18,11 +18,14 @@ export default class viewCalendar extends Component {
   }
   render() {
     return (
+      <div class="calendar-container">
       <FullCalendar
       plugins={[ dayGridPlugin ]}
       initialView="dayGridMonth"
       events={this.state.Events}
+      selectable={true}
     />
+    </div>
     )
   }
 }
