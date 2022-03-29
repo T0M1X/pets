@@ -11,6 +11,7 @@ import rainbowPrint from './images/rainbowPrint.png'
 import petCat from './images/petCat.png'
 import petDog from './images/dogHappy.jpeg' // put images in pub
 import petCat2 from './images/petCat2.jpeg'
+import Calendar from './components/viewCalendar/viewCalendar';
 
 
 const theme = {
