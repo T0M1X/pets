@@ -9,7 +9,7 @@ import pawPrint from './images/pawPrint.png'
 import housePrint from './images/housePrint.png'
 import rainbowPrint from './images/rainbowPrint.png'
 import petCat from './images/petCat.png'
-import petDog from './images/dogHappy.jpeg'
+import petDog from './images/dogHappy.jpeg' // put images in pub
 import petCat2 from './images/petCat2.jpeg'
 
 
@@ -36,6 +36,7 @@ function App() {
               <>
                 <Container>
                   <div>
+                    {/* get buttons to link to page */}
                   <p className='blankText'>l</p>
                   <p className='blankText'>l</p>
                   <p className='blankText'>l</p>
