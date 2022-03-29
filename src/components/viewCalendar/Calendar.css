@@ -3,7 +3,7 @@
 }
 
 
-/* Calendar numbers */
+/* Calendar numbers
 .fc .fc-daygrid-day-number {
     color: #000000;
   }
@@ -11,7 +11,7 @@
   /* Calendar header */
   .fc .fc-col-header-cell-cushion{
     color: #000000;
-  }
+  } */
 
 
   .calendar-container{
@@ -24,8 +24,16 @@
   }
 
  /* Event colour */
-  .fc-h-event .fc-event-title-container{
+ .fc-daygrid-event-harness{
     all:none;
     color:white;
     background-color:black;
+    border:solid rgb(235, 26, 26) 2px;
+    margin:2%;
+    
+  }
+  .fc-daygrid-event-dot{
+    border-color:#000080;
+    background-color:blue;
+    margin:2%;
   }
