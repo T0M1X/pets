@@ -4,6 +4,14 @@ import {Container} from "./components/styles/Container.styled"
 import { ThemeProvider } from 'styled-components'
 import GlobalStyles from './components/styles/Global'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import MainPageWrapper from './components/styles/MainPage.styled'
+import pawPrint from './images/pawPrint.png'
+import housePrint from './images/housePrint.png'
+import rainbowPrint from './images/rainbowPrint.png'
+import petCat from './images/petCat.png'
+import petDog from './images/dogHappy.jpeg' // put images in pub
+import petCat2 from './images/petCat2.jpeg'
+import Calendar from './components/viewCalendar/viewCalendar';
 
 
 const theme = {
@@ -22,14 +30,16 @@ function App() {
         <>
           <GlobalStyles />
           <Header />
+          
           <Routes>
+          <Route path="/components/viewCalendar/viewCalendar" element={<Calendar />} />
             <Route
             path="/"
             element={
               <>
-
                 <Container>
                   <div>
+                    {/* get buttons to link to page */}
                   <p className='blankText'>l</p>
                   <p className='blankText'>l</p>
                   <p className='blankText'>l</p>
@@ -44,10 +54,32 @@ function App() {
                   <p className='blankText'>l</p>
                   </div>
                 </Container>
-
-                <div className='infoDiv'>
-                  <p>will contain about me stuff</p>
+                <MainPageWrapper>
+                
+                <h2 className='infoTitle'>Services for every pet</h2>
+                <div className='grid'>
+                  <img className='petCat' src={petCat} ></img>
+                  <img className='petDog' src={petDog} ></img>
+                  <p>Here are some of our satisfied customers!</p>
                 </div>
+                 <div className='infoDivs'>
+                  <img className = 'pawImg' src={pawPrint}></img>
+                  <h4>Walking</h4>
+                  <p>We will walk your pet near your area or where ever you feel like! Perfect for your pet to stretch its legs, or wings; whatever they would like.</p>
+                </div>
+                <div className='infoDivs'>
+                    <img className = 'houseImg' src={housePrint}></img>
+                    <h4>Drop-in</h4>
+                    <p>Your pet visits your sitter's home to take care, play, feed and have fun with them! </p>
+                </div>
+                <div className='infoDivs'>
+                  <img className = 'rainbowImg' src={rainbowPrint}></img>
+                  <h4>Day Care</h4>
+                  <p>Your sitter takes care of your pets and home, giving your furry friends all the attention and love they need without leaving the home.</p>
+                </div>
+                
+                </MainPageWrapper>
+                
               </>
             }/>
           </Routes>
