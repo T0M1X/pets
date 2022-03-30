@@ -17,9 +17,9 @@ import SearchSitters from "./components/searchSitters/searchSitters";
 
 const theme = {
   colors: {
-    header: 'rgb(24,26,27)',
+    header: 'rgb(255,255,27)',
     body: 'rgb(200,200,200)',
-    footer: 'rgb(24,26,27)',
+    footer: 'rgb(255,255,27)',
   },
   mobile: '768px',
 }

@@ -37,7 +37,7 @@ export default class SearchSitters extends Component {
                         }
                     </div>
                 </div>
-                <Map />
+                <Map filtered={this.filteredResults()} history={this.props.history}/>
             </div>
         );
     }

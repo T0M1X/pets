@@ -14,7 +14,7 @@ export default class Searchbar extends Component {
 
     render() {
         return (
-            <input className={'searchfield'} placeholder="ENTER POSTCODE..."  type="text" onChange={(e) => { this.inputHandler(e) }}>
+            <input className={'searchfield'} placeholder="Search for sitters..."  type="text" onChange={(e) => { this.inputHandler(e) }}>
 
             </input>
         );
