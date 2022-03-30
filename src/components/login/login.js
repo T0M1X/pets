@@ -1,86 +1,72 @@
+/*
 import React, { Component } from 'react'
-import React, { useState } from "react";
-//https://contactmentor.com/login-form-react-js-code/
-export default class login extends Component {
-  //react states
-  App() {
-    const [errorMessages, setErrorMessages] = useState({});
-    const [isSubmitted, setIsSubmitted] = useState(false);
 
-    const database = [
-      {
-        username: "user1",
-        password: "pass1"
-      },
-      {
-        username: "user2",
-        password: "pass2"
-      }
-    ];
-
-    const errors = {
-      uname: "invalid username",
-      pass: "invalid password"
-    };
-
-    // Generate JSX code for error message
-    const renderErrorMessage = (name) =>
-      name === errorMessages.name && (
-        <div classname="error">{errorMessages.message}</div>
-      )
-
-    //handles form submission
-    const handleSubmit = (event) => {
-      //Prevent page reload
-      event.preventDefault();
-
-      var {uname, pass} = document.forms[0];
-
-      //find user login info
-      const userData = database.find((user) => user.username === uname.value)
-
-      //compare user info
-      if (userData){
-        if (userData.password !== pass.value){
-          //Invalid password
-          setErrorMessages({name:"pass", message: errors.pass});
-        } else {
-          setIsSubmitted(true);
-        }
-      }else {
-        //Username not found
-        setErrorMessages({name:"uname", message: errors.uname});
-      }
-    };
-    
-    // JSX code for login form
-    const renderForm = (
-      <div className='form'>
-        <form onSubmit={handleSubmit}>
-          <div className="input-container">
-            <label>Username </label>
-            <input type="text" name="uname" required />
-            {renderErrorMessage("uname")}
+  export default class login extends Component {
+    render() {
+      return (
+        <div className="login-container">
+          <div className="title">
+           Login
           </div>
-          <div className="input-container">
-            <label>Password </label>
-            <input type="password" name="pass" required />
-            {renderErrorMessage("pass")}
-          </div>
-          <div>
-            <input type="submit"/>
-          </div>
-        </form>
-      </div>
-    );
-    
-    return (
-      <div className="app">
-        <div className="login-form">
-          <div className="title">Sign In</div>
-          {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+          <input type="text" label="name" id="name" style={style} />
+          <input type="password" label="password" id="password" style={style} />
+          <button buttonText="log in" buttonClass="login-button" />
         </div>
-      </div>
-    );
+      );
+    }
   }
+*/
+
+import React, { useState } from 'react';
+import LoginForm from './LoginForm';
+
+function LoginApp() {
+  const adminUser = {
+    email: "admin@admin.com",
+    password: "admin123"
+  }
+
+  const [user, setUser] = useState({name:"", email:""});
+  const [error, setError] = useState("");
+
+  //function which is run after user submits
+  const Login = details => {
+    console.log(details);
+    //checks if login details matches registered user data
+    if (details.email == adminUser.email && details.password == adminUser.password){
+      console.log("Logged in");
+      setUser({
+        name: details.name,
+        email: details.email
+      });
+    } else {
+      console.log("Details do not match!");
+      setError("Details do not match!")
+    }
+  }
+
+  //function occurs when logout button is pressed
+  const Logout = () => {
+    console.log("Logout")
+    //sets user to default state
+    setUser({name:"", email:""})
+  }
+
+  //page which determines whether user is logged in and which page to show
+  return(
+    <div className="App">
+      {(user.email != "") ? 
+      (
+        <div className="welcome">
+          <h2>Welcome, <span>{user.name}</span></h2>
+          <button onClick={Logout}>Logout</button>
+        </div>
+      ) 
+      : (
+        <LoginForm Login={Login} error={error}/>
+      )}
+        </div>
+  );
 }
+
+export default LoginApp

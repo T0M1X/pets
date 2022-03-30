@@ -12,6 +12,7 @@ import petCat from './images/petCat.png'
 import petDog from './images/dogHappy.jpeg' // put images in pub
 import petCat2 from './images/petCat2.jpeg'
 import Calendar from './components/viewCalendar/viewCalendar';
+import LoginApp from './components/login/login';
 
 
 const theme = {
@@ -33,6 +34,7 @@ function App() {
           
           <Routes>
           <Route path="/components/viewCalendar/viewCalendar" element={<Calendar />} />
+          <Route path="/components/login/login" element={<LoginApp />} />
             <Route
             path="/"
             element={
