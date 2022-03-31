@@ -33,7 +33,7 @@ function App() {
           <Header />
 
           <Routes>
-            <Route path="/components/viewCalendar/viewCalendar" element={<Calendar />} />
+            <Route path="/viewCalendar" element={<Calendar />} />
             <Route
               path="/"
               element={
