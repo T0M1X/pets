@@ -1,24 +1,6 @@
-/*
-import React, { Component } from 'react'
-
-  export default class login extends Component {
-    render() {
-      return (
-        <div className="login-container">
-          <div className="title">
-           Login
-          </div>
-          <input type="text" label="name" id="name" style={style} />
-          <input type="password" label="password" id="password" style={style} />
-          <button buttonText="log in" buttonClass="login-button" />
-        </div>
-      );
-    }
-  }
-*/
-
 import React, { useState } from 'react';
 import LoginForm from './LoginForm';
+import "./login.css"
 
 function LoginApp() {
   const adminUser = {
