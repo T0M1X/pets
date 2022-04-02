@@ -19,7 +19,7 @@ const GlobalStyles = createGlobalStyle`
   }
   img {
     max-width: 100%;
-
+  }
   br {
     margin: auto;
   }                

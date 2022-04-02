@@ -11,6 +11,8 @@ import rainbowPrint from "./images/rainbowPrint.png";
 import petCat from "./images/petCat.png";
 import petDog from "./images/dogHappy.jpeg"; // put images in pub
 import petCat2 from "./images/petCat2.jpeg";
+import Calendar from "./components/viewCalendar/viewCalendar";
+import SearchSitters from "./components/searchSitters/searchSitters";
 
 const theme = {
   colors: {
@@ -29,6 +31,7 @@ function App() {
           <GlobalStyles />
           <Header />
           <Routes>
+            <Route path="/viewCalendar" element={<Calendar />} />
             <Route
               path="/"
               element={
@@ -47,11 +50,11 @@ function App() {
                       <p className="underlyingText">
                         Book the best sitters and walkers for your furry friends
                       </p>
-                      {/*buttons will go here*/}
                       <div className="button-group">
                         <button>Walking</button>
                         <button>Day Care</button>
                       </div>
+                      <p className="blankText">l</p>
                       <p className="blankText">l</p>
                       <p className="blankText">l</p>
                       <p className="blankText">l</p>
@@ -96,6 +99,7 @@ function App() {
                 </>
               }
             />
+            <Route path="/search" element={<SearchSitters />} />
           </Routes>
           <Footer />
         </>
