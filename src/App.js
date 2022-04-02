@@ -43,10 +43,11 @@ function App() {
                         Book the best sitters and walkers for your furry friends
                       </p>
                       <div className="button-group">
-                        <Link to="/components/searchSitters.js">
+                        <Link to="/search">
                           <button>Walking</button>
                         </Link>
-                        <Link to="/">
+                        <Link to="/viewCalendar">
+                          {/* //left like this just to check, will change later on */}
                           <button>Day Care</button>
                         </Link>
                       </div>
