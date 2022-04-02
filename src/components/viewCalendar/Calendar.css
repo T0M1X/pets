@@ -37,3 +37,27 @@
     background-color:blue;
     margin:2%;
   }
+
+  .Event-container{
+    width:80%;
+    height:80%;
+    position: relative;
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:3%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.8);
+    color:white;
+  }
+
+  .close{
+    position:absolute; 
+    top:0; 
+    right:0;
+    border-radius: 50%;
+    border: 1px solid red;
+  }
