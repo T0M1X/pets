@@ -29,25 +29,46 @@ export const Container = styled.div`
 
   .button-group button {
     display: inline-block;
-    background-color: grey;
+    background-color: rgb(24, 26, 27);
+    border-radius: 3px;
+    box-shadow: none;
+    border: none;
     color: gainsboro;
     float: left;
-    margin-top: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 15px;
+    margin-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 22px;
+    padding-right: 22px;
+    font-size: 20px;
+    cursor: pointer;
+    transition-duration: 0.8s;
+  }
+
+  .button-group button:hover {
+    display: inline-block;
+    background-color: transparent;
+    border-radius: 3px;
+    border: 1px solid #66ffff;
+    color: white;
+    font-weight: bold;
+    float: left;
+    margin-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 28px;
+    padding-right: 28px;
+    font-size: 20px;
+    cursor: pointer;
   }
 
   .button-group {
-    margin: auto;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 25px;
     width: 50%;
-  }
-
-  .button-group button:not(:last-child) {
-    border-right: none;
   }
 
   .button-group:after {

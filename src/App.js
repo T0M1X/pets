@@ -5,14 +5,9 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./components/styles/Global";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MainPageWrapper from "./components/styles/MainPage.styled";
-import pawPrint from "./images/pawPrint.png";
-import housePrint from "./images/housePrint.png";
-import rainbowPrint from "./images/rainbowPrint.png";
-import petCat from "./images/petCat.png";
-import petDog from "./images/dogHappy.jpeg"; // put images in pub
-import petCat2 from "./images/petCat2.jpeg";
 import Calendar from "./components/viewCalendar/viewCalendar";
 import SearchSitters from "./components/searchSitters/searchSitters";
+import { Link } from "react-router-dom";
 
 const theme = {
   colors: {
@@ -37,13 +32,10 @@ function App() {
               element={
                 <>
                   <Container>
-                    <div>
+                    <div
+                      style={{ paddingTop: "250px", paddingBottom: "250px" }}
+                    >
                       {/* get buttons to link to page */}
-                      <p className="blankText">l</p>
-                      <p className="blankText">l</p>
-                      <p className="blankText">l</p>
-                      <p className="blankText">l</p>
-                      <p className="blankText">l</p>
                       <p className="openingText">
                         Welcome to PetFriends, where all pets are friends here!
                       </p>
@@ -51,26 +43,24 @@ function App() {
                         Book the best sitters and walkers for your furry friends
                       </p>
                       <div className="button-group">
-                        <button>Walking</button>
-                        <button>Day Care</button>
+                        <Link to="/components/searchSitters.js">
+                          <button>Walking</button>
+                        </Link>
+                        <Link to="/">
+                          <button>Day Care</button>
+                        </Link>
                       </div>
-                      <p className="blankText">l</p>
-                      <p className="blankText">l</p>
-                      <p className="blankText">l</p>
-                      <p className="blankText">l</p>
-                      <p className="blankText">l</p>
-                      <p className="blankText">l</p>
                     </div>
                   </Container>
                   <MainPageWrapper>
                     <h2 className="infoTitle">Services for every pet</h2>
                     <div className="grid">
-                      <img className="petCat" src={petCat}></img>
-                      <img className="petDog" src={petDog}></img>
+                      <img className="petCat" src="petCat.png"></img>
+                      <img className="petDog" src="dogHappy.jpeg"></img>
                       <p>Here are some of our satisfied customers!</p>
                     </div>
                     <div className="infoDivs">
-                      <img className="pawImg" src={pawPrint}></img>
+                      <img className="pawImg" src="pawPrint.png"></img>
                       <h4>Walking</h4>
                       <p>
                         We will walk your pet near your area or where ever you
@@ -79,15 +69,15 @@ function App() {
                       </p>
                     </div>
                     <div className="infoDivs">
-                      <img className="houseImg" src={housePrint}></img>
+                      <img className="houseImg" src="housePrint.png"></img>
                       <h4>Drop-in</h4>
                       <p>
                         Your pet visits your sitter's home to take care, play,
-                        feed and have fun with them!{" "}
+                        feed and have fun with them!
                       </p>
                     </div>
                     <div className="infoDivs">
-                      <img className="rainbowImg" src={rainbowPrint}></img>
+                      <img className="rainbowImg" src="rainbowPrint.png"></img>
                       <h4>Day Care</h4>
                       <p>
                         Your sitter takes care of your pets and home, giving
