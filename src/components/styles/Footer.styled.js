@@ -21,4 +21,7 @@ export const StyledFooter = styled.footer`
     color:whitesmoke;
     margin-left:3%;
   }
+  a{
+    color: rgb(211,207,201);
+  }
 `
