@@ -10,7 +10,9 @@ const Header = () => {
                   <Button className="logo" bg='transparent'><img src='logo.png' alt='' /></Button>
                 </Link> 
               <p>PetFriends!</p>
-              <Button className="right-nav">Seach Sitters</Button>
+              <Link to="/search">
+                <Button className="right-nav">Seach Sitters</Button>
+              </Link>
               <Button>Sign Up</Button>
               <Button>Sign in</Button>
             </Nav>

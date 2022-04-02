@@ -10,12 +10,6 @@ export const Button = styled.button`
     background-color: ${({ bg }) => bg || 'rgb(24,26,27)'};
     color: ${({ color }) => color || 'rgb(211,207,201)'};
     font-family: 'Avenir', Helvetica, sans-serif;
-
-    &.title{
-        margin-left:12%;
-        margin-top:30%;
-    }
-
     &:hover {
     opacity: 0.3;
     transform: scale(0.96);
@@ -28,7 +22,8 @@ export const Button = styled.button`
     }
 
     &.right-nav{
-        margin-left:50%;
+        margin-left:30%;
+        margin-top:20%;
     }
 
 `
