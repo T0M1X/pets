@@ -13,7 +13,7 @@ export default class SitterCard extends Component {
     render() {
         return (
             <div className={'card'}>
-                <img src={ this.state.sitter.profilePicture }/>
+                <img src={ this.state.sitter.profilePicture } alt=''/>
                 <div className={'cardinfo'}>
                     <p className={'username'}>{ this.state.sitter.username }</p>
                     <p className={'bio'}>{ this.state.sitter.bio }</p>

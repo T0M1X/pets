@@ -31,7 +31,6 @@ function App() {
         <>
           <GlobalStyles />
           <Header />
-
           <Routes>
             <Route path="/viewCalendar" element={<Calendar />} />
             <Route
@@ -53,10 +52,10 @@ function App() {
                       <p className='blankText'>l</p>
                       <p className='blankText'>l</p>
                       <p className='blankText'>l</p>
+                      <p className='blankText'>l</p>
                     </div>
                   </Container>
                   <MainPageWrapper>
-
                     <h2 className='infoTitle'>Services for every pet</h2>
                     <div className='grid'>
                       <img className='petCat' src={petCat} ></img>

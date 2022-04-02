@@ -2,9 +2,15 @@ import styled from "styled-components";
 
 const MainPageWrapper = styled.div`
 
+    font-family: 'Avenir', Helvetica, sans-serif;
+    padding-bottom: 3%;
+    background-color: ${({ theme }) => theme.colors.header};
+    color: rgb(211,207,201);
+
     & .infoTitle {
         text-align: center;
         padding-top: 40px;
+        margin-top:0;
     }
 
     & .infoDivs {
