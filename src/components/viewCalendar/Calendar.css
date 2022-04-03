@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
 :root{
   font-size: 16px;
+  font-family:"Quicksand",sans-serif;
 }
 
 
@@ -12,6 +15,7 @@
   .fc .fc-col-header-cell-cushion{
     color: #000000;
   } */
+
 
   .calendar-container2{
     height: 80%;
@@ -41,19 +45,19 @@
     all:none;
     color:white;
     background-color:black;
-    border:solid rgb(235, 26, 26) 2px;
-    margin:2%;
-    
+    border:solid rgb(102,255,255);
+    margin:2%; 
   }
+
   .fc-daygrid-event-dot{
-    border-color:#000080;
-    background-color:blue;
+    color:black;
+    background-color:black;
     margin:2%;
   }
 
   .Event-container{
-    width:60%;
-    height:60%;
+    width:75%;
+    height:80%;
     position: relative;
     position: fixed;
     margin-left: auto;
@@ -66,6 +70,10 @@
     background-color: rgba(0,0,0,.93);
     color:white;
     z-index:100;
+    border-radius: 2%;
+    border:solid 2px black;
+    font-family: 'Quicksand', sans-serif;
+
   }
 
   .close{
@@ -77,10 +85,106 @@
     margin-right:1%;
   }
 
-  .title{
-    margin-top:2%;
-    margin-left:2%;
-    font-size:1.7rem;
+  .close:hover{
+    color:rgb(102,255,255);
   }
+
+  .title{
+    padding-left:2%;
+    margin-top:2%;
+    font-size:1.7rem;
+    padding-bottom:3%;
+    width:100%;
+    border-bottom:3px solid rgb(195, 195, 195);
+
+    ;
+  }
+
+  .booking-container{
+    display:flex;
+    align-items: center;
+    margin-top:2%;
+    margin-bottom:2%;
+    flex-direction:column;
+
+  }
+  .booking-container div{
+    margin:0.1%;
+  }
+
+
+.info-container{
+  display:flex;
+  margin-left: 2%;
+  margin-right: 20%;
+  flex-direction: column;
+  text-align:justify;
+
+}
+
+.info-container div{
+  width:100%;
+}
+
+
+.pet-container{
+  display:flex;
+  flex-direction: column;
+
+}
+
+.pet-container{
+  margin-left:2%;
+}
+
+
+h2{
+  font-size:1.4rem;
+}
+
+.Flex-Container{
+  display:flex;
+  border:solid rgb(63, 63, 63) 2px;
+  width:90%;
+  margin: 3%;
+  padding-bottom: 1%;
+
+  
+}
+
+
+.Other{
+  padding:1%;
+  margin-left: 3%;
+  border:solid rgb(63, 63, 63) 2px;
+  width:40%;
+  height:25%;
+
+}
+
+.Flex-Container-2{
+  display:flex;
+  width:90%;
+  justify-content:space-between;
+
+
+}
+
+.Payment-container{
+  border:solid rgb(63, 63, 63) 2px;
+  width:20%;
+  height:90%;
+  padding:1%;
+
+}
+
+h3{
+  margin:0;
+  display:inline;
+  font-size:1.2rem;
+  color:grey;
+
+}
+
 
 
