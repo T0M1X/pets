@@ -11,17 +11,24 @@ export default class eventInfo extends Component {
        };
     
   render() {
+    var q = new Date();
     return (
         <div>
       <div className="Event-container">
           <div></div>
       <div className="title">Booking Infomation</div>
-
+      <div class="Book-Review-Container">
       <div className="booking-container">
       <div><h3>Booking ID: </h3> {this.props.event.id}</div>
       <div><h3>Start Date: </h3>{(this.props.event.start).toString().substring(25,0)}</div>
       <div><h3>End Date: </h3> {(this.props.event.end).toString().substring(25,0)}</div>
       <div><h3>Booking Title: </h3>{this.props.event.title}</div>
+      </div>
+      <div>
+      {this.props.event.end>q.getDate()?
+      <button className="reviewPage glow-on-hover">Write Review</button>
+      :null}
+      </div>
       </div>
       <span className="close" onClick={this.handleClick}>x</span>
       <div className="Flex-Container">
@@ -47,6 +54,7 @@ export default class eventInfo extends Component {
           <h2>Payment Details</h2>
           <div><h3>Total Cost: </h3>£{this.props.event.extendedProps.Payment}</div>
       </div>
+      
       </div>
       </div>
       </div>
