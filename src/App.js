@@ -1,6 +1,5 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
 import { Container } from "./components/styles/Container.styled";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./components/styles/Global";
