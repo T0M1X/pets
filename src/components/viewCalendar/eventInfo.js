@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import "./Calendar.css"
+import { Link } from "react-router-dom";
 
 export default class eventInfo extends Component {
 
@@ -11,7 +12,9 @@ export default class eventInfo extends Component {
        };
     
   render() {
-    var q = new Date();
+    var todayDate = new Date();
+    var endDate=new Date(this.props.event.end.toString());
+
     return (
         <div>
       <div className="Event-container">
@@ -25,8 +28,12 @@ export default class eventInfo extends Component {
       <div><h3>Booking Title: </h3>{this.props.event.title}</div>
       </div>
       <div>
-      {this.props.event.end>q.getDate()?
+        {console.log("Check"+todayDate+" endDate:"+endDate)}
+        {console.log("Check if:"+this.props.event.end>todayDate?"true":"false")}
+      {this.props.event.end<todayDate?
+      <Link to="/writeReview">
       <button className="reviewPage glow-on-hover">Write Review</button>
+      </Link>
       :null}
       </div>
       </div>
