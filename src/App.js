@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+
 import { Container } from "./components/styles/Container.styled";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./components/styles/Global";
@@ -8,6 +9,7 @@ import MainPageWrapper from "./components/styles/MainPage.styled";
 import Calendar from "./components/viewCalendar/viewCalendar";
 import SearchSitters from "./components/searchSitters/searchSitters";
 import { Link } from "react-router-dom";
+import LoginApp from './components/login/login';
 
 const theme = {
   colors: {
@@ -26,6 +28,7 @@ function App() {
           <GlobalStyles />
           <Header />
           <Routes>
+            <Route path="/login" element={<LoginApp />} />
             <Route path="/viewCalendar" element={<Calendar />} />
             <Route
               path="/"
