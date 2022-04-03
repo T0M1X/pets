@@ -83,6 +83,7 @@
     font-weight: bolder;
     color:grey;
     margin-right:1%;
+    cursor: pointer;
   }
 
   .close:hover{
