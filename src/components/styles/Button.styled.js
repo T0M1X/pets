@@ -25,5 +25,7 @@ export const Button = styled.button`
         margin-left:30%;
         margin-top:20%;
     }
-
+    &.login{
+        margin-top:40%;
+    }
 `

@@ -14,7 +14,9 @@ const Header = () => {
                 <Button className="right-nav">Seach Sitters</Button>
               </Link>
               <Button>Sign Up</Button>
-              <Button>Sign in</Button>
+              <Link to="/login">
+                <Button className="login">Sign in</Button>
+              </Link>
             </Nav>
         </StyledHeader>
     )
