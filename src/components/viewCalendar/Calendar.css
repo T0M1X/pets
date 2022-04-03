@@ -13,6 +13,15 @@
     color: #000000;
   } */
 
+  .calendar-container2{
+    height: 80%;
+    width:90%;
+    margin-top: 5%;
+    margin-bottom:5%;
+    margin-left: auto;
+    margin-right:auto;
+
+  }
 
   .calendar-container{
     height: 80%;
@@ -21,6 +30,10 @@
     margin-bottom:5%;
     margin-left: auto;
     margin-right:auto;
+  }
+
+  .transparent{
+    opacity:46%;
   }
 
  /* Event colour */
@@ -39,8 +52,8 @@
   }
 
   .Event-container{
-    width:80%;
-    height:80%;
+    width:60%;
+    height:60%;
     position: relative;
     position: fixed;
     margin-left: auto;
@@ -50,14 +63,24 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0,0,0,.8);
+    background-color: rgba(0,0,0,.93);
     color:white;
+    z-index:100;
   }
 
   .close{
     position:absolute; 
     top:0; 
     right:0;
-    border-radius: 50%;
-    border: 1px solid red;
+    font-weight: bolder;
+    color:grey;
+    margin-right:1%;
   }
+
+  .title{
+    margin-top:2%;
+    margin-left:2%;
+    font-size:1.7rem;
+  }
+
+
