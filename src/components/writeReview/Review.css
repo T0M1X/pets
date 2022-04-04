@@ -1,0 +1,9 @@
+ .ReviewForm {
+    background-color:none !important;
+    color:green;
+}
+
+.ReviewForm:after{
+    background-image:none !important;
+
+}
