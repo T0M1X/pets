@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import LoginForm from './LoginForm';
 import "./login.css"
+import data from "../../lib/users.json";
 
 function LoginApp() {
+  /* temporary hard code version
   const adminUser = {
     email: "admin@admin.com",
     password: "admin123"
   }
+  */
 
   const [user, setUser] = useState({name:"", email:""});
   const [error, setError] = useState("");
@@ -14,14 +17,26 @@ function LoginApp() {
   //function which is run after user submits
   const Login = details => {
     console.log(details);
+    console.log(data);
     //checks if login details matches registered user data
-    if (details.email == adminUser.email && details.password == adminUser.password){
-      console.log("Logged in");
-      setUser({
-        name: details.name,
-        email: details.email
-      });
-    } else {
+
+    //for all users, check if email matches an email in the database, then check if password matches
+    let loggedIn = false;
+    for (let i=0; i < data.Admins.length; i++){
+      if (details.email == data.Admins[i].email){
+        if (details.password == data.Admins[i].password){
+      //if (details.email == adminUser.email && details.password == adminUser.password){
+        console.log("Logged in");
+        loggedIn = true;
+        setUser({
+          name: details.name,
+          email: details.email
+          });
+        }
+      }
+    }
+    //if it gets to the end of the loop, tell user the details are incorrect
+    if (loggedIn == false){
       console.log("Details do not match!");
       setError("Details do not match!")
     }
