@@ -18,7 +18,6 @@ export default class eventInfo extends Component {
     return (
         <div>
       <div className="Event-container">
-          <div></div>
       <div className="title">Booking Infomation</div>
       <div class="Book-Review-Container">
       <div className="booking-container">
