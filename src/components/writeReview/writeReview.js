@@ -77,7 +77,7 @@ export default class writeReview extends Component {
         <div className="recommend-container"> 
         <h2>Would you recommend this product?</h2>
         <div class="button-container">
-        <input type="radio" id="Yes" name="recommend" value="yes" checked/>
+        <input type="radio" id="Yes" name="recommend" value="yes" required/>
         <label htmlFor="Yes">Yes</label>
         <input type="radio" id="No" name="recommend" value="no"/>
         <label htmlFor="No">No</label>
