@@ -48,6 +48,9 @@ export default class writeReview extends Component {
             overall:this.state.overall,
             recommend:this.state.recommend,
         }
+
+        //For now only booking 1 works because the sitter id(booking.json) and id(in sitter) match 
+        //change client info in the calendar  into sitter name and add ids?
         console.log(Review)
         var result = this.state.sitter.findIndex(obj => obj.id===this.props.sitterId);
         console.log(result);
