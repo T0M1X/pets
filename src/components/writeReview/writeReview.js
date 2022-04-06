@@ -11,7 +11,6 @@ function WriteReview() {
 return (
   <div>
     {console.log(location.state)}
-  <div>{location.state.sitterId}</div>
   <Review sitterId={location.state.sitterId} />
   </div>
   
