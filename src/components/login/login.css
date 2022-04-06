@@ -20,10 +20,11 @@ input, button {
 
 /*sets page size*/
 .App {
+    height: auto*2;
     display: block;
     align-items: flex-start;
     justify-content: center;
-    background-color: #E6E8EB
+    background-color: #ffffff
 }
 
 form {

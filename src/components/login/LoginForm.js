@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 function LoginForm({Login, error}) {
-    const [details, setDetails] = useState({name:"", email:"", password: ""});
+    const [details, setDetails] = useState({username:"", password: ""});
 
     //handles form submission
     const submitHandler = (event) => {
@@ -19,12 +19,8 @@ function LoginForm({Login, error}) {
             (error != "") ? (<div className='error'>{error}</div>) : ""
             }
             <div className="form-group">
-                <label htmlFor="name">Name:</label>
-                <input type="text" name="name" id="name" onChange={event => setDetails({...details, name: event.target.value})} value={details.name}/>
-            </div>
-            <div className="form-group">
-                <label htmlFor="email">Email:</label>
-                <input type="text" name="email" id="email" onChange={event => setDetails({...details, email: event.target.value})} value={details.email}/>
+                <label htmlFor="username">Username:</label>
+                <input type="text" name="username" id="username" onChange={event => setDetails({...details, username: event.target.value})} value={details.username}/>
             </div>
             <div className="form-group">
                 <label htmlFor="passowrd">Password:</label>
