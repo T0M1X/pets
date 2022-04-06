@@ -31,7 +31,7 @@ export default class eventInfo extends Component {
         {console.log("Check if:"+this.props.event.end>todayDate?"true":"false")}
       {this.props.event.end<todayDate?
       <Link to={"/writeReview"}
-        state={{test: 'test'}}>
+        state={{sitterId:this.props.event.extendedProps.sitterId}}>
       <button className="reviewPage glow-on-hover">Write Review</button>
       </Link>
       :null}
