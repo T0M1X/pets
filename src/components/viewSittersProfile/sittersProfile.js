@@ -25,23 +25,59 @@ const SittersProfile = (props) => {
             if (user.rating >= 4) { setColor("rgb(81, 148, 81)") }
             if (user.rating <= 2) { setColor("red") }
             if (user.rating < 4 && user.rating > 2) { setColor("orange") }
+
+            if (user.images) {setPicture(user.images[0])}
         }
 
     }, [user]);
 
-
-
     return (
         <div>
-            {user && (<div className="container">
+            {user && (<div className="containerProfile">
                 <div className="profileHeader">
-                    <p>Sitter: {user.username}</p>
-                    <div className="rating" style={{ backgroundColor: color }}>
-                        <p>  average rating: {user.rating}  </p>
+                    <img src={user.profilePicture} />
+                    <p>{user.username}</p>
+                    <div className="satisfaction">
+                        {[...Array(Math.round(user.rating))].map(() => (
+                            <img src="https://cdn-icons-png.flaticon.com/512/786/786432.png" />
+                        )
+                        )}
+                    </div>
+
+                    <div className="sub">
+                        <p>rating: {user.rating}/5</p>
                     </div>
                 </div>
-                <div><hr className="solid" /></div>
-                <div className="userprofile">
+                <div className="line" />
+                <div classname="infocontainer">
+                    <div className="userInfo">
+                        <div className="uintro"><p> Hi, I'm {user.username}! &#128021;</p></div>
+                        <div className="profilebio"><p>{user.bio}</p></div>
+                        <div className="subheader"><p>Additional facts about me:</p></div>
+                        <div className="profilebio"><p>{user.additionalinfo}</p></div>
+                    </div>
+                    <div className="badges">
+                        {user.badges?.map((badge) => (
+                            <div className="pills"><p> {badge} </p></div>
+                        ))}
+                    </div>
+                    <div className="pictureSection">
+                        <div className="introPictures"><p>Photos from {user.username}'s sittings &#128247;:</p></div>
+                        <div className="pictures">
+                            <div className="pictureColumn">
+                                {user.images?.map((image) => (
+                                    <div className="pictureRow"> <img src={image} onClick={() => { setPicture(image) }} /></div>
+                                ))}
+                            </div>
+                            <div className="bigPicture">
+                                {bigPicture && <img src={bigPicture} />}
+                            </div>
+                        </div> 
+                        {!user.images && <div className="profilebio"><p>This user has not supplied us with any pictures yet! </p></div>}
+                    </div>
+                </div>
+                {
+                /*<div className="userprofile">
                     <img src={user.profilePicture} />
                     <div className="userinfo">
                         <p className="intro"> Hi, I'm {user.username}! &#128021;</p>
@@ -70,7 +106,7 @@ const SittersProfile = (props) => {
                     <div className="reviews">
                         <p>reviews go here!</p>
                     </div>
-                </div>
+                </div> */}
 
 
 
