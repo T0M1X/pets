@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import "./Review.css"
 import { Link,Location } from "react-router-dom";
 import Sitter from "../../lib/sitters.json";
-import {writeJsonFile} from 'write-json-file';
 
 export default class writeReview extends Component {
     constructor(props){
@@ -54,7 +53,7 @@ export default class writeReview extends Component {
         console.log(result);
         Sitter[result].review.push(Review);
         console.log(Sitter)
-
+        
   
       }
       onValueChange(event) {
