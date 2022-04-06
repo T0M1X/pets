@@ -1,8 +1,15 @@
 @font-face {
   font-family: 'Avenir';
-  src: url('../fonts/AvenirLTStd-Book.otf') format('opentype'),
+  src: 
+  url('../fonts/Avenir\ Light.ttf'),
+  url('../fonts/AvenirLTStd-Book.otf') format('opentype'),
   url('../fonts/AvenirLTStd-Medium.otf') format('opentype'),
   url('../fonts/AvenirLTStd-Roman.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'AvenirLight';
+  src: url('../fonts/Avenir\ Light.ttf');
 }
 
 h1{

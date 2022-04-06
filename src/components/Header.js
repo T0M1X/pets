@@ -7,7 +7,7 @@ const Header = () => {
         <StyledHeader>
             <Nav>
                 <Link to="/">
-                  <Button className="logo" bg='transparent'><img src='logo.png' alt='' /></Button>
+                  <Button className="logo" bg='transparent'><img src='/logo.png' alt='' /></Button>
                 </Link> 
               <p>PetFriends!</p>
               <Link to="/search">
