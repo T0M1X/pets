@@ -4,6 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import "./Calendar.css"
 import EventInfo from "./eventInfo.js"
 import booking from "../../lib/booking.json";
+import Sitter from "../../lib/sitters.json";
 
 export default class viewCalendar extends Component {
   constructor() {
@@ -28,6 +29,7 @@ export default class viewCalendar extends Component {
   render() {
     return (
       <div>
+        {console.log(Sitter)}
       <div className={!this.state.display ?"calendar-container":"calendar-container transparent"}>
       <FullCalendar
       plugins={[ dayGridPlugin ]}
