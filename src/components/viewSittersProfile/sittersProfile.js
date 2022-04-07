@@ -85,8 +85,11 @@ const SittersProfile = (props) => {
                 </div>
                
             </div>)}
-            <div class="Reviews">
+            
+            <div className="R-container">
+            <div className="Reviews">
                     {(review[0].review).map(review => < Review  review={review} />)}
+            </div>
             </div>
             
         </div>

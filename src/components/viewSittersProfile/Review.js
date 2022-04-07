@@ -52,11 +52,11 @@ export default class Review extends Component {
             </>
 
         )}
-        else if (x==2){
+        else if (x==1){
             return(
                 <>
             <span className="fa fa-star checked"></span>
-            <span className="fa fa-star checked"></span>
+            <span className="fa fa-star"></span>
             <span className="fa fa-star"></span>
             <span className="fa fa-star"></span>
             <span className="fa fa-star"></span>
@@ -80,14 +80,13 @@ export default class Review extends Component {
 
                 </div>
                 <div className="ratings">
-                            <div>Quality:{this.number(this.props.review.quality)}/5</div>
-                            <div>Price:{this.number(this.props.review.price)}/5</div>
-                            <div>Timeliness:{this.number(this.props.review.timeliness)}/5</div>
+                            <div>Quality:{this.number(this.props.review.quality)}</div>
+                            <div>Price:{this.number(this.props.review.price)}</div>
+                            <div>Timeliness:{this.number(this.props.review.timeliness)}</div>
                             <div>Overall: {this.number(this.props.review.overall)} </div>
                     </div>
                     <div className="Review-Desc">
                         {this.props.review.text}
-
                     </div>
             </div>
 
