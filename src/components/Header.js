@@ -7,13 +7,15 @@ const Header = () => {
         <StyledHeader>
             <Nav>
                 <Link to="/">
-                  <Button className="logo" bg='transparent'><img src='logo.png' alt='' /></Button>
+                  <Button className="logo" bg='transparent'><img src='/logo.png' alt='' /></Button>
                 </Link> 
               <p>PetFriends!</p>
               <Link to="/search">
                 <Button className="right-nav">Seach Sitters</Button>
               </Link>
-              <Button>Sign Up</Button>
+              <Link to="/register">
+                <Button className="login">Sign Up</Button>
+              </Link>
               <Link to="/login">
                 <Button className="login">Sign in</Button>
               </Link>

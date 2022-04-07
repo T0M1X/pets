@@ -2,18 +2,6 @@ import { Component } from "react";
 import EventInfoBookings from "./eventInfoBookings";
 
 export default class acceptDeclineBooking extends Component {
-  // toggleAccepted = (button) => {
-  //   if (button === "accept") {
-  //     this.setState({
-  //       accepted: true,
-  //     });
-  //   } else {
-  //     this.setState({
-  //       accepted: false,
-  //     });
-  //   }
-  // };
-
   render() {
     return (
       <>
