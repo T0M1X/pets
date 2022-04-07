@@ -20,7 +20,6 @@ input, button {
 
 /*sets page size*/
 .App {
-    height: auto*2;
     display: block;
     align-items: flex-start;
     justify-content: center;
@@ -28,7 +27,10 @@ input, button {
 }
 
 form {
-    display: block;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
 }
 
@@ -109,17 +111,22 @@ form .form-inner input[type="submit"]:hover, .welcome button:hover{
 }
 
 .welcome {
-    width: 100%;
-    max-width: 480px;
-    background-color: #fff;
-    padding: 15px 30px;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
 }
 
 .welcome h2 {
     color: #888;
-    font-size: 28px;
+    font-size: 10vh;
     font-weight: 500;
-    margin-bottom: 30px;
+    margin-right: 2vh;
+}
+.welcome button{
+    display: inline-flex;
+    font-size: 6vh;
 }
 
 .welcome h2 span {

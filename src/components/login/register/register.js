@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 function RegisterApp() {
   const [error, setError] = useState("");
   const [complete, setComplete] = useState(false);
-  var type = ""
 
   //check if user is logged in, if they are, redirect them to logged in page
   if (localStorage.getItem('UserDetails')){
