@@ -12,6 +12,7 @@ function RegisterForm({Register, error}) {
     }
 
   return (
+      <div class="login">
     <form onSubmit={submitHandler}>
         <div className="form-inner">
             <h2>Register</h2>
@@ -36,6 +37,7 @@ function RegisterForm({Register, error}) {
             </div>
         </div>
     </form>
+    </div>
   )
 }
 
