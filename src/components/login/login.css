@@ -126,3 +126,7 @@ form .form-inner input[type="submit"]:hover, .welcome button:hover{
     color: var(--color2);
     font-weight: 700;
 }
+
+.submitButtons input{
+    margin: 5px;
+}

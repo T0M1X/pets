@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 function RegisterApp() {
   const [error, setError] = useState("");
   const [complete, setComplete] = useState(false);
+  var type = ""
 
   //check if user is logged in, if they are, redirect them to logged in page
   if (localStorage.getItem('UserDetails')){
@@ -24,8 +25,8 @@ function RegisterApp() {
     }
     
     //check if username is taken
-    for (let i=0; i < data.Admins.length; i++){
-      if (details.username == data.Admins[i].username){
+    for (let i=0; i < data.Users.length; i++){
+      if (details.username == data.Users[i].username){
         setError("Username already exists!");
         return;
       }
@@ -38,13 +39,32 @@ function RegisterApp() {
     }
 
     //if there are no errors, register user into database
-    data.Admins.push({
-      username: details.username,
-      password: details.password
-    })
+    if (details.type == "Register as PetSitter"){
+      RegisterAsPetSitter(details);
+    }
+    else{
+      RegisterAsPetOwner(details);
+    }
+
     //console.log(data)
     setComplete(true)
     console.log(complete == true)
+  }
+
+  const RegisterAsPetOwner = details => {
+    data.Users.push({
+      username: details.username,
+      password: details.password,
+      type: "PetOwner"
+    })
+  }
+
+  const RegisterAsPetSitter = details => {
+    data.Users.push({
+      username: details.username,
+      password: details.password,
+      type: "PetSitter"
+    })
   }
 
   return(

@@ -1,21 +1,10 @@
 var json = `
 {
-    "Admins":[
+    "Users":[
         {
             "username": "adminadmin1",
-            "password": "admin123"
-        }
-    ]
-    ,
-
-    "PetSitters":[
-        {
-        }
-    ]
-    ,
-
-    "PetOwners":[
-        {
+            "password": "admin123",
+            "type": "admin"
         }
     ]
 }

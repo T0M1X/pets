@@ -28,19 +28,18 @@ function LoginApp() {
   //function which is run after user submits
   const Login = details => {
     console.log(details);
-    //console.log(data);
+    console.log(data);
     //checks if login details matches registered user data
 
-    //for all users, check if email matches an email in the database, then check if password matches
+    //for all users, check if username matches a username in the database, then check if password matches
     let loggedIn = false;
-    for (let i=0; i < data.Admins.length; i++){
-      if (details.username == data.Admins[i].username){
-        if (details.password == data.Admins[i].password){
+    for (let i=0; i < data.Users.length; i++){
+      if (details.username == data.Users[i].username){
+        if (details.password == data.Users[i].password){
       //if (details.email == adminUser.email && details.password == adminUser.password){
         console.log("Logged in");
         loggedIn = true;
         setUser({
-          //name: details.name,
           username: details.username
           });
         localStorage.setItem('UserDetails', details.username);

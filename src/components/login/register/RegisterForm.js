@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 function RegisterForm({Register, error}) {
-    const [details, setDetails] = useState({username:"", password: "", password2: ""});
+    const [details, setDetails] = useState({username:"", password: "", password2: "", type: ""});
 
     //handles form submission
     const submitHandler = (event) => {
@@ -30,7 +30,10 @@ function RegisterForm({Register, error}) {
                 <label htmlFor="password2">Confirm Password:</label>
                 <input type="password" name="password2" id="password2" onChange={event => setDetails({...details, password2: event.target.value})} value={details.password2}/>
             </div>
-            <input type="submit" value="Register"/>
+            <div className='submitButtons'>
+                <input type="submit" value="Register as PetSitter" onClick={event => setDetails({...details, type: event.target.value})}/>
+                <input type="submit" value="Register as PetOwner" onClick={event => setDetails({...details, type: event.target.value})}/>
+            </div>
         </div>
     </form>
   )
