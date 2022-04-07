@@ -155,9 +155,9 @@ export default class writeReview extends Component {
           <textarea id="desc" name="description"placeholder='Enter review' value={this.state.text} onChange={this.handleChange} required></textarea>
         </div>
         <div>
-
+        <Link to={"/viewCalendar"}>
         <button type="submit" className="submitButton">Submit</button>
-
+        </Link>
         </div>
       </form>
       </div>
