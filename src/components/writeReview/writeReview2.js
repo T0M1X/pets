@@ -42,13 +42,12 @@ export default class writeReview extends Component {
         console.log("the overall was "+this.state.overall);
         console.log("the recommend was "+this.state.recommend);
         var Review={
-            text:this.state.text,
-            quality:this.state.quality,
-            timeliness:this.state.timeliness,
-            overall:this.state.overall,
-            recommend:this.state.recommend,
+            "text":this.state.text,
+            "quality":this.state.quality,
+            "timeliness":this.state.timeliness,
+            "overall":this.state.overall,
+            "recommend":this.state.recommend,
         }
-
         //For now only booking 1 works because the sitter id(booking.json) and id(in sitter) match 
         //change client info in the calendar  into sitter name and add ids?
         console.log(Review)
@@ -56,7 +55,7 @@ export default class writeReview extends Component {
         console.log(result);
         Sitter[result].review.push(Review);
         console.log(Sitter)
-        
+       
   
       }
       onValueChange(event) {
