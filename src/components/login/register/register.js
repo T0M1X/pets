@@ -72,7 +72,7 @@ function RegisterApp() {
       (
         <div className="welcome">
           <h2>Sign up successful!</h2>
-          <Link to="/login">
+          <Link to="/login" style={{ textDecoration: 'none' }}>
             <button className="login">Sign in</button>
           </Link>
         </div>

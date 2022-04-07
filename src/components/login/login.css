@@ -129,6 +129,10 @@ form .form-inner input[type="submit"]:hover, .welcome button:hover{
     font-size: 6vh;
 }
 
+.welcome Link{
+    text-decoration: none;
+}
+
 .welcome h2 span {
     color: var(--color2);
     font-weight: 700;

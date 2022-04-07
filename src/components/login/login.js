@@ -12,7 +12,7 @@ function LoginApp() {
   }
   */
 
-  const [user, setUser] = useState({username:""});
+  const [user, setUser] = useState({username:"", type:""});
   const [error, setError] = useState("");
   
   //on page load, check if user is already logged in
@@ -21,7 +21,8 @@ function LoginApp() {
       console.log("user details exists");
       console.log(localStorage.getItem('UserDetails'));
       let temp = localStorage.getItem('UserDetails');
-      setUser({username: temp});
+      let temp2 = localStorage.getItem('UserType');
+      setUser({username: temp, type: temp2});
     }
   }, [])
 
@@ -40,11 +41,14 @@ function LoginApp() {
         console.log("Logged in");
         loggedIn = true;
         setUser({
-          username: details.username
+          username: details.username,
+          type: data.Users[i].type
           });
         localStorage.setItem('UserDetails', details.username);
+        localStorage.setItem('UserType', details.type);
+        break;
         }
-        
+
       }
     }
     //if it gets to the end of the loop, tell user the details are incorrect
@@ -68,7 +72,7 @@ function LoginApp() {
       {(user.username != "") ? 
       (
         <div className="welcome">
-          <h2>Welcome, <span>{user.username}</span></h2>
+          <h2>Welcome, <span>{user.type} {user.username}</span></h2>
           <button onClick={Logout}>Logout</button>
         </div>
       ) 
