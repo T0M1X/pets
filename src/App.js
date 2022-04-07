@@ -8,7 +8,8 @@ import MainPageWrapper from "./components/styles/MainPage.styled";
 import Calendar from "./components/viewCalendar/viewCalendar";
 import SearchSitters from "./components/searchSitters/searchSitters";
 import { Link } from "react-router-dom";
-import LoginApp from './components/login/login';
+import LoginApp from "./components/login/login";
+import AcceptDeclineBooking from "./components/acceptDeclineBooking/acceptDeclineBooking";
 
 const theme = {
   colors: {
@@ -29,6 +30,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<LoginApp />} />
             <Route path="/viewCalendar" element={<Calendar />} />
+            <Route path="/bookingConfirm" element={<AcceptDeclineBooking />} />
             <Route
               path="/"
               element={
