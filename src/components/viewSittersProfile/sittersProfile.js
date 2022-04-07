@@ -4,19 +4,26 @@ import Footer from "../Footer.js";
 import Header from "../Header.js";
 import { useParams } from "react-router-dom";
 import sitters from "../../lib/sitters.json";
+import Reviews from "../../lib/review.json";
+import Review from "./Review";
 
 //pass in sitters.json object as props
 const SittersProfile = (props) => {
-
     let { name } = useParams();
     const [user, setUser] = useState(null);
     const [color, setColor] = useState("green");
     const [bigPicture, setPicture] = useState(null);
+    // const [review,setReview]=useState(null);
+    const review=Reviews.filter(reviews =>reviews.id===sitters.filter(sitter => sitter.username.toLowerCase() == name)[0].id);
     useEffect(() => {
         console.log(name);
         // Find user object with matching name from json
         const sitter = sitters.filter(sitter => sitter.username.toLowerCase() == name)[0];
+        const review=Reviews.filter(reviews =>reviews.id===sitter.id);
         setUser(sitter);
+        // setReview(review);
+        // console.log(review);
+        // setReview(review);
     }, []);
 
     useEffect(() => {
@@ -76,8 +83,15 @@ const SittersProfile = (props) => {
                         {!user.images && <div className="profilebio"><p>This user has not supplied us with any pictures yet! </p></div>}
                     </div>
                 </div>
+               
             </div>)}
-
+            
+            <div className="R-container">
+            <div className="Reviews">
+                    {(review[0].review).map(review => < Review  review={review} />)}
+            </div>
+            </div>
+            
         </div>
     );
 }
