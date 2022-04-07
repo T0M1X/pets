@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import "./Review.css"
 import { Link,Location } from "react-router-dom";
-import Sitter from "../../lib/sitters.json";
+import Review from "../../lib/review.json";
 
 export default class writeReview extends Component {
     constructor(props){
@@ -22,7 +22,7 @@ export default class writeReview extends Component {
         timeliness:'',
         overall:'',
         recommend:'',
-        sitter:Sitter
+        Review:Review
 
       }
     }
@@ -41,20 +41,21 @@ export default class writeReview extends Component {
         console.log("the timeliness was "+this.state.timeliness);
         console.log("the overall was "+this.state.overall);
         console.log("the recommend was "+this.state.recommend);
-        var Review={
+        var oneReview={
             "text":this.state.text,
             "quality":this.state.quality,
             "timeliness":this.state.timeliness,
             "overall":this.state.overall,
+            "price":this.state.price,
             "recommend":this.state.recommend,
         }
         //For now only booking 1 works because the sitter id(booking.json) and id(in sitter) match 
         //change client info in the calendar  into sitter name and add ids?
-        console.log(Review)
-        var result = this.state.sitter.findIndex(obj => obj.id===this.props.sitterId);
+        console.log(oneReview)
+        var result = this.state.Review.findIndex(obj => obj.id===this.props.sitterId);
         console.log(result);
-        Sitter[result].review.push(Review);
-        console.log(Sitter)
+        Review[result].review.push(oneReview);
+        console.log(Review)
        
   
       }
