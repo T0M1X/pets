@@ -74,12 +74,12 @@
 
 .rating > input:checked ~ label, 
 .rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label { color: #000000;  } 
+.rating:not(:checked) > label:hover ~ label { color: gold;  } 
 
 .rating > input:checked + label:hover, 
 .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, 
-.rating > input:checked ~ label:hover ~ label { color: #201f1f;  } 
+.rating > input:checked ~ label:hover ~ label { color: goldenrod;  } 
 
 
 
@@ -110,7 +110,7 @@
   /* default  look */
   .recommend-container label {
     display: inline-block;
-    background-color: #ddd;
+    background-color: #101010;
     font-family: sans-serif, Arial;
     padding:2%;
     padding-left:3%;
@@ -156,7 +156,7 @@
 
 .submitButton:hover{
     color:white;
-    background-color:#ddd;
+    background-color:#101010;
 }
 
 a:-webkit-any-link {
