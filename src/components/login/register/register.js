@@ -3,9 +3,12 @@ import RegisterForm from './RegisterForm';
 import "../login.css"
 import {data} from "../../../lib/users.js";
 import  { Navigate } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 function RegisterApp() {
   const [error, setError] = useState("");
+  const [complete, setComplete] = useState(false);
+
   //check if user is logged in, if they are, redirect them to logged in page
   if (localStorage.getItem('UserDetails')){
     //console.log("user details exists");
@@ -39,12 +42,25 @@ function RegisterApp() {
       username: details.username,
       password: details.password
     })
-    console.log(data)
+    //console.log(data)
+    setComplete(true)
+    console.log(complete == true)
   }
 
   return(
     <div className="App">
-      <RegisterForm Register={Register} error={error}/>
+      {(complete == true) ? 
+      (
+        <div className="welcome">
+          <h2>Sign up successful!</h2>
+          <Link to="/login">
+            <button className="login">Sign in</button>
+          </Link>
+        </div>
+      ) 
+      : (
+         <RegisterForm Register={Register} error={error}/>
+      )}
     </div>
   );
 }

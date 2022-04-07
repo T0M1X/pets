@@ -3,6 +3,7 @@ import LoginForm from './LoginForm';
 import "./login.css"
 import {data} from "../../lib/users.js"; //import from the end of sign up instead?
 
+
 function LoginApp() {
   /* temporary hard code version
   const adminUser = {
@@ -75,7 +76,7 @@ function LoginApp() {
       : (
         <LoginForm Login={Login} error={error}/>
       )}
-        </div>
+    </div>
   );
 }
 
