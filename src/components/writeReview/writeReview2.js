@@ -13,6 +13,7 @@ export default class writeReview extends Component {
       this.onValueChange3=this.onValueChange3.bind(this);
       this.onValueChange4=this.onValueChange4.bind(this);
       this.onValueChange5=this.onValueChange5.bind(this);
+      this.onValueChange6=this.onValueChange6.bind(this);
 
 
       this.state={
@@ -22,6 +23,7 @@ export default class writeReview extends Component {
         timeliness:'',
         overall:'',
         recommend:'',
+        title:'',
         Review:Review
 
       }
@@ -41,6 +43,7 @@ export default class writeReview extends Component {
         console.log("the timeliness was "+this.state.timeliness);
         console.log("the overall was "+this.state.overall);
         console.log("the recommend was "+this.state.recommend);
+        console.log("the title was "+this.state.title);
         var oneReview={
             "text":this.state.text,
             "quality":this.state.quality,
@@ -48,6 +51,7 @@ export default class writeReview extends Component {
             "overall":this.state.overall,
             "price":this.state.price,
             "recommend":this.state.recommend,
+            "title":this.state.title
         }
         //For now only booking 1 works because the sitter id(booking.json) and id(in sitter) match 
         //change client info in the calendar  into sitter name and add ids?
@@ -73,6 +77,11 @@ export default class writeReview extends Component {
     }
     onValueChange5(event) {
         this.setState({recommend:event.target.value});
+      }
+
+      onValueChange6(event) {
+        console.log("THE EVENT IS"+event.target.value);
+        this.setState({title:event.target.value});
       }
             
     render() {
@@ -130,12 +139,16 @@ export default class writeReview extends Component {
   
           <div className="recommend-container"> 
           <h2>Would you recommend this product?</h2>
-          <div class="button-container">
+          <div className="button-container">
           <input type="radio" id="Yes" name="recommend" value="yes"  onChange={this.onValueChange5} checked={this.state.recommend === "yes"}required/>
           <label htmlFor="Yes">Yes</label>
           <input type="radio" id="No" name="recommend" value="no" onChange={this.onValueChange5} checked={this.state.recommend === "no"}/>
           <label htmlFor="No">No</label>
           </div>
+          </div>
+          <div className="writeReview-title">
+            <h2>Title</h2>
+            <input className="write-title" type="text" placeholder="enter title"  value={this.state.title}  onChange={this.onValueChange6} required></input>
           </div>
           <div className="Description">
             <h2>Description</h2>

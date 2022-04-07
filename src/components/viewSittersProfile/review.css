@@ -1,0 +1,61 @@
+.Review-Container{
+    border:solid rgb(209, 209, 209) 2px;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    color:rgb(0, 0, 0);
+    height:40%;
+    margin-top:1%;
+    margin-bottom:1%;
+    font-family: 'Avenir', Helvetica, sans-serif;
+}
+
+.title-review{
+    font-size:1.825rem;
+}
+
+.title-container{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-left:2%;
+    margin-right:2%;
+}
+
+
+.true{
+    font-weight:bold;
+    font-family: 'Avenir', Helvetica, sans-serif;
+    font-size:1rem;
+    margin-right:20%;
+
+
+}
+.tick{
+    display:inline-block;
+    color:rgb(102,255,255);
+}
+
+.cross{
+    display:inline-block;
+    color:red;
+}
+
+.ratings{
+    margin-left:2%;
+    margin-right:2%;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    font-size:1rem;
+    font-weight:bolder;
+}
+
+.Review-Desc{
+font-size:1.2rem;
+margin-left:2%;
+margin-right:2%;
+margin-top:2%;
+
+}
