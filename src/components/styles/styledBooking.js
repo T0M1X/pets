@@ -56,6 +56,14 @@ const styledBooking = styled.div`
     border-radius: 3px;
     font-size: 15px;
   }
+
+  .accept {
+    color: green;
+  }
+
+  .decline {
+    color: red;
+  }
 `;
 
 export default styledBooking;
