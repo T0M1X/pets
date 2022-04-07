@@ -10,6 +10,7 @@ import SearchSitters from "./components/searchSitters/searchSitters";
 import { Link } from "react-router-dom";
 import LoginApp from './components/login/login';
 import RegisterApp from './components/login/register/register';
+import SittersProfile from './components/viewSittersProfile/sittersProfile';
 
 const theme = {
   colors: {
@@ -95,6 +96,7 @@ function App() {
               }
             />
             <Route path="/search" element={<SearchSitters />} />
+            <Route path="/profile/:name" element={<SittersProfile />} />
           </Routes>
           <Footer />
         </>

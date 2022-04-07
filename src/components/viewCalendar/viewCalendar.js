@@ -2,23 +2,33 @@ import React, { Component } from 'react'
 import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import "./Calendar.css"
+import EventInfo from "./eventInfo.js"
+import booking from "../../lib/booking.json";
+
 export default class viewCalendar extends Component {
   constructor() {
     super();
     this.state = {
-      Events: [
-        // initial event data
-        { title: 'Booking 3', start: '2022-04-01T14:30:00' ,end:'2022-04-01T17:30:00'  },
-        { title: 'Booking 4', start: '2022-04-01 12:30:00' ,end:'2022-04-01T13:30:00' },
-        { title: 'Booking 5', start: '2022-04-02 08:30:00',end:'2022-04-02T10:30:00' },
-        { title: 'Booking 1', start: '2022-03-05 10:30:00',end:'2022-03-05T13:30:00' },
-        { title: 'Booking 2', start: '2022-03-29 21:30:00' ,end:'2022-03-29T23:30:00' }
-      ]
+      event:"",
+      display:false,
+      Events: booking   // uses json the file as an object
+      
+      
+    
     };
+
   }
+
+  toggleDisplay=()=>{
+    this.setState({
+      display: !this.state.display
+    });
+  }
+
   render() {
     return (
-      <div class="calendar-container">
+      <div>
+      <div className={!this.state.display ?"calendar-container":"calendar-container transparent"}>
       <FullCalendar
       plugins={[ dayGridPlugin ]}
       initialView="dayGridMonth"
@@ -30,13 +40,23 @@ export default class viewCalendar extends Component {
         minute: '2-digit',
         meridiem: true
       }}
+      eventClick={
+        (arg)=>{
+          this.setState({
+            display:true,
+            event:arg.event,
+          })
+          console.log(arg.event.extendedProps.infomation)
+          console.log("In now "+arg.event.end)
+        }
+      }
       timeFormat= 'h(:mm)' // uppercase H for 24-hour clock
       eventBorderColor ={"#000080"}
       eventBackgroundColor={"#000000"}
-    
-
-
     />
+    </div>
+    {console.log(this.state.display)}
+    <div>{this.state.display ?  <EventInfo event={this.state.event} display={this.toggleDisplay}/>:null}</div>
     </div>
     )
   }
