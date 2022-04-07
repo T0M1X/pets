@@ -1,20 +1,20 @@
 import React, {useState} from 'react';
 
-function LoginForm({Login, error}) {
-    const [details, setDetails] = useState({username:"", password: ""});
+function RegisterForm({Register, error}) {
+    const [details, setDetails] = useState({username:"", password: "", password2: ""});
 
     //handles form submission
     const submitHandler = (event) => {
         //Prevent page reload
         event.preventDefault();
 
-        Login(details);
+        Register(details);
     }
 
   return (
     <form onSubmit={submitHandler}>
         <div className="form-inner">
-            <h2>Login</h2>
+            <h2>Register</h2>
             {/*check for error*/
             (error != "") ? (<div className='error'>{error}</div>) : ""
             }
@@ -26,10 +26,14 @@ function LoginForm({Login, error}) {
                 <label htmlFor="password">Password:</label>
                 <input type="password" name="password" id="password" onChange={event => setDetails({...details, password: event.target.value})} value={details.password}/>
             </div>
-            <input type="submit" value="Login"/>
+            <div className="form-group">
+                <label htmlFor="password2">Confirm Password:</label>
+                <input type="password" name="password2" id="password2" onChange={event => setDetails({...details, password2: event.target.value})} value={details.password2}/>
+            </div>
+            <input type="submit" value="Register"/>
         </div>
     </form>
   )
 }
 
-export default LoginForm
+export default RegisterForm

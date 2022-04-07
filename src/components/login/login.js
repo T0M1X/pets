@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import LoginForm from './LoginForm';
 import "./login.css"
-import {data} from "../../lib/users.js";
+import {data} from "../../lib/users.js"; //import from the end of sign up instead?
 
 function LoginApp() {
   /* temporary hard code version

@@ -9,6 +9,7 @@ import Calendar from "./components/viewCalendar/viewCalendar";
 import SearchSitters from "./components/searchSitters/searchSitters";
 import { Link } from "react-router-dom";
 import LoginApp from './components/login/login';
+import RegisterApp from './components/login/register/register';
 
 const theme = {
   colors: {
@@ -28,6 +29,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/login" element={<LoginApp />} />
+            <Route path="/register" element={<RegisterApp />} />
             <Route path="/viewCalendar" element={<Calendar />} />
             <Route
               path="/"
