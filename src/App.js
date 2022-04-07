@@ -8,10 +8,12 @@ import MainPageWrapper from "./components/styles/MainPage.styled";
 import Calendar from "./components/viewCalendar/viewCalendar";
 import SearchSitters from "./components/searchSitters/searchSitters";
 import { Link } from "react-router-dom";
-import AcceptDeclineBooking from "./components/acceptDeclineBooking/acceptDeclineBooking";
 import LoginApp from "./components/login/login";
 import RegisterApp from "./components/login/register/register";
 import SittersProfile from "./components/viewSittersProfile/sittersProfile";
+import Review from "./components/writeReview/writeReview";
+import MakeBooking from "./components/makeBooking/makeBooking";
+
 const theme = {
   colors: {
     header: "rgb(24,26,27)",
@@ -32,7 +34,9 @@ function App() {
             <Route path="/login" element={<LoginApp />} />
             <Route path="/register" element={<RegisterApp />} />
             <Route path="/viewCalendar" element={<Calendar />} />
-            <Route path="/bookingConfirm" element={<AcceptDeclineBooking />} />
+            <Route path="/writeReview" element={<Review />} />
+            <Route path="/makeBooking" element={<MakeBooking />} />
+
             <Route
               path="/"
               element={

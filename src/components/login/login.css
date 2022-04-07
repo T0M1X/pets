@@ -11,7 +11,7 @@
 }
 
 /*reset appearance of input boxes and buttons*/
-input, button {
+.login input,.login button {
     appearance: none;
     background: none;
     border: none;
@@ -26,7 +26,7 @@ input, button {
     background-color: #ffffff
 }
 
-form {
+.login form {
     height: 70vh;
     display: flex;
     align-items: center;
@@ -34,7 +34,7 @@ form {
     position: relative;
 }
 
-form:after {
+.login form:after {
     content: '';
     display: block;
     position: absolute;
@@ -46,7 +46,7 @@ form:after {
     background-image: linear-gradient(to bottom right, var(--color1), var(--color2));
 }
 
-form .form-inner{
+.login form .form-inner{
     position: relative;
     display: block;
     background-color: #FFF;
@@ -54,20 +54,20 @@ form .form-inner{
     z-index: 2;
 }
 
-form .form-inner h2{
+.login form .form-inner h2{
     color: #888;
     font-size: 2em;
     font-weight: 500;
     margin-bottom: 15px;
 }
 
-form .form-inner .form-group{
+.login form .form-inner .form-group{
     display: block;
     width: 300px;
     margin-bottom: 15px;
 }
 
-.form-inner .form-group label{
+.login .form-inner .form-group label{
     display: block;
     color: #666;
     font-size: 1em;
@@ -75,11 +75,11 @@ form .form-inner .form-group{
     transition: 0.4s;
 }
 
-.form-inner .form-group:focus-within label {
+.login .form-inner .form-group:focus-within label {
     color: var(--color2);
 }
 
-form .form-inner .form-group input {
+.login form .form-inner .form-group input {
     display: block;
     width: 100%;
     padding: 10px 15px;
@@ -88,12 +88,12 @@ form .form-inner .form-group input {
     transition: 0.4s;
 }
 
-form .form-inner .form-group input:focus {
+.login form .form-inner .form-group input:focus {
     box-shadow: 0px 0px 3px rgba(0,0,0,0.2);
 }
 
 /*Button appearance and animation*/
-form .form-inner input[type="submit"], .welcome button{
+.login form .form-inner input[type="submit"], .welcome button{
     display: inline-block;
     padding: 10px 15px;
     border-radius: 8px;
@@ -106,11 +106,11 @@ form .form-inner input[type="submit"], .welcome button{
     cursor: pointer;
 }
 
-form .form-inner input[type="submit"]:hover, .welcome button:hover{
+.login form .form-inner input[type="submit"]:hover, .welcome button:hover{
     background-position: 100% 0%;
 }
 
-.welcome {
+ .welcome {
     height: 70vh;
     display: flex;
     align-items: center;
@@ -118,7 +118,7 @@ form .form-inner input[type="submit"]:hover, .welcome button:hover{
     background-color: rgb(255, 255, 255);
 }
 
-.welcome h2 {
+ .welcome h2 {
     color: #888;
     font-size: 10vh;
     font-weight: 500;
@@ -129,7 +129,7 @@ form .form-inner input[type="submit"]:hover, .welcome button:hover{
     font-size: 6vh;
 }
 
-.welcome h2 span {
+ .welcome h2 span {
     color: var(--color2);
     font-weight: 700;
 }
