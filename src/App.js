@@ -12,6 +12,7 @@ import LoginApp from './components/login/login';
 import RegisterApp from './components/login/register/register';
 import SittersProfile from './components/viewSittersProfile/sittersProfile';
 import Review from './components/writeReview/writeReview';
+import MakeBooking from "./components/makeBooking/makeBooking";
 
 
 const theme = {
@@ -35,6 +36,7 @@ function App() {
             <Route path="/register" element={<RegisterApp />} />
             <Route path="/viewCalendar" element={<Calendar />} />
             <Route path="/writeReview" element={<Review />} />
+            <Route path="/makeBooking" element={<MakeBooking />} />
 
             <Route
               path="/"

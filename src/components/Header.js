@@ -14,7 +14,7 @@ const Header = () => {
                 <Button className="right-nav">Seach Sitters</Button>
               </Link>
               <Link to="/register">
-                <Button className="login">Sign Up</Button>
+                <Button className="register">Sign Up</Button>
               </Link>
               <Link to="/login">
                 <Button className="login">Sign in</Button>

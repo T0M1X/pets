@@ -26,6 +26,10 @@ export const Button = styled.button`
         margin-top:20%;
     }
     &.login{
+        margin-top:45%;
+    }
+
+    &.register{
         margin-top:40%;
     }
 `
