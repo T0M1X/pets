@@ -1,6 +1,15 @@
+import {Booking} from '../styles/Booking.styled'
+
 const makeBooking = () => {
   return (
-    <div>makeBooking</div>
+    <Booking>
+      <p>l</p>
+      <p>l</p>
+      <p>l</p>
+      <p>l</p>
+      <p>l</p>
+      <p>l</p>
+    </Booking>
   )
 }
 

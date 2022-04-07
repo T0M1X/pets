@@ -4,16 +4,20 @@
   font-family:"Quicksand",sans-serif;
 }
  .Container-title{
-     margin-top:3%;
-     margin-bottom:3%;
+    background: rgb(9,9,121);
+    background: linear-gradient(210deg, rgba(9,9,121,1) 0%, rgba(1,0,19,1) 49%, rgba(0,126,126,1) 100%);
+    color: rgb(211,207,201);
+     padding-top:3%;
+     padding-bottom:3%;
  }
  .ReviewForm {
+     padding:3%;
     font-family:"Quicksand",sans-serif;
-    background-color:#f4f4f4 !important;
+    background-color:rgb(24,26,27) !important;
     width:70%;
     margin-left:auto;
     margin-right:auto;
-    color:black(255, 255, 255);
+    color:whitesmoke;
     font-weight: bold;
     
 
