@@ -80,9 +80,9 @@ export default class Review extends Component {
 
                 </div>
                 <div className="ratings">
-                            <div>Quality:{this.props.review.quality}/5</div>
-                            <div>Price:{this.props.review.price}/5</div>
-                            <div>Timeliness:{this.props.review.timeliness}/5</div>
+                            <div>Quality:{this.number(this.props.review.quality)}/5</div>
+                            <div>Price:{this.number(this.props.review.price)}/5</div>
+                            <div>Timeliness:{this.number(this.props.review.timeliness)}/5</div>
                             <div>Overall: {this.number(this.props.review.overall)} </div>
                     </div>
                     <div className="Review-Desc">
