@@ -6,9 +6,12 @@ class eventInfoBookings extends Component {
   render() {
     return (
       <StyledBooking>
+        <br></br>
+        <div>
+          <h1>List of Bookings</h1>
+        </div>
         <div className="bookingDiv">
           {bookings.map((booking, key) => {
-            // console.log(key, value);
             return (
               <div className="tableDiv">
                 <table key={key}>
