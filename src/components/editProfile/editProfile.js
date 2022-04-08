@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserMethods } from "../../lib/users.js";
+import './editProfile.css'
 
 function EditProfile() {
     const [user, setUser] = useState(null);
@@ -20,7 +21,14 @@ function EditProfile() {
     }, [])
 
     return (
-        <div>{user && <p>{user.username}</p>}</div>
+        <div className='containerEdit'>
+            <p>username:</p>
+            <input></input>
+            <p>bio:</p>
+            <input></input>
+            <p>additional information: </p>
+            <input></input>
+        </div>
     )
 
 }

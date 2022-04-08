@@ -51,9 +51,10 @@ export default class Map extends Component {
                 this.props.onPress(sitter.username)
             }); // TODO: Add links to the sitter pages here
                 // 
-
-            let pin = new mapboxgl.Marker(el).setLngLat([sitter.coordinates[1], sitter.coordinates[0]]).addTo(map);
-            this.state.markers.push(pin)
+            if (sitter.coordinates && sitter.coordinates.length == 2) {
+                let pin = new mapboxgl.Marker(el).setLngLat([sitter.coordinates[1], sitter.coordinates[0]]).addTo(map);
+                this.state.markers.push(pin)
+            }
         });
     }
 

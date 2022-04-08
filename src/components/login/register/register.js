@@ -61,7 +61,14 @@ function RegisterApp() {
       username: details.username,
       password: details.password,
       id: Math.random(3, 1000).toString(),
-      type: "owner"
+      type: "owner",
+      bio: "",
+      additionalinfo: "",
+      images: [],
+      badges: [],
+      postcode: "",
+      coordinates: null,
+      rating: 0,
     })
     console.log(owners)
   }
@@ -72,7 +79,14 @@ function RegisterApp() {
       username: details.username,
       password: details.password,
       id: Math.random(3, 1000).toString(),
-      type: "sitter"
+      type: "sitter",
+      bio: "",
+      additionalinfo: "",
+      images: [],
+      badges: [],
+      postcode: "",
+      coordinates: null,
+      rating: 0,
     })
     console.log(sitters)
   }
