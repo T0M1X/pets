@@ -12,7 +12,8 @@ class eventInfoBookings extends Component {
   }
 
   bookingStatus = (id, isAccepted) => (event) => {
-    const accepted = this.state.bookings[id];
+    //this function checks to see if the data in the json is "Booked" or "Not Booked"
+    const accepted = this.state.bookings[id]; // ... and so changes the state
     if (isAccepted) {
       accepted.accepted = "Booked";
     } else {
@@ -45,18 +46,15 @@ class eventInfoBookings extends Component {
                         <p
                           style={{
                             color:
-                              booking.accepted === "Booked" ? "green" : "red",
+                              booking.accepted === "Booked" ? "green" : "red", // here is where the function matters, it checks if the text in bookings.accepted fits the conditions
                           }}
                         >
                           Is Booked? - {booking.accepted}
                         </p>
-                        {console.log(this.state.accepted)}
-                        <p>{booking.accepted}</p>
                         <br></br>
                         <button onClick={this.bookingStatus(key, true)}>
                           Accept
                         </button>
-                        {console.log(this.state.bookings)}
                         {/* {console.log(booking.id, booking.accepted)}/ */}
                         <button onClick={this.bookingStatus(key, false)}>
                           Decline
