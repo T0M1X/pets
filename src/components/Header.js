@@ -11,7 +11,7 @@ const Header = () => {
                 </Link> 
               <p>PetFriends!</p>
               <Link to="/search">
-                <Button className="right-nav">Seach Sitters</Button>
+                <Button className="right-nav">Search Sitters</Button>
               </Link>
               <Link to="/register">
                 <Button className="register">Sign Up</Button>
