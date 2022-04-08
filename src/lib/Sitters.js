@@ -1,7 +1,9 @@
 let sitters = [
     {
         id: "123456",
+        type: "sitter",
         username: "brandonhicks",
+        password: "1",
         postcode: "AB51 0EN",
         coordinates: [
             52.534372,
@@ -26,7 +28,9 @@ let sitters = [
     },
     {
         id: "21313",
+        type: "sitter",
         username: "yelenalane",
+        password: "1",
         postcode: "PA27 2RT",
         coordinates: [
             55.969988,
@@ -50,7 +54,9 @@ let sitters = [
     },
     {
         id: "99313",
+        type: "sitter",
         username: "carolynpoppermore",
+        password: "1",
         postcode: "YO7 8XY",
         coordinates: [
             54.042934,
@@ -74,7 +80,9 @@ let sitters = [
     },
     {
         id: "12A313",
+        type: "sitter",
         username: "benniebailey",
+        password: "1",
         postcode: "CF62 7AX",
         coordinates: [
             51.357418,
@@ -98,7 +106,9 @@ let sitters = [
     },
     {
         id: "45215",
+        type: "sitter",
         username: "johnweeks",
+        password: "1",
         postcode: "TD13 9BR",
         coordinates: [
             55.878381,
@@ -123,7 +133,9 @@ let sitters = [
     },
     {
         id: "999",
+        type: "sitter",
         username: "emmaworthy",
+        password: "1",
         postcode: "AB51 0EN",
         coordinates: [
             51.534372,

@@ -1,13 +1,23 @@
-var json = `
-{
-    "Users":[
-        {
-            "username": "adminadmin1",
-            "password": "admin123",
-            "type": "admin"
-        }
-    ]
-}
-`;
+import {sitters} from './Sitters'
+import {owners} from './Owners'
 
-export var data = JSON.parse(json);
+
+class UserMethods {
+    static GetUserById(id) {
+        console.log(sitters);
+        console.log(owners);
+        return this.GetUsers().filter(s => s.id == id)[0];
+    }
+
+    static LoginUser(username, password) {
+        return this.GetUsers().filter(s => s.username == username && s.password == password)[0] ?? null
+    }
+
+    static GetUsers() {
+        return sitters.concat(owners);
+    }
+}
+
+export {
+    UserMethods
+}

@@ -14,6 +14,7 @@ import SittersProfile from "./components/viewSittersProfile/sittersProfile";
 import Review from "./components/writeReview/writeReview";
 import MakeBooking from "./components/makeBooking/makeBooking";
 import AcceptDeclineBooking from "./components/acceptDeclineBooking/acceptDeclineBooking";
+import EditProfile from "./components/editProfile/editProfile";
 
 const theme = {
   colors: {
@@ -38,6 +39,7 @@ function App() {
             <Route path="bookingConfirm" element={<AcceptDeclineBooking />} />
             <Route path="/writeReview" element={<Review />} />
             <Route path="/makeBooking" element={<MakeBooking />} />
+            <Route path='/editProfile' element={<EditProfile />} />
 
             <Route
               path="/"

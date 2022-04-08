@@ -32,4 +32,9 @@ export const Button = styled.button`
     &.register{
         margin-top:40%;
     }
+
+    &.edit{
+        margin-top:20%;
+        margin-right: 5%;
+    }
 `
