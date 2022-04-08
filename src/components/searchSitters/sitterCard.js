@@ -16,7 +16,7 @@ export default class SitterCard extends Component {
                 <img src={ this.state.sitter.profilePicture } alt=''/>
                 <div className={'cardinfo'}>
                     <p className={'username'}>{ this.state.sitter.username }</p>
-                    <p className={'bio'}>{ this.state.sitter.bio }</p>
+                    <p className={'bio'}>{ this.state.sitter.bio.substring(0, 250) }...</p>
                     <p className={'postcode'}>{ this.state.sitter.postcode }</p>
                 </div>
             </div>
