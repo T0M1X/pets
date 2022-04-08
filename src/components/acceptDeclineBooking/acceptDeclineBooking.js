@@ -7,9 +7,6 @@ export default class acceptDeclineBooking extends Component {
       <>
         <div>
           <div>
-            <h1 style={{ textAlign: "center", marginTop: "15px" }}>
-              List of Bookings
-            </h1>
             <EventInfoBookings />
           </div>
         </div>
