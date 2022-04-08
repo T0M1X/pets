@@ -33,7 +33,7 @@ export default class SearchSitters extends Component {
                             this.filteredResults().map((sitter) => (<SitterCard sitter={sitter} key={sitter.username} />))
                         }
                         {
-                            this.filteredResults().length === 0 && <p>Oh no! We didn't find any sitters for you :(</p>
+                            this.filteredResults().length === 0 && <div className='noresult'><p>Oh no! We didn't find any sitters for you :(</p></div>
                         }
                     </div>
                 </div>

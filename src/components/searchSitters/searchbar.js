@@ -14,9 +14,10 @@ export default class Searchbar extends Component {
 
     render() {
         return (
-            <input className={'searchfield'} placeholder="Search for sitters..."  type="text" onChange={(e) => { this.inputHandler(e) }}>
-
-            </input>
+            <div className={'searchfield'}>
+                <img src='https://cdn-icons-png.flaticon.com/512/875/875623.png' />
+                <input className={'searchbar'} placeholder="Search for sitters..." type="text" onChange={(e) => { this.inputHandler(e) }} />
+            </div>
         );
     }
 }

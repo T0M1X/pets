@@ -7,7 +7,6 @@
     display: flex;
     flex-direction: row;
     gap: 20px;
-    overflow: hidden;
     padding: 10px;
     color: white;
     justify-content: center;
@@ -15,6 +14,15 @@
     align-content: center;
     align-items: center;
     min-height: 20%;
+    font-family: 'Avenir', Helvetica, sans-serif;
+}
+
+@media (max-width: 800px) {
+    .card {
+        min-height: 60%;
+        max-height: max-content;
+        flex: 1;
+    }
 }
 
 .container {
@@ -47,17 +55,34 @@
 
 .cardinfo > p {
     width: 100%;
+    font-family: 'Avenir', Helvetica, sans-serif;
 }
 
 .searchfield {
+    display: flex;
+    flex-direction: row;
     width: 100%;
-    border: none;
     border-radius: 5px;
     box-shadow: 0 0 3px black;
-    padding: 10px;
     background-color: #242525;
-    color: white;
     margin-bottom: 5px;
+}
+
+.searchfield > img {
+    height: 25px;
+    margin-top: 7px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.searchbar {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #242525;
+    font-family: 'Avenir', Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    border: none;
+    width: 100%
 }
 
 .username {
@@ -128,4 +153,18 @@
     border-radius: 50%;
     cursor: pointer;
     padding: 0;
+}
+
+.noresult {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    overflow: hidden;
+}
+
+.noresult > p {
+    margin-top: 20px;
+    color: white;
+    font-family: 'Avenir', Helvetica, sans-serif;
+    font-size: 150%;
 }
