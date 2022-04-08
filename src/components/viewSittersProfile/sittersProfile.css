@@ -117,7 +117,10 @@
 }
 
 .pills {
-    background:linear-gradient(rgb(81, 148, 81),transparent);
+    background-image: linear-gradient(to right, var(--color1) 50%, var(--color1) 50%, var(--color2));
+    background-size: 200%;
+    background-position: 0%;
+    transition: 0.4s;
     width: fit-content;
     background-color: rgb(156, 216, 156);
     border-radius: 25%;
@@ -128,8 +131,14 @@
     height: 35px;
 }
 
+.pills:hover {
+    background-position: 100% 0%;
+    cursor: pointer;
+}
+
 .pills > p {
     white-space: nowrap;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
 }
 
 .pictureSection {
