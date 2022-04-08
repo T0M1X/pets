@@ -45,7 +45,8 @@ function LoginApp() {
           type: data.Users[i].type
           });
         localStorage.setItem('UserDetails', details.username);
-        localStorage.setItem('UserType', details.type);
+        localStorage.setItem('UserType', data.Users[i].type);
+        window.location.reload(false); //reloads page so the header changes
         break;
         }
 
@@ -64,6 +65,8 @@ function LoginApp() {
     //sets user to default state
     setUser({username:""});
     localStorage.removeItem('UserDetails');
+    localStorage.removeItem('UserType');
+    window.location.reload(false); //reloads page so the header changes
   }
 
   //page which determines whether user is logged in and which page to show
