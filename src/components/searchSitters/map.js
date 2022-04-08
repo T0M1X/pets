@@ -3,7 +3,7 @@ import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-load
 import { createRef } from "react";
 import 'mapbox-gl/dist/mapbox-gl.css'
 import "./style.css";
-
+import { useNavigates } from "react-router-dom";
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibWFqYXNkZWFkIiwiYSI6ImNsMWNuNjVoejA5NzEzanA0aHQyYjloYnkifQ.I-9v2C5_SLo20jvDLzOD6w';
 let map = null;
@@ -48,7 +48,7 @@ export default class Map extends Component {
             el.style.backgroundSize = '100%';
             
             el.addEventListener('click', () => {
-                window.alert(`Hello, I'm ${sitter.username}`);
+                this.props.onPress(sitter.username)
             }); // TODO: Add links to the sitter pages here
                 // 
 

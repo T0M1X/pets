@@ -3,7 +3,7 @@ import "./sittersProfile.css";
 import Footer from "../Footer.js";
 import Header from "../Header.js";
 import { useParams } from "react-router-dom";
-import sitters from "../../lib/sitters.json";
+import { sitters } from "../../lib/Sitters";
 import Reviews from "../../lib/review.json";
 import Review from "./Review";
 

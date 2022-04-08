@@ -1,16 +1,24 @@
 import { Component } from "react"
 import Searchbar from "./searchbar";
 import SitterCard from "./sitterCard";
-import sitters from "../../lib/sitters.json";
 import Map from "./map";
+import { sitters } from "../../lib/Sitters";
+import { Navigate } from "react-router-dom";
 
 export default class SearchSitters extends Component {
     constructor() {
         super();
 
         this.state = {
-            searchText: ""
+            searchText: "",
+            goToProfile: "",
         }
+    }
+
+    onPinPressed(user) {
+        this.setState({
+            goToProfile: user
+        });
     }
 
     onTextChanged(newText) {
@@ -25,20 +33,24 @@ export default class SearchSitters extends Component {
 
     render() {
         return (
-            <div className={"container"}>
-                <div className={"layout"}>
-                    <Searchbar onChange={(text) => { this.onTextChanged(text) }} />
-                    <div className={"sitterList"}>
-                        {
-                            this.filteredResults().map((sitter) => (<SitterCard sitter={sitter} key={sitter.username} />))
-                        }
-                        {
-                            this.filteredResults().length === 0 && <div className='noresult'><p>Oh no! We didn't find any sitters for you :(</p></div>
-                        }
+            <div>
+                { this.state.goToProfile && <Navigate to={`/profile/${this.state.goToProfile}`}></Navigate>}
+                <div className={"container"}>
+                    <div className={"layout"}>
+                        <Searchbar onChange={(text) => { this.onTextChanged(text) }} />
+                        <div className={"sitterList"}>
+                            {
+                                this.filteredResults().map((sitter) => (<SitterCard sitter={sitter} key={sitter.username} />))
+                            }
+                            {
+                                this.filteredResults().length === 0 && <div className='noresult'><p>Oh no! We didn't find any sitters for you :(</p></div>
+                            }
+                        </div>
                     </div>
+                    <Map filtered={this.filteredResults()} history={this.props.history} onPress={(user) => { this.onPinPressed(user) }}/>
                 </div>
-                <Map filtered={this.filteredResults()} history={this.props.history}/>
             </div>
+
         );
     }
 }
