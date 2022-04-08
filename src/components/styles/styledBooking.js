@@ -2,6 +2,13 @@ import styled from "styled-components";
 
 const styledBooking = styled.div`
   font-family: "Avenir", Helvetica, sans-serif;
+  background: linear-gradient(
+    210deg,
+    rgba(9, 9, 121, 1) 0%,
+    rgba(1, 0, 19, 1) 49%,
+    rgba(0, 126, 126, 1) 100%
+  );
+  color: whitesmoke;
 
   .bookingDiv {
     padding: 25px;
@@ -16,13 +23,14 @@ const styledBooking = styled.div`
     text-align: center;
     display: flex;
     justify-content: center;
-    border: 2px solid black;
+    border: 2px solid whitesmoke;
     border-radius: 3px;
     font-size: 20px;
   }
 
-  h2 {
+  h1 {
     text-align: center;
+    margin: 0;
   }
 
   p {
@@ -44,7 +52,7 @@ const styledBooking = styled.div`
     cursor: pointer;
     padding: 5px;
     margin-left: 40px;
-    border: solid 2px black;
+    border: solid 2px whitesmoke;
     border-radius: 3px;
     font-size: 15px;
   }
