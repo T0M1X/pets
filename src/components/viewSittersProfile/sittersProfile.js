@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./sittersProfile.css";
-import Footer from "../Footer.js";
-import Header from "../Header.js";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { sitters } from "../../lib/Sitters";
 import Reviews from "../../lib/review.json";
 import Review from "./Review";
@@ -53,6 +51,11 @@ const SittersProfile = (props) => {
 
                     <div className="sub">
                         <p>rating: {user.rating}/5</p>
+                    </div>
+                    <div>
+                        <Link to='/makeBooking'>
+                            <div className="pills"><p>Book me!</p></div>
+                        </Link>
                     </div>
                 </div>
                 <div className="line" />
