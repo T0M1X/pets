@@ -1,5 +1,5 @@
 import {Booking} from '../styles/Booking.styled'
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 
 const Walking = () => {
   return(
@@ -50,22 +50,38 @@ const Sitting = () => {
   )
 }
 
+
 const MakeBooking = () => {
   const [book, setType] = useState('');
   const [start, setStart] = useState('');
   const [end, setEnd] = useState('');
   const [additional, setAdditional] = useState('');
+  const [petName, setPetName] = useState('');
+  const [petType, setPetType] = useState('');
+  const [all, setAll] = useState([]);
 
-
+  const add = () => {
+    setPetType('');
+    setPetName('');
+  }
 
   return (
     <Booking>
       <h1>Make a booking</h1>
       <form className="bookingForm">
         <h2 className='req'>Select your requirements</h2>
+        <div>
+          <h3>Add your pets!</h3>
+          <div className='addPet'>
+            <textarea id="petName" name="petName" placeholder='Name of pet' value={petName} onChange={(e) => setPetName(e.target.value)}></textarea>
+            <textarea id="petType" name="petTypes" placeholder='Type of pet' value={petType} onChange={(e) => setPetType(e.target.value)}></textarea>
+          </div>
+          <button className="addB" onClick={() => {setAll([...all,{petName, petType}]); add(petType);}}>Add</button>
+          {all.length > 0 ? all.map((p) => (<p className='pList'>{`${p.petName} : ${p.petType}`}</p>)) : <p>No pets</p>}
+        </div>
         <div className="type-container"> 
           <h3>What type of booking do you need?</h3>
-          <div class="walkSit">
+          <div className="walkSit">
           <input type="radio" id="walk" name="type" value="Walking" onChange={(e) => setType(e.target.value)} required/>
           <label htmlFor="walk">Walking</label>
           <input type="radio" id="sit" name="type" value="Sitting" onChange={(e) => setType(e.target.value)} />

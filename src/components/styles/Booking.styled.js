@@ -82,6 +82,7 @@ export const Booking = styled.div`
         resize: none;
         width:80%;
         color:black;
+        font-family: 'Avenir', Helvetica, sans-serif;
     }
 
     .sButton{
@@ -151,5 +152,34 @@ export const Booking = styled.div`
           background-color: rgb(102,255,255);
           border-color: white;
           color:#101010;
+    }
+
+    .addPet textarea {
+        border:solid black 2px;
+        height: 3em;
+        font-size: 1.2rem;
+        resize: none;
+        width:20%;
+        color:black;
+        font-family: 'Avenir', Helvetica, sans-serif;
+    }
+
+    .addB{
+        border-radius:5%;
+        font-size:1.1rem;
+        font-weight:bold;
+        background-color:rgb(102,255,255);
+        color:black;
+        border:solid black 3px;
+        margin-bottom:1.3%;
+    }
+
+    .addB:hover{
+        color:white;
+        background-color:#101010;
+    }
+
+    .pList{
+        padding:0%;
     }
 `
