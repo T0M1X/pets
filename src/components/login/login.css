@@ -11,7 +11,7 @@
 }
 
 /*reset appearance of input boxes and buttons*/
-.login input,.login button {
+.login input, .login button, .App button {
     appearance: none;
     background: none;
     border: none;
