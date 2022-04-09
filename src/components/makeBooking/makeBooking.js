@@ -1,60 +1,14 @@
 import {Booking} from '../styles/Booking.styled'
 import {useEffect, useState} from 'react'
 
-const Walking = () => {
-  return(
-    <div>
-      <h3>Timing</h3>
-      <div>
-        <div>
-          <label htmlFor="timestart">Start date and time</label>
-          <input type="date" id="start" required/>
-          <input type="time" id="timestart" name="appt" min="07:00" max="22:00" step="600" required/>
-        </div>
-        <h3>Length</h3>
-        <div className='lengths'>
-          <input type="radio" name="walkLength" id="10" value="10" />
-          <label htmlFor="10">10 minutes</label>
-          <input type="radio" name="walkLength" id="20" value="20" />
-          <label htmlFor="20">20 minutes</label>
-          <input type="radio" name="walkLength" id="30" value="30" />
-          <label htmlFor="30">30 minutes</label>
-          <input type="radio" name="walkLength" id="40" value="40" />
-          <label htmlFor="40">40 minutes</label>
-          <input type="radio" name="walkLength" id="50" value="50" />
-          <label htmlFor="50">50 minutes</label>
-          <input type="radio" name="walkLength" id="60" value="60" />
-          <label htmlFor="60">60 minutes</label>
-        </div>
-      </div>
-    </div>
-  )
-}
-const Sitting = () => {
-  return(
-    <div>
-      <h3>Timing</h3>
-      <div>
-        <div>
-          <label htmlFor="timestart">Start date and time</label>
-          <input type="date" id="start" required/>
-          <input type="time" id="timestart" name="appt" min="07:00" max="22:00" required/>
-        </div>
-        <div>
-          <label htmlFor="timeend">End date and time</label>
-          <input type="date" id="end" required/>
-          <input type="time" id="timeend" name="appt" min="07:00" max="22:00" required/>
-        </div>
-      </div>
-    </div>
-  )
-}
-
 
 const MakeBooking = () => {
   const [book, setType] = useState('');
-  const [start, setStart] = useState('');
-  const [end, setEnd] = useState('');
+  const [startTime, setStartTime] = useState('');
+  const [startDate, setStartDate] = useState('');
+  const [length, setLength] = useState('');
+  const [endTime, setEndTime] = useState('');
+  const [endDate, setEndDate] = useState('');
   const [additional, setAdditional] = useState('');
   const [petName, setPetName] = useState('');
   const [petType, setPetType] = useState('');
@@ -65,10 +19,69 @@ const MakeBooking = () => {
     setPetName('');
   }
 
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(startDate + " " + startTime);
+    var end;
+    console.log(endDate > startDate)
+    {book === "Walking" ? end = startTime+length : end = endDate + " " + endTime}
+
+  }
+
+  const Walking = () => {
+    return(
+      <div>
+        <h3>Timing</h3>
+        <div>
+          <div>
+            <label htmlFor="timestart">Start date and time</label>
+            <input type="date" id="start" value={startDate} onChange={(e) => setStartDate(e.target.value)} required/>
+            <input type="time" id="timestart" name="appt" min="07:00" max="22:00" value={startTime} onChange={(e) => setStartTime(e.target.value)} required/>
+          </div>
+          <h3>Length</h3>
+          <div className='lengths'>
+            <input type="radio" name="walkLength" id="10" check={() => setLength("10")} />
+            <label htmlFor="10">10 minutes</label>
+            <input type="radio" name="walkLength" id="20" check={() => setLength("20")} />
+            <label htmlFor="20">20 minutes</label>
+            <input type="radio" name="walkLength" id="30" check={() => setLength("30")} />
+            <label htmlFor="30">30 minutes</label>
+            <input type="radio" name="walkLength" id="40" check={() => setLength("40")} />
+            <label htmlFor="40">40 minutes</label>
+            <input type="radio" name="walkLength" id="50" check={() => setLength("50")} />
+            <label htmlFor="50">50 minutes</label>
+            <input type="radio" name="walkLength" id="60" check={() => setLength("60")} />
+            <label htmlFor="60">60 minutes</label>
+          </div>
+        </div>
+      </div>
+    )
+  }
+  const Sitting = () => {
+    return(
+      <div>
+        <h3>Timing</h3>
+        <div>
+          <div>
+            <label htmlFor="timestart">Start date and time</label>
+            <input type="date" id="start" value={startDate} onChange={(e) => setStartDate(e.target.value)} required/>
+            <input type="time" id="timestart" name="appt" min="07:00" max="22:00" value={startTime} onChange={(e) => setStartTime(e.target.value)} required/>
+          </div>
+          <div>
+            <label htmlFor="timeend">End date and time</label>
+            <input type="date" id="end" value={endDate} onChange={(e) => setEndDate(e.target.value)} required/>
+            <input type="time" id="timeend" name="appt" min="07:00" max="22:00" value={endTime} onChange={(e) => setEndTime(e.target.value)} required/>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <Booking>
       <h1>Make a booking</h1>
-      <form className="bookingForm">
+      <form className="bookingForm" onSubmit={handleSubmit}>
         <h2 className='req'>Select your requirements</h2>
         <div>
           <h3>Add your pets!</h3>
