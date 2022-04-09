@@ -31,7 +31,7 @@ function RegisterApp() {
     //check if username is taken
     for (let i = 0; i < UserMethods.GetUsers().length; i++) {
       if (details.username == UserMethods.GetUsers()[i].username) {
-        setError("Username already exists!");
+        setError("Username is already taken!");
         return;
       }
     }
@@ -43,7 +43,7 @@ function RegisterApp() {
     }
 
     //if there are no errors, register user into database
-    if (details.type == "Register as PetSitter") {
+    if (details.type == "Register as Pet Sitter") {
       RegisterAsPetSitter(details);
     }
     else {
