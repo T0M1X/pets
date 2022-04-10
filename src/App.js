@@ -39,7 +39,7 @@ function App() {
             <Route path="bookingConfirm" element={<AcceptDeclineBooking />} />
             <Route path="/writeReview" element={<Review />} />
             <Route path="/makeBooking" element={<MakeBooking />} />
-            <Route path='/editProfile' element={<EditProfile />} />
+            <Route path="/editProfile" element={<EditProfile />} />
 
             <Route
               path="/"
@@ -60,7 +60,7 @@ function App() {
                         <Link to="/search">
                           <button>Walking</button>
                         </Link>
-                        <Link to="/viewCalendar">
+                        <Link to="/search">
                           {/* //left like this just to check, will change later on */}
                           <button>Day Care</button>
                         </Link>
