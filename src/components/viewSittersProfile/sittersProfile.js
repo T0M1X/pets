@@ -5,24 +5,18 @@ import { sitters } from "../../lib/Sitters";
 import Reviews from "../../lib/review.json";
 import Review from "./Review";
 
-//pass in sitters.json object as props
 const SittersProfile = (props) => {
     let { name } = useParams();
     const [user, setUser] = useState(null);
     const [color, setColor] = useState("green");
     const [bigPicture, setPicture] = useState(null);
-    // const [review,setReview]=useState(null);
-    const review=Reviews.filter(reviews =>reviews.id===sitters.filter(sitter => sitter.username.toLowerCase() == name.toLowerCase())[0].id);
+    const review = Reviews.filter(reviews => reviews.id === sitters.filter(sitter => sitter.username.toLowerCase() == name.toLowerCase())[0].id);
     useEffect(() => {
         console.log(name);
-        // Find user object with matching name from json
+        // Find user object with matching name
         const sitter = sitters.filter(sitter => sitter.username.toLowerCase() == name.toLowerCase())[0];
-        console.log(sitter)
-        const review=Reviews.filter(reviews =>reviews.id===sitter.id);
+        const review = Reviews.filter(reviews => reviews.id === sitter.id);
         setUser(sitter);
-        // setReview(review);
-        // console.log(review);
-        // setReview(review);
     }, []);
 
     useEffect(() => {
@@ -32,7 +26,7 @@ const SittersProfile = (props) => {
             if (user.rating <= 2) { setColor("red") }
             if (user.rating < 4 && user.rating > 2) { setColor("orange") }
 
-            if (user.images) {setPicture(user.images[0])}
+            if (user.images) { setPicture(user.images[0]) }
         }
 
     }, [user]);
@@ -53,10 +47,14 @@ const SittersProfile = (props) => {
                     <div className="sub">
                         <p>rating: {user.rating}/5</p>
                     </div>
-                    <div>
-                        <Link to='/makeBooking'>
-                            <div className="pills"><p>Book me!</p></div>
-                        </Link>
+                    <div className='prices'>
+                        <p>walking price: {user.walkprice}/1h</p>
+                        <p>sitting price: {user.sitprice}/night</p>
+                        <div className='makeBooking'>
+                            <Link to='/makeBooking'>
+                                <div className="pills"><p>Book me!</p></div>
+                            </Link>
+                        </div>
                     </div>
                 </div>
                 <div className="line" />
@@ -83,18 +81,18 @@ const SittersProfile = (props) => {
                             <div className="bigPicture">
                                 {bigPicture && <img src={bigPicture} />}
                             </div>
-                        </div> 
+                        </div>
                         {!user.images && <div className="profilebio"><p>This user has not supplied us with any pictures yet! </p></div>}
                     </div>
                 </div>
             </div>)}
-            
+
             <div className="R-container">
-            <div className="Reviews">
-                   {review[0] && ((review[0].review).map(review => < Review  review={review} />))}
+                <div className="Reviews">
+                    {review[0] && ((review[0].review).map(review => < Review review={review} />))}
+                </div>
             </div>
-            </div>
-            
+
         </div>
     );
 }

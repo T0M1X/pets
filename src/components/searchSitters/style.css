@@ -13,8 +13,9 @@
     justify-items: center;
     align-content: center;
     align-items: center;
-    min-height: 20%;
+    min-height: 25%;
     font-family: 'Avenir', Helvetica, sans-serif;
+    height: fit-content;
 }
 
 @media (max-width: 800px) {
@@ -172,3 +173,18 @@
     font-family: 'Avenir', Helvetica, sans-serif;
     font-size: 150%;
 }
+
+.cardPrice {
+    display: flex;
+    flex-direction: row;
+    justify-items: space-between;
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+.cardPrice > p {
+    color: white;
+    font-family: 'Avenir', Helvetica, sans-serif;
+    font-size: 70%;
+}
+

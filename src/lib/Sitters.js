@@ -24,7 +24,9 @@ let sitters = [
             "https://images.pexels.com/photos/731022/pexels-photo-731022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
             "https://images.pexels.com/photos/1870301/pexels-photo-1870301.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
             "https://images.pexels.com/photos/5748792/pexels-photo-5748792.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-        ]
+        ],
+        walkprice: '£10',
+        sitprice: '£40',
     },
     {
         id: "21313",
@@ -50,7 +52,9 @@ let sitters = [
             "https://images.pexels.com/photos/4498185/pexels-photo-4498185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "https://images.pexels.com/photos/4452255/pexels-photo-4452255.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "https://images.pexels.com/photos/5240583/pexels-photo-5240583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        ]
+        ],
+        walkprice: '£15',
+        sitprice: '£40',
     },
     {
         id: "99313",
@@ -77,6 +81,8 @@ let sitters = [
             "🐈 pets in the household",
             "📖 part time student"
         ],
+        walkprice: '£12',
+        sitprice: '£35',
     },
     {
         id: "12A313",
@@ -103,6 +109,8 @@ let sitters = [
             "✅ returning owners",
             "💪 reliable",
         ],
+        walkprice: '£5',
+        sitprice: '£25',
     },
     {
         id: "45215",
@@ -130,6 +138,8 @@ let sitters = [
             "✅ returning owners",
             "💪 reliable",
         ],
+        walkprice: '£15',
+        sitprice: '£60',
     },
     {
         id: "999",
@@ -144,7 +154,9 @@ let sitters = [
         bio: "Hi, I'm Emma. Happy to sit both cats and dogs all throughout the week. I love cats and will gladly accept both daycare and walking bookings for them! :)",
         profilePicture: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         rating: 1.3,
-        additionalinfo: "I work night shifts and am unable to sit your pets overnight."
+        additionalinfo: "I work night shifts and am unable to sit your pets overnight.",
+        walkprice: '£12',
+        sitprice: '£20',
     }
 ];
 
