@@ -51,6 +51,7 @@ function EditProfile() {
         }
 
         UserMethods.modifyUser(id, new_user);
+        localStorage.setItem('UserDetails', new_user.username); //update username in local storage
         updated = true;
         document.getElementById('state').style.display = "flex";
     };
