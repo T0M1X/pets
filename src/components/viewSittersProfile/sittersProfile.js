@@ -52,9 +52,11 @@ const SittersProfile = (props) => {
                         <p>walking price: {user.walkprice}/1h</p>
                         <p>sitting price: {user.sitprice}/night</p>
                         <div className='makeBooking'>
-                            <Link to='/makeBooking'>
+                            {localStorage.getItem('UserId') != null && 
+                            <Link to={`/makeBooking/${name}`}>
                                 <div className="pills"><p>Book me!</p></div>
                             </Link>
+                            }
                         </div>
                     </div>
                     ) : (<div/>)}

@@ -1,6 +1,6 @@
 import {Booking} from '../styles/Booking.styled'
-import {useState} from 'react'
-import {useNavigate} from 'react-router-dom'
+import {useState, useEffect} from 'react'
+import {useParams, useNavigate} from 'react-router-dom'
 
 
 function timeToMins(time) {

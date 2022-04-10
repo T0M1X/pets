@@ -38,7 +38,7 @@ function App() {
             <Route path="/viewCalendar" element={<Calendar />} />
             <Route path="bookingConfirm" element={<AcceptDeclineBooking />} />
             <Route path="/writeReview" element={<Review />} />
-            <Route path="/makeBooking" element={<MakeBooking />} />
+            <Route path="/makeBooking/:name" element={<MakeBooking />} />
             <Route path="/editProfile" element={<EditProfile />} />
 
             <Route
