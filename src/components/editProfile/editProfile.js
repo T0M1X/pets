@@ -45,7 +45,9 @@ function EditProfile() {
             rating: user.rating,
             additionalinfo: document.getElementById('additional').value,
             badges: user.badges,
-            images: document.getElementById('images') && (document.getElementById('images').value.split('\n'))
+            images: document.getElementById('images') && (document.getElementById('images').value.split('\n')),
+            sitprice: document.getElementById('sit').value,
+            walkprice: document.getElementById('walk').value
         }
 
         UserMethods.modifyUser(id, new_user);
@@ -81,6 +83,16 @@ function EditProfile() {
                     </div>
                     <p>images: </p>
                     <textarea className='images' id='images' rows='4' wrap='soft' defaultValue={user.images?.map((image) => image + '\n').join('')}></textarea>
+                    <div className='location'>
+                        <div>
+                            <p>sitting price:</p>
+                            <textarea id='sit' defaultValue={user.sitprice} rows='1' cols='10' />
+                        </div>
+                        <div>
+                            <p>walking price:</p>
+                            <textarea id='walk' defaultValue={user.walkprice} rows='1' cols='10' />
+                        </div>
+                    </div>
                 </div>
                 <div className='save'>
                     <button className='save' onClick={Update}>Save changes</button>
