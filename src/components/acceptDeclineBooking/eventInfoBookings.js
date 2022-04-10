@@ -1,6 +1,9 @@
-import React, { Component } from "react";
-import bookings from "./bookings.json";
+import React, { Component, useState, useEffect } from "react";
+import bookings from "../../lib/booked.json";
 import StyledBooking from "../styles/styledBooking";
+import { sitter, SitterMethods } from "../../lib/Sitters";
+import { booked, BookingMethods } from "./BookingsByAllSitters";
+import { UserMethods } from "../../lib/users.js";
 
 class eventInfoBookings extends Component {
   constructor() {
@@ -8,6 +11,8 @@ class eventInfoBookings extends Component {
 
     this.state = {
       bookings: bookings,
+      user: UserMethods.GetUserById(localStorage.getItem("UserId")).username, // gets username of the current sitter logged in
+      sitterID: UserMethods.GetUserById(localStorage.getItem("UserId")).id, //uses methods from other files to get the sitter ID
     };
   }
 
@@ -22,13 +27,27 @@ class eventInfoBookings extends Component {
     this.setState({ ...this.state.bookings, ...accepted });
   };
 
+  displayBookings = (sitterID) => (event) => {
+    <div>
+      <p>hi this works :) {sitterID}</p>
+    </div>; // just testing this out
+  };
+
   render() {
     return (
       <StyledBooking>
         <script></script>
         <br></br>
         <div>
-          <h1>List of Bookings</h1>
+          {console.log(
+            BookingMethods.GetBookingBySitterId(this.state.sitterID) //this ones doesnt
+            //supposed to get the bookings only by the sitter
+          )}
+          {this.displayBookings(this.state.sitterID)}{" "}
+          {/*bunch of console logging here to see what works */}
+          <h1>List of Bookings for {this.state.user}</h1>
+          {console.log(this.state.sitterID)}
+          {console.log(this.state.user)}
         </div>
         <div className="bookingDiv">
           {this.state.bookings.map((booking, key) => {
@@ -55,7 +74,6 @@ class eventInfoBookings extends Component {
                         <button onClick={this.bookingStatus(key, true)}>
                           Accept
                         </button>
-                        {/* {console.log(booking.id, booking.accepted)}/ */}
                         <button onClick={this.bookingStatus(key, false)}>
                           Decline
                         </button>
