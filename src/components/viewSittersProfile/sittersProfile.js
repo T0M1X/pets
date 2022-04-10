@@ -86,12 +86,11 @@ const SittersProfile = (props) => {
                         {!user.images && <div className="profilebio"><p>This user has not supplied us with any pictures yet! </p></div>}
                     </div>
                 </div>
-               
             </div>)}
             
             <div className="R-container">
             <div className="Reviews">
-                    {(review[0].review).map(review => < Review  review={review} />)}
+                   {review[0] && ((review[0].review).map(review => < Review  review={review} />))}
             </div>
             </div>
             
