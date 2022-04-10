@@ -32,8 +32,8 @@ function RegisterForm({Register, error}) {
                 <input type="password" name="password2" id="password2" onChange={event => setDetails({...details, password2: event.target.value})} value={details.password2}/>
             </div>
             <div className='submitButtons'>
-                <input type="submit" value="Register as PetSitter" onClick={event => setDetails({...details, type: event.target.value})}/>
-                <input type="submit" value="Register as PetOwner" onClick={event => setDetails({...details, type: event.target.value})}/>
+                <input type="submit" value="Register as Pet Sitter" onClick={event => setDetails({...details, type: event.target.value})}/>
+                <input type="submit" value="Register as Pet Owner" onClick={event => setDetails({...details, type: event.target.value})}/>
             </div>
         </div>
     </form>

@@ -6,6 +6,7 @@ class UserMethods {
     static GetUserById(id) {
         console.log(sitters);
         console.log(owners);
+        console.log(this.GetUsers().filter(s => s.id == id)[0])
         return this.GetUsers().filter(s => s.id == id)[0];
     }
 
