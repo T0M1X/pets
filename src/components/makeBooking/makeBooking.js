@@ -1,6 +1,7 @@
 import {Booking} from '../styles/Booking.styled'
 import {useState, useEffect} from 'react'
 import {useParams, useNavigate} from 'react-router-dom'
+import { UserMethods } from "../../lib/users.js";
 
 
 function timeToMins(time) {
@@ -35,11 +36,27 @@ const MakeBooking = () => {
   const [petType, setPetType] = useState('');
   const [all, setAll] = useState([]);
   const redirect = useNavigate();
+  const [user, setUser] = useState(null);
+  let { name } = useParams();
 
   const add = () => {
     setPetType('');
     setPetName('');
   }
+
+  useEffect(() => {
+    console.log('IN MAKE BOOKING');
+    const id = localStorage.getItem('UserId');
+    const user = UserMethods.GetUserById(id)
+    console.log(user);
+    console.log(name)
+    if (user) {
+        setUser(user);
+    }
+    else {
+        redirect('/');
+    }
+}, [user])
 
 
   const handleSubmit = (event) => {
