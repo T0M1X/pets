@@ -1,0 +1,103 @@
+
+.containerEdit {
+    background-color: #333333;
+    min-height: 100vh;
+    flex-direction: column;
+    display: flex;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.userData {
+    margin-top: 30px;
+    background-color: #444444;
+    padding: 20px;
+    border-radius: 40px;
+}
+
+.userData > p {
+    font-family: 'Avenir', Helvetica, sans-serif;
+    color: white;
+    font-size: 150%;
+}
+
+.userData > textarea {
+    width: 100%;
+    overflow: visible;
+    background-color: #444444;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 10px;
+    font-family: 'Avenir', Helvetica, sans-serif;
+    color: white;
+    font-size: 100%;
+    resize: horizontal;
+    overflow: auto;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+}
+
+.location {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+}
+
+.location > div {
+    display: flex;
+    flex-direction: row;
+}
+
+.location > div > p {
+    font-family: 'Avenir', Helvetica, sans-serif;
+    color: white;
+    font-size: 120%;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    min-width: fit-content;
+}
+
+.location > div > textarea {
+    width: 100%;
+    overflow: visible;
+    background-color: #444444;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 10px;
+    font-family: 'Avenir', Helvetica, sans-serif;
+    color: white;
+    font-size: 100%;
+    resize: horizontal;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.save {
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.save > button {
+    background-image: linear-gradient(to right, var(--color1) 50%, var(--color1) 50%, var(--color2));
+    background-size: 200%;
+    background-position: 0%;
+    transition: 0.4s;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 10px;
+    color: rgb(211,207,201);
+    font-family: 'Avenir', Helvetica, sans-serif;
+    font-size: 100%;
+    font-weight: bold;
+    text-shadow: 1px 0 0 rgb(68, 68, 68), 0 -1px 0 rgb(68, 68, 68), 0 1px 0 rgb(68, 68, 68), -1px 0 0 rgb(68, 68, 68);
+    border: none;
+    text-align: center;
+}
+
+.save > button:hover {
+    background-position: 100% 0%;
+    cursor: pointer;
+}

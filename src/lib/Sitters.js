@@ -9,7 +9,7 @@ let sitters = [
             52.534372,
             0.901802
         ],
-        bio: "Hi everyone! My name is Brandon Hicks and I am a passionate pet sitter willing to look after your pets whe n you cannot! I have been working in the pet sitting industry for the last 3 years, so I'm experienced and ready to have fun with your pet :). I am flexible - I can commute and sit your pet at your house or you can transport the animal to my house, if that's your preference. Currently not accepting walking bookings, sorry!",
+        bio: "Hi everyone! My name is Brandon Hicks and I am a passionate pet sitter willing to look after your pets when you cannot! I have been working in the pet sitting industry for the last 3 years, so I'm experienced and ready to have fun with your pet :). I am flexible - I can commute and sit your pet at your house or you can transport the animal to my house, if that's your preference. Currently not accepting walking bookings, sorry!",
         profilePicture: "https://images.pexels.com/photos/5588528/pexels-photo-5588528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         rating: 4.5,
         additionalinfo: "My favorite breed of dog is a Golden Doodle (throughout my life, I owned three such dogs). I am available from thursday to sunday only due to my other job.",
