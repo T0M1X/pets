@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LoginForm from './LoginForm';
 import "./login.css"
 import { UserMethods } from "../../lib/users.js"; //import from the end of sign up instead?
+import { Navigate } from 'react-router-dom';
 
 
 function LoginApp() {
@@ -66,13 +67,16 @@ const Logout = () => {
 }
 
 //page which determines whether user is logged in and which page to show
+/* old welcome page
+          <h2>Welcome, <span>{user.type} {user.username}</span></h2>
+          <button onClick={Logout}>Logout</button>
+*/
 return (
   <div className="App">
     {(user) ?
       (
         <div className="welcome">
-          <h2>Welcome, <span>{user.type} {user.username}</span></h2>
-          <button onClick={Logout}>Logout</button>
+          <Navigate replace to="/editProfile" />
         </div>
       )
       : (

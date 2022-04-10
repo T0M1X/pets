@@ -5,16 +5,23 @@ import React, { useState, useEffect } from 'react';
 
 const Header = () => {
   const [loginText, setLoginText] = useState({text:""});
-  useEffect(() => {
-    //if UserDetails exists in localStorage, set the text to the username; else "Sign in"
+  const LoginCheck = () => {
+    //console.log("LOGIN CHECK");
     if (localStorage.getItem('UserDetails')){
       setLoginText({text:localStorage.getItem('UserDetails')});
     }
     else{
       setLoginText({text:"Sign In"});
     }
-  }, []);
+  };
+  useEffect(() => {LoginCheck()}, []) //does login check first thing to prevent showing the wrong headers on refresh
+  setInterval(LoginCheck, 500); //checks login regularly checks if user is logged in
   
+  const Logout = () => {
+    localStorage.removeItem('UserDetails');
+    localStorage.removeItem('UserType');
+    localStorage.removeItem('UserId')
+  }
   return (
     <StyledHeader>
       <Nav>
@@ -27,7 +34,9 @@ const Header = () => {
         </Link>
         {(loginText.text != "Sign In") ? 
         (
-          <div/>
+        <Link to="/viewCalendar">
+          <Button className='calendar'>Calendar</Button>
+        </Link>
         ) : (
         <Link to="/register">
           <Button className="register">Sign Up</Button>
@@ -36,10 +45,12 @@ const Header = () => {
         <Link to="/login">
           <Button className="login">{loginText.text}</Button>
         </Link>
-
-        <Link to="/editProfile">
-          <Button className='edit'>Edit Profile</Button>
+        {(loginText.text != "Sign In") ? 
+        (
+        <Link to="/login">
+          <Button onClick={Logout}>Logout</Button>
         </Link>
+        ) : (<div/>)}
       </Nav>
     </StyledHeader>
   )
