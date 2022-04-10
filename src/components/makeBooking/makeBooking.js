@@ -1,5 +1,5 @@
 import {Booking} from '../styles/Booking.styled'
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 
 
@@ -49,9 +49,9 @@ const MakeBooking = () => {
     var end = "";
     if (book === "Walking") {
       endtime = addTimes(startTime, length);
-      end = startDate + " " + endTime;
+      end = startDate + " " + endtime;
     } else {
-      end = endDate + " " + endTime;
+      end = endDate + " " + endtime;
     }
     const d1 = new Date(start);
     const d2 = new Date(end);
