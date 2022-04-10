@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import "./Review.css"
-import { Link,Location } from "react-router-dom";
+import { Link,Navigate } from "react-router-dom";
+import { SitterMethods } from "../../lib/Sitters";
+
 import {Reviews,reviewMethod} from "../../lib/Review";
 
 export default class writeReview extends Component {
@@ -24,6 +26,8 @@ export default class writeReview extends Component {
         overall:'',
         recommend:'',
         title:'',
+        id:"/profile/"+SitterMethods.GetSitterById(this.props.sitterId).username,
+        route:false,
         Review:Reviews
 
       }
@@ -61,10 +65,7 @@ export default class writeReview extends Component {
         console.log(result);
         // Review[result].review.push(oneReview);
         console.log(Reviews)
-        return(
-        <Link to={"/viewCalendar"}>
-        </Link>
-        )
+        this.setState({route:true})
         
        
   
@@ -162,6 +163,8 @@ export default class writeReview extends Component {
         </div>
         <div>
         <button type="submit" className="submitButton">Submit</button>
+        {this.state.route? <Navigate to={this.state.id}><div>{console.log(this.state.route)}</div></Navigate>:null}
+        
         </div>
       </form>
       </div>
