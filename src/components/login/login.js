@@ -45,7 +45,6 @@ function LoginApp() {
       localStorage.setItem('UserDetails', user.username);
       localStorage.setItem('UserType', user.type);
       localStorage.setItem('UserId', user.id);
-      window.location.reload(false); //reloads page so the header changes
     }
     else {
       console.log("Details do not match!");
@@ -64,7 +63,6 @@ const Logout = () => {
   localStorage.removeItem('UserDetails');
   localStorage.removeItem('UserType');
   localStorage.removeItem('UserId')
-  window.location.reload(false); //reloads page so the header changes
 }
 
 //page which determines whether user is logged in and which page to show
