@@ -20,21 +20,4 @@ export const Button = styled.button`
         width:120px;
         height:120px;
     }
-
-    &.right-nav{
-        margin-left:30%;
-        margin-top:20%;
-    }
-    &.login{
-        margin-top:45%;
-    }
-
-    &.register{
-        margin-top:40%;
-    }
-
-    &.edit{
-        margin-top:20%;
-        margin-right: 5%;
-    }
 `
