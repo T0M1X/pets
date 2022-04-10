@@ -12,11 +12,12 @@ const SittersProfile = (props) => {
     const [color, setColor] = useState("green");
     const [bigPicture, setPicture] = useState(null);
     // const [review,setReview]=useState(null);
-    const review=Reviews.filter(reviews =>reviews.id===sitters.filter(sitter => sitter.username.toLowerCase() == name)[0].id);
+    const review=Reviews.filter(reviews =>reviews.id===sitters.filter(sitter => sitter.username.toLowerCase() == name.toLowerCase())[0].id);
     useEffect(() => {
         console.log(name);
         // Find user object with matching name from json
-        const sitter = sitters.filter(sitter => sitter.username.toLowerCase() == name)[0];
+        const sitter = sitters.filter(sitter => sitter.username.toLowerCase() == name.toLowerCase())[0];
+        console.log(sitter)
         const review=Reviews.filter(reviews =>reviews.id===sitter.id);
         setUser(sitter);
         // setReview(review);

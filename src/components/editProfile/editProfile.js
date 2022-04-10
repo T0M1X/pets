@@ -30,6 +30,7 @@ function EditProfile() {
         }
 
         console.log(coords)
+        console.log(document.getElementById('images').value.split('\n'))
 
         let id = user.id;
         let new_user = {
@@ -79,7 +80,7 @@ function EditProfile() {
                         </div>
                     </div>
                     <p>images: </p>
-                    <textarea className='images' id='additional' rows='4' wrap='soft' defaultValue={user.images?.map((image) => image + '\n').join('')}></textarea>
+                    <textarea className='images' id='images' rows='4' wrap='soft' defaultValue={user.images?.map((image) => image + '\n').join('')}></textarea>
                 </div>
                 <div className='save'>
                     <button className='save' onClick={Update}>Save changes</button>
