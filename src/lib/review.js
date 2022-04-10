@@ -1,6 +1,6 @@
 
 
-let review= [
+let Reviews= [
 
     {
         "id":"123456",
@@ -283,13 +283,13 @@ let review= [
 class reviewMethod {
 
     static AddReview(r,index) {
-        review[index].review.push(oneReview);
+        Reviews[index].review.push(r);
     }
 
 
 }
 
 export {
-    review,
+    Reviews,
     reviewMethod
 }
