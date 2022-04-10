@@ -30,7 +30,7 @@ function EditProfile() {
                     <p>bio:</p>
                     <textarea className='bioText' name='bio' rows={Math.ceil(user.bio.length / 194)} wrap='soft' defaultValue={user.bio}></textarea>
                     <p>additional information: </p>
-                    <textarea className='additionalText' name='additional' rows={Math.ceil(user.additionalinfo.length / 194)} wrap='soft' defaultValue={user.additionalinfo}></textarea>
+                    <textarea className='additionalText' name='additional' rows={Math.ceil(user.additionalinfo?.length / 194)} wrap='soft' defaultValue={user.additionalinfo}></textarea>
                     <div className='location'>
                         <div>
                             <p>postcode:</p>
@@ -38,15 +38,15 @@ function EditProfile() {
                         </div>
                         <div>
                             <p>x-coordinate:</p>
-                            <textarea name='xcoord' defaultValue={user.coordinates[1]} rows='1' cols='10' />
+                            <textarea name='xcoord' defaultValue={user.coordinates && (user.coordinates[1])} rows='1' cols='10' />
                         </div>
                         <div>
                             <p>y-coordinate:</p>
-                            <textarea name='ycoord' defaultValue={user.coordinates[0]} rows='1' cols='10' />
+                            <textarea name='ycoord' defaultValue={user.coordinates && (user.coordinates[0])} rows='1' cols='10' />
                         </div>
                     </div>
                     <p>images: </p>
-                    <textarea className='images' name='additional' rows='4' wrap='soft' defaultValue={user.images.map((image) => image + '\n').join('')}></textarea>
+                    <textarea className='images' name='additional' rows='4' wrap='soft' defaultValue={user.images?.map((image) => image + '\n').join('')}></textarea>
                 </div>
                 <div className='save'>
                     <button className='save' onclick='updateProfile()'>Save changes</button>
