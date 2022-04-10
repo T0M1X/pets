@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import "./Review.css"
-import { Link,Location } from "react-router-dom";
-import Review from "../../lib/review.json";
+import { Link,Navigate } from "react-router-dom";
+import { SitterMethods } from "../../lib/Sitters";
+
+import {Reviews,reviewMethod} from "../../lib/review";
 
 export default class writeReview extends Component {
     constructor(props){
@@ -24,7 +26,9 @@ export default class writeReview extends Component {
         overall:'',
         recommend:'',
         title:'',
-        Review:Review
+        id:"/profile/"+SitterMethods.GetSitterById(this.props.sitterId).username,
+        route:false,
+        Review:Reviews
 
       }
     }
@@ -53,13 +57,16 @@ export default class writeReview extends Component {
             "recommend":this.state.recommend,
             "title":this.state.title
         }
-        //For now only booking 1 works because the sitter id(booking.json) and id(in sitter) match 
-        //change client info in the calendar  into sitter name and add ids?
+        // oneReview=JSON.parse(oneReview);
+
         console.log(oneReview)
         var result = this.state.Review.findIndex(obj => obj.id===this.props.sitterId);
+        reviewMethod.AddReview(oneReview,result)
         console.log(result);
-        Review[result].review.push(oneReview);
-        console.log(Review)
+        // Review[result].review.push(oneReview);
+        console.log(Reviews)
+        this.setState({route:true})
+        
        
   
       }
@@ -155,9 +162,9 @@ export default class writeReview extends Component {
           <textarea id="desc" name="description"placeholder='Enter review' value={this.state.text} onChange={this.handleChange} required></textarea>
         </div>
         <div>
-        <Link to={"/viewCalendar"}>
         <button type="submit" className="submitButton">Submit</button>
-        </Link>
+        {this.state.route? <Navigate to={this.state.id}><div>{console.log(this.state.route)}</div></Navigate>:null}
+        
         </div>
       </form>
       </div>
