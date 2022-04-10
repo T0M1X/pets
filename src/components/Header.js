@@ -4,11 +4,14 @@ import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
 const Header = () => {
-  const [loginText, setLoginText] = useState({text:""});
+  const [loginText, setLoginText] = useState({text:"", type:""});
   const LoginCheck = () => {
     //console.log("LOGIN CHECK");
     if (localStorage.getItem('UserDetails')){
-      setLoginText({text:localStorage.getItem('UserDetails')});
+      setLoginText({
+      text:localStorage.getItem('UserDetails'),
+      type:localStorage.getItem('UserType')
+      });
     }
     else{
       setLoginText({text:"Sign In"});
@@ -32,6 +35,11 @@ const Header = () => {
         <Link to="/search">
           <Button className="right-nav">Search Sitters</Button>
         </Link>
+        {(loginText.type == "sitter") ? (
+          <Link to="/bookingConfirm">
+            <Button className="booking-list">Booking List</Button>
+          </Link>
+        ) : (<div/>)}
         {(loginText.text != "Sign In") ? 
         (
         <Link to="/viewCalendar">
