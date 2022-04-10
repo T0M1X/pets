@@ -3,7 +3,7 @@ import "./Review.css"
 import { Link,Navigate } from "react-router-dom";
 import { SitterMethods } from "../../lib/Sitters";
 
-import {Reviews,reviewMethod} from "../../lib/Review";
+import {Reviews,reviewMethod} from "../../lib/review";
 
 export default class writeReview extends Component {
     constructor(props){

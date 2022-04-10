@@ -4,7 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import "./Calendar.css"
 import EventInfo from "./eventInfo.js"
 import booking from "../../lib/booked.json";
-import {Reviews} from "../../lib/Review";
+import {Reviews} from "../../lib/review";
 export default class viewCalendar extends Component {
   constructor() {
     super();

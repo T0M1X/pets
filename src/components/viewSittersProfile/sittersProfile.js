@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./sittersProfile.css";
 import { useParams, Link } from "react-router-dom";
 import { sitters } from "../../lib/Sitters";
-import {Reviews} from "../../lib/Review";
+import {Reviews} from "../../lib/review";
 import Review from "./Review";
 
 //pass in sitters.json object as props
