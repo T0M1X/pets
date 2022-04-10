@@ -47,6 +47,7 @@ const SittersProfile = (props) => {
                     <div className="sub">
                         <p>rating: {user.rating}/5</p>
                     </div>
+                    {(user.username == localStorage.getItem('UserDetails')) ? (
                     <div className='prices'>
                         <p>walking price: {user.walkprice}/1h</p>
                         <p>sitting price: {user.sitprice}/night</p>
@@ -56,6 +57,7 @@ const SittersProfile = (props) => {
                             </Link>
                         </div>
                     </div>
+                    ) : (<div/>)}
                 </div>
                 <div className="line" />
                 <div classname="infocontainer">
