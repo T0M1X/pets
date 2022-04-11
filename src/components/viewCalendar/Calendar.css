@@ -5,6 +5,15 @@
   font-family:"Quicksand",sans-serif;
 }
 
+.calendar-page {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  background: linear-gradient(
+    210deg,
+    rgba(0, 126, 126, 1) 0%,
+    #92B7CE 100%
+  );
+}
 
 /* Calendar numbers
 .fc .fc-daygrid-day-number {
@@ -28,13 +37,14 @@
   }
 
   .calendar-container{
+    background-color: whitesmoke;
     height: 80%;
-    width:90%;
+    width:85%;
     margin-top: 2%;
     margin-bottom:2%;
     margin-left: auto;
     margin-right:auto;
-    padding: 4vh 10vw;
+    padding: 4vh 5vw;
     border-radius: 1%;
   }
 
@@ -59,25 +69,24 @@
     margin:2%;
   }
 
+  /*highest element of booking information*/
   .Event-container{
-    width:75%;
-    height:80%;
-    position: relative;
+    overflow:auto;
+    margin-top: 5vh;
+    margin-bottom: 10vh;
     position: fixed;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top:3%;
+    margin-left: 20vh;
+    margin-right: 20vh;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0,0,0,.93);
+    background-color: rgba(24,26,27,.93);
     color:white;
     z-index:100;
-    border-radius: 2%;
+    border-radius: 16px;
     border:solid 2px black;
     font-family: 'Quicksand', sans-serif;
-
   }
 
   .close{
@@ -85,7 +94,9 @@
     top:0; 
     right:0;
     font-weight: bolder;
+    font-size: 1.8rem;
     color:grey;
+    margin-top:0.2%;
     margin-right:1%;
     cursor: pointer;
   }
@@ -97,50 +108,39 @@
   .title{
     padding-left:2%;
     margin-top:2%;
-    font-size:1.7rem;
+    font-size:2rem;
+    font-weight: 900;
     padding-bottom:3%;
     width:100%;
     border-bottom:3px solid rgb(195, 195, 195);
-
-    ;
   }
 
   .booking-container{
     display:flex;
     align-items: center;
-    margin-top:2%;
-    min-width:60%;
-    margin-bottom:2%;
+    min-width:30vw;
     flex-direction:column;
-
+    padding-top: 10px;
+    margin-right: 5%;
   }
   .booking-container div{
     margin:0.1%;
   }
 
 
-.info-container{
+.info-container, .pet-container{
   display:flex;
-  margin-left: 2%;
-  margin-right: 20%;
   flex-direction: column;
   text-align:justify;
-
 }
 
-.info-container div{
-  width:100%;
-}
-
-
-.pet-container{
-  display:flex;
-  flex-direction: column;
-
+.info-container, .pet-container, .Other, .Payment-container{
+  font-size: 120%;
+  padding: 2% 3% 3% 3% !important;
 }
 
 .pet-container{
-  margin-left:2%;
+  margin-left: 20%;
 }
 
 
@@ -148,40 +148,32 @@ h2{
   font-size:1.4rem;
 }
 
-.Flex-Container{
+.Flex-Container, .Flex-Container-2{
   display:flex;
-  border:solid rgb(63, 63, 63) 2px;
-  width:90%;
-  margin: 3%;
-  padding-bottom: 1%;
-
-  
-}
-
-
-.Other{
-  padding:1%;
-  margin-left: 3%;
-  border:solid rgb(63, 63, 63) 2px;
-  width:40%;
-  height:25%;
-
+  border:solid rgb(63, 63, 63) 6px;
+  border-radius: 16px;
+  margin: 0 3% 2% 3%;
 }
 
 .Flex-Container-2{
-  display:flex;
-  width:90%;
+  border: none;
   justify-content:space-between;
+}
 
-
+.Other{
+  padding: 20px;
+  padding-left: 2%;
+  border:solid rgb(63, 63, 63) 6px;
+  border-radius: 16px;
 }
 
 .Payment-container{
-  border:solid rgb(63, 63, 63) 2px;
-  width:20%;
-  height:90%;
-  padding:1%;
-
+  text-align: center;
+  border:solid rgb(63, 63, 63) 6px;
+  border-radius: 16px;
+  padding: 20px;
+  margin-right: 9%;
+  margin-left: 2%;
 }
 
 h3{
@@ -260,10 +252,9 @@ h3{
 .Book-Review-Container{
   display:flex;
   justify-content: space-evenly;
-  flex-direction: row;
   font-family:"Quicksand",sans-serif;
   font-weight: 900;
-  width:90%;
+  margin: 1% 3%;
 }
 
 

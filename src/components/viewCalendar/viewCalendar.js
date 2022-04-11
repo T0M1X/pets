@@ -27,7 +27,7 @@ export default class viewCalendar extends Component {
 
   render() {
     return (
-      <div>
+      <div className='calendar-page'>
         {console.log(Reviews)}
       <div className={!this.state.display ?"calendar-container":"calendar-container transparent"}>
       <FullCalendar

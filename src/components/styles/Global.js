@@ -24,7 +24,9 @@ const GlobalStyles = createGlobalStyle`
     margin: auto;
   }                
 
-  
+  button, Button {
+    border-radius: 16px !important;
+  }
 }
 `
 
