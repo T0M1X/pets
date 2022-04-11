@@ -30,57 +30,65 @@ class eventInfoBookings extends Component {
     return (
       <StyledBooking>
         <div className="section">
-        <script></script>
-        <br></br>
-        <div>
-          <h1>List of Bookings for {this.state.user}</h1>
-        </div>
-        <div className="bookingDiv">
-          <div className="cardDiv">
-            <p style={{ fontSize: "15px" }}>
-              ID of booking:
-              {BookingMethods.GetBookingBySitterId(this.state.sitterID).id}
-            </p>
-            <p>
-              {BookingMethods.GetBookingBySitterId(this.state.sitterID).name}
-            </p>
-            <p>
-              {BookingMethods.GetBookingBySitterId(this.state.sitterID).Address}
-            </p>
-            <p
-              style={{
-                color:
-                  BookingMethods.GetBookingBySitterId(this.state.sitterID)
-                    .accepted === "Booked"
-                    ? "green"
-                    : "red", // here is where the function matters, it checks if the text in bookings.accepted fits the conditions
-              }}
-            >
-              Is Booked? -{" "}
-              {
-                BookingMethods.GetBookingBySitterId(this.state.sitterID)
-                  .accepted
-              }
-            </p>
-            <br></br>
-            <button
-              onClick={this.bookingStatus(
-                BookingMethods.GetBookingBySitterId(this.state.sitterID).id,
-                true
-              )}
-            >
-              Accept
-            </button>
-            <button
-              onClick={this.bookingStatus(
-                BookingMethods.GetBookingBySitterId(this.state.sitterID).id,
-                false
-              )}
-            >
-              Decline
-            </button>
+          <script></script>
+          <br></br>
+          <div>
+            <h1>List of Bookings for {this.state.user}</h1>
           </div>
-        </div>
+          <div className="bookingDiv">
+            <div className="cardDiv">
+              <table>
+                <p style={{ fontSize: "15px" }}>
+                  ID of booking:
+                  {BookingMethods.GetBookingBySitterId(this.state.sitterID).id}
+                </p>
+                <p>
+                  {
+                    BookingMethods.GetBookingBySitterId(this.state.sitterID)
+                      .name
+                  }
+                </p>
+                <p>
+                  {
+                    BookingMethods.GetBookingBySitterId(this.state.sitterID)
+                      .Address
+                  }
+                </p>
+                <p
+                  style={{
+                    color:
+                      BookingMethods.GetBookingBySitterId(this.state.sitterID)
+                        .accepted === "Booked"
+                        ? "green"
+                        : "red", // here is where the function matters, it checks if the text in bookings.accepted fits the conditions
+                  }}
+                >
+                  Is Booked? -{" "}
+                  {
+                    BookingMethods.GetBookingBySitterId(this.state.sitterID)
+                      .accepted
+                  }
+                </p>
+                <br></br>
+                <button
+                  onClick={this.bookingStatus(
+                    BookingMethods.GetBookingBySitterId(this.state.sitterID).id,
+                    true
+                  )}
+                >
+                  Accept
+                </button>
+                <button
+                  onClick={this.bookingStatus(
+                    BookingMethods.GetBookingBySitterId(this.state.sitterID).id,
+                    false
+                  )}
+                >
+                  Decline
+                </button>
+              </table>
+            </div>
+          </div>
         </div>
       </StyledBooking>
     );

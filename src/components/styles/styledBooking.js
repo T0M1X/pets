@@ -30,6 +30,7 @@ const styledBooking = styled.div`
     border: 6px solid whitesmoke;
     border-radius: 30px;
     font-size: 20px;
+    background-color: #e7e9eb;
   }
 
   h1 {
