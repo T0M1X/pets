@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserMethods } from "../../lib/users.js";
 import './editProfile.css'
+import { PostcodetoLatLong } from "../../lib/geolocation"
 
 function EditProfile() {
     const [user, setUser] = useState(null);
@@ -28,8 +29,7 @@ function EditProfile() {
             coords = [ parseInt(document.getElementById('ycoord').value),
                        parseInt(document.getElementById('xcoord').value)]
         }
-
-        console.log(coords)
+        coords = PostcodetoLatLong(document.getElementById('postcode').value);
         console.log(document.getElementById('images').value.split('\n'))
 
         let id = user.id;
