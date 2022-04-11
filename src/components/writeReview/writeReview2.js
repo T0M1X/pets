@@ -52,7 +52,7 @@ export default class writeReview extends Component {
           }if(this.state.price==''){
             errors.push("Price")
           }if(this.state.quality==''){
-            errors.push("Quality")
+            errors.push("Quality of service ")
           }if(this.state.overall==''){
             errors.push("Overall rating")
           }if(this.state.recommend==''){
