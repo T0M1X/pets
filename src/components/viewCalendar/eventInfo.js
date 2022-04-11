@@ -18,7 +18,7 @@ export default class eventInfo extends Component {
     return (
         <div>
       <div className="Event-container">
-      <div className="title">Booking Infomation</div>
+      <div className="title">Booking Information</div>
       <div class="Book-Review-Container">
       <div className="booking-container">
       <div><h3>Booking ID: </h3> {this.props.event.id}</div>

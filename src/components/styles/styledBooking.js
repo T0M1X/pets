@@ -4,31 +4,41 @@ const styledBooking = styled.div`
   font-family: "Avenir", Helvetica, sans-serif;
   background: linear-gradient(
     210deg,
-    rgba(9, 9, 121, 1) 0%,
-    rgba(1, 0, 19, 1) 49%,
-    rgba(0, 126, 126, 1) 100%
+    rgba(0, 126, 126, 1) 0%,
+    #92B7CE 100%
   );
-  color: whitesmoke;
+  color: black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  .section {
+    background-color: rgb(24,26,27);
+    margin-left: 20vw;
+    margin-right: 20vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+  }
 
   .bookingDiv {
     padding: 25px;
-    padding-bottom: 120px;
     border: 10px solid #66ffffp;
   }
 
   .tableDiv {
-    margin: 0 auto;
+    background-color: #E7E9EB;
+    margin-bottom: 20px;
     padding: 20px;
-    margin-right: 30px;
     text-align: center;
     display: flex;
     justify-content: center;
-    border: 2px solid whitesmoke;
-    border-radius: 3px;
+    border: 6px solid whitesmoke;
+    border-radius: 30px;
     font-size: 20px;
   }
 
   h1 {
+    color: whitesmoke;
     text-align: center;
     margin: 0;
   }
@@ -50,11 +60,15 @@ const styledBooking = styled.div`
 
   button {
     cursor: pointer;
-    padding: 5px;
+    padding: 1em;
     margin-left: 40px;
-    border: solid 2px whitesmoke;
-    border-radius: 3px;
+    border: solid 2px #494E51;
+    border-radius: 6px;
     font-size: 15px;
+  }
+
+  button:hover {
+    background-color: #BAFFFB;
   }
 `;
 

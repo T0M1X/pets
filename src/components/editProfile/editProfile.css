@@ -76,6 +76,7 @@
     width: 100%;
     display: flex;
     margin-top: 10px;
+    margin-bottom: 10px;
     flex-direction: row;
     justify-content: center;
 }
@@ -85,9 +86,9 @@
     background-size: 200%;
     background-position: 0%;
     transition: 0.4s;
-    border-radius: 20px;
+    border-radius: 15px;
     width: fit-content;
-    padding: 10px;
+    padding: 20px;
     color: rgb(211,207,201);
     font-family: 'Avenir', Helvetica, sans-serif;
     font-size: 100%;

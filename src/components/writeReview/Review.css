@@ -4,17 +4,21 @@
   font-family:"Quicksand",sans-serif;
 }
  .Container-title{
-    background: rgb(9,9,121);
-    background: linear-gradient(210deg, rgba(9,9,121,1) 0%, rgba(1,0,19,1) 49%, rgba(0,126,126,1) 100%);
+    background: linear-gradient(
+      210deg,
+      rgba(0, 126, 126, 1) 0%,
+      #92B7CE 100%
+    );
     color: rgb(211,207,201);
      padding-top:3%;
      padding-bottom:3%;
  }
  .ReviewForm {
-     padding:3%;
+    border-radius: 60px;
+    padding:3%;
     font-family:"Quicksand",sans-serif;
     background-color:rgb(24,26,27) !important;
-    width:70%;
+    width:60%;
     margin-left:auto;
     margin-right:auto;
     color:whitesmoke;
@@ -85,10 +89,10 @@
 
 
 .ReviewForm h2{
-    font-size:1.5rem;
+    font-size:2rem;
     display:block;
     margin-bottom:2%;
-    margin-left:25%;
+    text-align: center;
 }
 
 .quality{
@@ -115,7 +119,7 @@
     padding-left:3%;
     padding-right:3%;
     border: 2px solid #444;
-    border-radius: 4px;
+    border-radius: 6px;
     margin-left:2%;
     margin-right:2%;
 }
@@ -123,7 +127,7 @@
 /* Look of the yes no buttons when selected */
 .recommend-container input[type="radio"]:checked + label {
     background-color:rgb(102,255,255);
-    margin-left:2%;
+    color: black;
 }
 
 
@@ -141,7 +145,7 @@
     margin-left:auto;
     margin-right:auto;
     height:33%;
-    width:30%;
+    width:25%;
     padding:3%;
     border-radius:5%;
    margin-top:2%;
@@ -173,4 +177,27 @@ a:-webkit-any-link {
 
   .checked {
     color: rgb(102,255,255);
+  }
+
+  .Input-Section{
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+
+  .Input-Section input, .Input-Section textarea{
+    appearance: none !important;
+    border: none !important;
+    outline: none !important;
+
+    font-size: 1.5em;
+    font-family: inherit;
+    padding: 10px 15px;
+    background-color: #F8F8F8;
+    border-radius: 8px;
+    transition: 0.4s;
+  }
+
+  .Input-Section textarea{
+    font-size: 1.2em !important;
+    height: 10em !important;
   }

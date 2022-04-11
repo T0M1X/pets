@@ -96,9 +96,9 @@ export default class writeReview extends Component {
         <div className="Background">
             {console.log("sitter id :"+this.props.sitterId)}
           <div className="Container-title">
-          <div className="review-title">Submit your Review</div>
+          <div className="review-title">Submit Your Review</div>
         <form className="ReviewForm" onSubmit={this.handleSubmit}>
-        <h2>Rate Your expierence</h2>
+        <h2>Rate Your Experience</h2>
           <div className="Rating-Container">
           <div class="quality">Quality of service</div>
           <div>
@@ -145,7 +145,7 @@ export default class writeReview extends Component {
   
   
           <div className="recommend-container"> 
-          <h2>Would you recommend this product?</h2>
+          <h2>Would you recommend this pet sitter?</h2>
           <div className="button-container">
           <input type="radio" id="Yes" name="recommend" value="yes"  onChange={this.onValueChange5} checked={this.state.recommend === "yes"}required/>
           <label htmlFor="Yes">Yes</label>
@@ -153,13 +153,15 @@ export default class writeReview extends Component {
           <label htmlFor="No">No</label>
           </div>
           </div>
+          <div className="Input-Section">
           <div className="writeReview-title">
             <h2>Title</h2>
-            <input className="write-title" type="text" placeholder="enter title"  value={this.state.title}  onChange={this.onValueChange6} required></input>
+            <input className="write-title" type="text" placeholder="Enter title"  value={this.state.title}  onChange={this.onValueChange6} required></input>
           </div>
           <div className="Description">
             <h2>Description</h2>
           <textarea id="desc" name="description"placeholder='Enter review' value={this.state.text} onChange={this.handleChange} required></textarea>
+        </div>
         </div>
         <div>
         <button type="submit" className="submitButton">Submit</button>

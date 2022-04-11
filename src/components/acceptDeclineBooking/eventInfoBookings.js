@@ -36,6 +36,7 @@ class eventInfoBookings extends Component {
   render() {
     return (
       <StyledBooking>
+        <div className="section">
         <script></script>
         <br></br>
         <div>
@@ -84,6 +85,7 @@ class eventInfoBookings extends Component {
               </div>
             );
           })}
+        </div>
         </div>
       </StyledBooking>
     );

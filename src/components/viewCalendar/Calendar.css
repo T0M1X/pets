@@ -30,10 +30,12 @@
   .calendar-container{
     height: 80%;
     width:90%;
-    margin-top: 5%;
-    margin-bottom:5%;
+    margin-top: 2%;
+    margin-bottom:2%;
     margin-left: auto;
     margin-right:auto;
+    padding: 4vh 10vw;
+    border-radius: 1%;
   }
 
   .transparent{
@@ -45,8 +47,10 @@
     all:none;
     color:white;
     background-color:black;
-    border:solid rgb(102,255,255);
     margin:2%; 
+    padding: 16px 0px;
+    padding-right: 3px;
+    border-radius: 12px;
   }
 
   .fc-daygrid-event-dot{
