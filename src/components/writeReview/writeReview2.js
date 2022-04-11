@@ -41,18 +41,25 @@ export default class writeReview extends Component {
     
   
       handleSubmit = (event) =>{
+        var errors=[];
         event.preventDefault();
         console.log(this.state.errors)
-        this.setState({errors:[]})
-        if(this.state.timeliness==''||this.state.quality==''||this.state.price==''||this.state.overall==''||this.state.recommend==''){
+        if(this.state.timeliness==''||this.state.quality==''||this.state.price==''||this.state.overall==''||this.state.recommend=='' ||this.state.text==''||this.state.title==''){
+          console.log(this.state.errors)
           if(this.state.timeliness==''){
-            this.state.errors.push("Timeliness cannot be empty!")
+            errors.push("Timeliness cannot be empty!")
+          }if(this.state.price==''){
+            errors.push("Price cannot be empty!")
           }if(this.state.quality==''){
-            this.setState({errors:[...this.state.errors, "quality of service cannot be empty!"]})
+            errors.push("Quality of service cannot be empty!")
           }if(this.state.overall==''){
-            this.state.errors.push("Overall rating cannot be empty!")
+            errors.push("Overall rating cannot be empty!")
           }if(this.state.recommend==''){
-            this.state.errors.push("Recommend pet sitter cannot be empty!")
+            errors.push("Recommend pet sitter cannot be empty!")
+          }if(this.state.title==''){
+            errors.push("Title cannot be empty!")
+          }if(this.state.text==''){
+            errors.push("Description cannot be empty!")
           }
         
         }else{
@@ -83,7 +90,10 @@ export default class writeReview extends Component {
         console.log(Reviews)
         this.setState({route:true})
       }
-       
+      if (errors.length > 0) {
+        this.setState({errors:errors });
+        return;
+      }
   
       }
       onValueChange(event) {
@@ -174,11 +184,11 @@ export default class writeReview extends Component {
           <div className="Input-Section">
           <div className="writeReview-title">
             <h2>Title</h2>
-            <input className="write-title" type="text" placeholder="Enter title"  value={this.state.title}  onChange={this.onValueChange6} required></input>
+            <input className="write-title" type="text" placeholder="Enter title"  value={this.state.title}  onChange={this.onValueChange6} ></input>
           </div>
           <div className="Description">
             <h2>Description</h2>
-          <textarea id="desc" name="description"placeholder='Enter review' value={this.state.text} onChange={this.handleChange} required></textarea>
+          <textarea id="desc" name="description"placeholder='Enter review' value={this.state.text} onChange={this.handleChange} ></textarea>
         </div>
         </div>
         <div>
