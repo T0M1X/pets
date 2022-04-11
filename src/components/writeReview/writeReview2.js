@@ -96,9 +96,9 @@ export default class writeReview extends Component {
         <div className="Background">
             {console.log("sitter id :"+this.props.sitterId)}
           <div className="Container-title">
-          <div className="review-title">Submit your Review</div>
+          <div className="review-title">Submit Your Review</div>
         <form className="ReviewForm" onSubmit={this.handleSubmit}>
-        <h2>Rate Your experience</h2>
+        <h2>Rate Your Experience</h2>
           <div className="Rating-Container">
           <div class="quality">Quality of service</div>
           <div>
