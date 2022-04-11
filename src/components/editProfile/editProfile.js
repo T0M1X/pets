@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserMethods } from "../../lib/users.js";
 import './editProfile.css'
+import { PostcodetoLatLong } from "../../lib/geolocation"
 
 function EditProfile() {
     const [user, setUser] = useState(null);
@@ -28,8 +29,7 @@ function EditProfile() {
             coords = [ parseInt(document.getElementById('ycoord').value),
                        parseInt(document.getElementById('xcoord').value)]
         }
-
-        console.log(coords)
+        //coords = PostcodetoLatLong(document.getElementById('postcode').value);
         console.log(document.getElementById('images').value.split('\n'))
 
         let id = user.id;
@@ -61,37 +61,37 @@ function EditProfile() {
         <div>
             {user && (<div className='containerEdit'>
                 <div className='userData'>
-                    <p>username:</p>
+                    <p>Username:</p>
                     <textarea className='usernameText' id='uname' rows={Math.ceil(user.username.length / 194)} wrap='soft' defaultValue={user.username}></textarea>
-                    <p>profile picture:</p>
+                    <p>Profile picture:</p>
                     <textarea className='pfp' id='pfp' rows={Math.ceil(user.profilePicture?.length / 194)} wrap='soft' defaultValue={user.profilePicture}></textarea>
-                    <p>bio:</p>
+                    <p>Bio:</p>
                     <textarea className='bioText' id='bio' rows={Math.ceil(user.bio.length / 194)} wrap='soft' defaultValue={user.bio}></textarea>
-                    <p>additional information: </p>
+                    <p>Additional information: </p>
                     <textarea className='additionalText' id='additional' rows={Math.ceil(user.additionalinfo?.length / 194)} wrap='soft' defaultValue={user.additionalinfo}></textarea>
                     <div className='location'>
                         <div>
-                            <p>postcode:</p>
+                            <p>Postcode:</p>
                             <textarea id='postcode' defaultValue={user.postcode} rows='1' cols='10' />
                         </div>
                         <div>
-                            <p>x-coordinate:</p>
+                            <p>X-coordinate:</p>
                             <textarea id='xcoord' defaultValue={user.coordinates && (user.coordinates[1])} rows='1' cols='10' />
                         </div>
                         <div>
-                            <p>y-coordinate:</p>
+                            <p>Y-coordinate:</p>
                             <textarea id='ycoord' defaultValue={user.coordinates && (user.coordinates[0])} rows='1' cols='10' />
                         </div>
                     </div>
-                    <p>images: </p>
+                    <p>Images: </p>
                     <textarea className='images' id='images' rows='4' wrap='soft' defaultValue={user.images?.map((image) => image + '\n').join('')}></textarea>
                     <div className='location'>
                         <div>
-                            <p>sitting price:</p>
+                            <p>Sitting price:</p>
                             <textarea id='sit' defaultValue={user.sitprice} rows='1' cols='10' />
                         </div>
                         <div>
-                            <p>walking price:</p>
+                            <p>Walking price:</p>
                             <textarea id='walk' defaultValue={user.walkprice} rows='1' cols='10' />
                         </div>
                     </div>
