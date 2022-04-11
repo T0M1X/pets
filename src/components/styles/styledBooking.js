@@ -16,7 +16,7 @@ const styledBooking = styled.div`
     border: 10px solid #66ffffp;
   }
 
-  .tableDiv {
+  .cardDiv {
     margin: 0 auto;
     padding: 20px;
     margin-right: 30px;
