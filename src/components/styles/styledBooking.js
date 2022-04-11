@@ -12,7 +12,7 @@ const styledBooking = styled.div`
   padding-bottom: 20px;
 
   .section {
-    background-color: #494E51;
+    background-color: rgb(24,26,27);
     margin-left: 20vw;
     margin-right: 20vw;
     margin-top: 20px;
