@@ -103,42 +103,42 @@ export default class writeReview extends Component {
           <div class="quality">Quality of service</div>
           <div>
           <fieldset className="rating" >
-      <input type="radio" id="q5" name="Quality" value="5" onChange={this.onValueChange} checked={this.state.quality ==="5"}/><label  htmlFor="q5" title="5 stars" required></label>
+      <input type="radio" id="q5" name="Quality" value="5" onChange={this.onValueChange} checked={this.state.quality ==="5"} /><label  htmlFor="q5" title="5 stars" ></label>
       <input type="radio" id="q4" name="Quality" value="4" onChange={this.onValueChange} checked={this.state.quality ==="4"}/><label htmlFor="q4" title="4 stars"></label>
       <input type="radio" id="q3" name="Quality" value="3" onChange={this.onValueChange} checked={this.state.quality ==="3"}/><label  htmlFor="q3" title="3 stars"></label>
       <input type="radio" id="q2" name="Quality" value="2" onChange={this.onValueChange} checked={this.state.quality === "2"}/><label  htmlFor="q2" title="2 stars"></label>
-      <input type="radio" id="q1" name="Quality" value="1" onChange={this.onValueChange} checked={this.state.quality === "1"}/><label  htmlFor="q1" title="1 star"></label>
+      <input type="radio" id="q1" name="Quality" value="1" onChange={this.onValueChange} checked={this.state.quality === "1"}required/><label  htmlFor="q1" title="1 star"></label>
           </fieldset>
           </div>
           <div class="quality">Price</div>
           <div>
           <fieldset className="rating">
-            <input type="radio" id="p5" name="Price" value="5" onChange={this.onValueChange2} checked={this.state.price === "5"} /><label  htmlFor="p5" title="5 stars"></label>
+            <input type="radio" id="p5" name="Price" value="5" onChange={this.onValueChange2} checked={this.state.price === "5"} required/><label  htmlFor="p5" title="5 stars" ></label>
             <input type="radio" id="p4" name="Price" value="4"onChange={this.onValueChange2} checked={this.state.price === "4"} /><label  htmlFor="p4" title="4 stars"></label>
             <input type="radio" id="p3" name="Price" value="3"onChange={this.onValueChange2} checked={this.state.price === "3"} /><label  htmlFor="p3" title="3 stars"></label>
             <input type="radio" id="p2" name="Price" value="2" onChange={this.onValueChange2} checked={this.state.price === "2"}/><label  htmlFor="p2" title="2 stars"></label>
-            <input type="radio" id="p1" name="Price" value="1" onChange={this.onValueChange2} checked={this.state.price === "1"} /><label  htmlFor="p1" title="1 star"></label>
+            <input type="radio" id="p1" name="Price" value="1" onChange={this.onValueChange2} checked={this.state.price === "1"} required/><label  htmlFor="p1" title="1 star"></label>
           </fieldset>
           </div>
           
           <div class="quality">Timeliness</div>
           <div>
           <fieldset className="rating">
-            <input type="radio" id="t5" name="Timeliness" value="5" onChange={this.onValueChange3} checked={this.state.timeliness === "5"} /><label  htmlFor="t5" title="5 stars"></label>
+            <input type="radio" id="t5" name="Timeliness" value="5" onChange={this.onValueChange3} checked={this.state.timeliness === "5"} /><label  htmlFor="t5" title="5 stars" required></label>
             <input type="radio" id="t4" name="Timeliness" value="4" onChange={this.onValueChange3} checked={this.state.timeliness === "4"} /><label  htmlFor="t4" title="4 stars"></label>
             <input type="radio" id="t3" name="Timeliness" value="3"onChange={this.onValueChange3} checked={this.state.timeliness === "3"} /><label  htmlFor="t3" title="3 stars"></label>
             <input type="radio" id="t2" name="Timeliness" value="2" onChange={this.onValueChange3} checked={this.state.timeliness === "2"} /><label  htmlFor="t2" title="2 stars"></label>
-            <input type="radio" id="t1" name="Timeliness" value="1"onChange={this.onValueChange3} checked={this.state.timeliness === "1"} /><label  htmlFor="t1" title="1 star"></label>
+            <input type="radio" id="t1" name="Timeliness" value="1"onChange={this.onValueChange3} checked={this.state.timeliness === "1"} required/><label  htmlFor="t1" title="1 star"></label>
           </fieldset>
           </div>
           <div class="quality">Overall Rating</div>
           <div>
           <fieldset className="rating">
-            <input type="radio" id="w5" name="Overall" value="5" onChange={this.onValueChange4} checked={this.state.overall === "5"}/><label  htmlFor="w5" title="5 stars"></label>
+            <input type="radio" id="w5" name="Overall" value="5" onChange={this.onValueChange4} checked={this.state.overall === "5"}/><label  htmlFor="w5" title="5 stars" required></label>
             <input type="radio" id="w4" name="Overall" value="4" onChange={this.onValueChange4} checked={this.state.overall === "4"}/><label  htmlFor="w4" title="4 stars"></label>
             <input type="radio" id="w3" name="Overall" value="3" onChange={this.onValueChange4} checked={this.state.overall === "3"}/><label  htmlFor="w3" title="3 stars"></label>
             <input type="radio" id="w2" name="Overall" value="2" onChange={this.onValueChange4} checked={this.state.overall === "2"}/><label  htmlFor="w2" title="2 stars"></label>
-            <input type="radio" id="w1" name="Overall" value="1" onChange={this.onValueChange4} checked={this.state.overall === "1"}/><label  htmlFor="w1" title="1 star"></label>
+            <input type="radio" id="w1" name="Overall" value="1" onChange={this.onValueChange4} checked={this.state.overall === "1"} required/><label  htmlFor="w1" title="1 star"></label>
           </fieldset>
           </div>
           </div>
