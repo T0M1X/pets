@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 import {useParams, useNavigate} from 'react-router-dom'
 import { UserMethods } from "../../lib/users.js";
 import { sitters } from "../../lib/Sitters";
-import {BookingMethods} from "../acceptDeclineBooking/BookingsByAllSitters"
+import {booked, BookingMethods} from "../acceptDeclineBooking/BookingsByAllSitters"
 
 function timeToMins(time) {
   var b = time.split(':');
@@ -129,8 +129,10 @@ const MakeBooking = () => {
         Payment:calcprice(),
         accepted: "Not Booked",
       }
+      console.log(booked);
       BookingMethods.AddBooking(results);
       console.log(results);
+      console.log(booked);
       redirect('/viewCalendar');
     }
   }
