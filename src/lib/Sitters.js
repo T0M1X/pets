@@ -27,6 +27,7 @@ let sitters = [
         ],
         walkprice: '£10',
         sitprice: '£40',
+        number:"07742659365",
     },
     {
         id: "21313",
@@ -55,6 +56,7 @@ let sitters = [
         ],
         walkprice: '£15',
         sitprice: '£40',
+        number:"07742659365",
     },
     {
         id: "99313",
@@ -83,6 +85,7 @@ let sitters = [
         ],
         walkprice: '£12',
         sitprice: '£35',
+        number:"07742659365",
     },
     {
         id: "12A313",
@@ -111,6 +114,7 @@ let sitters = [
         ],
         walkprice: '£5',
         sitprice: '£25',
+        number:"07742659747",
     },
     {
         id: "45215",
@@ -140,6 +144,7 @@ let sitters = [
         ],
         walkprice: '£15',
         sitprice: '£60',
+        number:"07742659235",
     },
     {
         id: "999",
@@ -157,6 +162,7 @@ let sitters = [
         additionalinfo: "I work night shifts and am unable to sit your pets overnight.",
         walkprice: '£12',
         sitprice: '£20',
+        number:"07245659365",
     }
 ];
 

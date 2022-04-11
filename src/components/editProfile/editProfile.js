@@ -47,7 +47,8 @@ function EditProfile() {
             badges: user.badges,
             images: document.getElementById('images') && (document.getElementById('images').value.split('\n')),
             sitprice: document.getElementById('sit').value,
-            walkprice: document.getElementById('walk').value
+            walkprice: document.getElementById('walk').value,
+            number: "07486291472"
         }
 
         UserMethods.modifyUser(id, new_user);

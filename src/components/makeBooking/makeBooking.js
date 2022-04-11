@@ -2,7 +2,8 @@ import {Booking} from '../styles/Booking.styled'
 import {useState, useEffect} from 'react'
 import {useParams, useNavigate} from 'react-router-dom'
 import { UserMethods } from "../../lib/users.js";
-
+import { sitters } from "../../lib/Sitters";
+import {BookingMethods} from "../acceptDeclineBooking/BookingsByAllSitters"
 
 function timeToMins(time) {
   var b = time.split(':');
@@ -24,6 +25,17 @@ function addTimes(t0, t1) {
   return timeFromMins(timeToMins(t0) + timeToMins(t1));
 }
 
+function makeid(length) {
+  var result           = '';
+  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var charactersLength = characters.length;
+  for ( var i = 0; i < length; i++ ) {
+    result += characters.charAt(Math.floor(Math.random() * 
+charactersLength));
+ }
+ return result;
+}
+
 const MakeBooking = () => {
   const [book, setType] = useState('');
   const [startTime, setStartTime] = useState('');
@@ -37,6 +49,7 @@ const MakeBooking = () => {
   const [all, setAll] = useState([]);
   const redirect = useNavigate();
   const [user, setUser] = useState(null);
+  const [sitter,setSitter] = useState(null);
   let { name } = useParams();
 
   const add = () => {
@@ -49,7 +62,10 @@ const MakeBooking = () => {
     const id = localStorage.getItem('UserId');
     const user = UserMethods.GetUserById(id)
     console.log(user);
-    console.log(name)
+    console.log(name);
+    const sit = sitters.filter(sitter => sitter.username.toLowerCase() == name.toLowerCase())[0];
+    console.log(sit);
+    setSitter(sit);
     if (user) {
         setUser(user);
     }
@@ -58,6 +74,22 @@ const MakeBooking = () => {
     }
 }, [user])
 
+  function calcprice(){
+    if (book === "Walking"){
+      var price = parseInt(sitter.walkprice.slice(1));
+      price = price/(parseInt(length.slice(3)))
+    } else {
+      var price = parseInt(sitter.sitprice.slice(1));
+      var start = startDate + " " + startTime;
+      var end = endDate + " " + endTime;
+      const d1 = new Date(start);
+      const d2 = new Date(end);
+      var difference = d1.getTime() - d2.getTime();
+      var days = Math.ceil(difference / (1000 * 3600 * 24));
+      price = price*days;
+    }
+    return price
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -73,6 +105,7 @@ const MakeBooking = () => {
     const d1 = new Date(start);
     const d2 = new Date(end);
     const today = new Date();
+    var pets = all.map(x => x.petType);
     if (d1 > d2) {
       alert("Your second date needs to be later than the first date!");
       return false;
@@ -80,7 +113,25 @@ const MakeBooking = () => {
       alert("You cannot book in the past!");
       return false;
     } else  {
-      redirect('/');
+      var results = {
+        sitterId:user.id,
+        id:makeid(5),
+        title:"Booking " + (BookingMethods.GetLength()+1),
+        start:d1,
+        end:d2,
+        name:sitter.username,
+        Address:sitter.postcode,
+        Number:sitter.Number,
+        typeBooking:book,
+        typePet:pets,
+        amount:pets.length,
+        other:additional,
+        Payment:calcprice(),
+        accepted: "Not Booked",
+      }
+      BookingMethods.AddBooking(results);
+      console.log(results);
+      redirect('/viewCalendar');
     }
   }
 
@@ -106,7 +157,7 @@ const MakeBooking = () => {
             <label htmlFor="40">40 minutes</label>
             <input type="radio" name="walkLength" id="50" onChange={() => setLength("00:50")} />
             <label htmlFor="50">50 minutes</label>
-            <input type="radio" name="walkLength" id="60" onChange={() => setLength('01:00')} />
+            <input type="radio" name="walkLength" id="60" onChange={() => setLength('00:60')} />
             <label htmlFor="60">60 minutes</label>
           </div>
         </div>
@@ -166,7 +217,7 @@ const MakeBooking = () => {
           <br/>
           <textarea id="add" name="additional" placeholder='Enter additional information...' value={additional} onChange={(e) => setAdditional(e.target.value)} required></textarea>
         </div>
-        <button type="submit" className="sButton" onSubmit={(e) => handleSubmit(e)}>Submit</button>
+        <button type="submit" className="sButton" onSubmit={(e) => handleSubmit(e)}>Book</button>
       </form>
     </Booking>
   )

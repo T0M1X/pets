@@ -111,6 +111,14 @@ class BookingMethods {
   static GetBookingBySitterId(sitterID) {
     return booked.filter((b) => b.id == sitterID)[0];
   }
+
+  static AddBooking(b) {
+    booked.push(b);
+}
+
+  static GetLength(){
+    return booked.length;
+  }
 }
 
 export { booked, BookingMethods };
