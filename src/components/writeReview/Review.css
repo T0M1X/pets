@@ -201,10 +201,18 @@ a:-webkit-any-link {
     font-size: 1.2em !important;
     height: 10em !important;
   }
-
+/* 
   .error{
     color:red;
-  }
+    display:inline-block;
+    text-align:center;
 
+  } */
+ .p-container{
+   color:Red;
+   display:inline-block;
+   text-align:center;
+
+  }
   .ReviewForm p{
   }

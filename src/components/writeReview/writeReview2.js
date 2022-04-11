@@ -19,7 +19,8 @@ export default class writeReview extends Component {
 
 
       this.state={
-        errors:[],
+        errors:'',
+        errorCheck:false,
         text:'',
         quality:'',
         price:'',
@@ -44,26 +45,24 @@ export default class writeReview extends Component {
         var errors=[];
         event.preventDefault();
         console.log(this.state.errors)
-        if(this.state.timeliness==''||this.state.quality==''||this.state.price==''||this.state.overall==''||this.state.recommend=='' ||this.state.text==''||this.state.title==''){
+        if(this.state.timeliness==''||this.state.quality==''||this.state.price==''||this.state.overall==''||this.state.recommend==''){
           console.log(this.state.errors)
           if(this.state.timeliness==''){
-            errors.push("Timeliness cannot be empty!")
+            errors.push("Timeliness")
           }if(this.state.price==''){
-            errors.push("Price cannot be empty!")
+            errors.push("Price")
           }if(this.state.quality==''){
-            errors.push("Quality of service cannot be empty!")
+            errors.push("Quality")
           }if(this.state.overall==''){
-            errors.push("Overall rating cannot be empty!")
+            errors.push("Overall rating")
           }if(this.state.recommend==''){
-            errors.push("Recommend pet sitter cannot be empty!")
+            errors.push("Recommend pet sitter")
           }if(this.state.title==''){
-            errors.push("Title cannot be empty!")
-          }if(this.state.text==''){
-            errors.push("Description cannot be empty!")
+            errors.push("Title")
           }
         
         }else{
-
+          this.setState({errorCheck:false})
         console.log("The name you entered was:"+this.state.text);
         console.log("the quality was "+this.state.quality);
         console.log("the price was "+this.state.price);
@@ -91,7 +90,10 @@ export default class writeReview extends Component {
         this.setState({route:true})
       }
       if (errors.length > 0) {
-        this.setState({errors:errors });
+        var x=errors.toString();
+        this.setState({errors:x.substring((0)),
+                      errorCheck:true  
+        });
         return;
       }
   
@@ -124,8 +126,6 @@ export default class writeReview extends Component {
           <div className="Container-title">
           <div className="review-title">Submit Your Review</div>
         <form className="ReviewForm" onSubmit={this.handleSubmit}>
-        {this.state.errors.map(error => <p class="error"key={error}>{error}</p>)}
-        {console.log(this.state.errors)}
         <h2>Rate Your Experience</h2>
           <div className="Rating-Container">
           <div class="quality">Quality of service</div>
@@ -193,6 +193,7 @@ export default class writeReview extends Component {
         </div>
         <div>
         <button type="submit" className="submitButton">Submit</button>
+        {this.state.errorCheck?<div className="p-container">Field which are empty: {this.state.errors}</div>:null}
         {console.log(this.state.errors)}
         {this.state.route? <Navigate to={this.state.id}><div>{console.log(this.state.route)}</div></Navigate>:null}
         
