@@ -35,7 +35,7 @@ const GlobalStyles = createGlobalStyle`
 
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: rgba(0,0,0,0);
     border-radius: 5px;
   }
 
