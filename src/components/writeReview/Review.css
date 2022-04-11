@@ -204,8 +204,7 @@ a:-webkit-any-link {
 
  .p-container{
    color:Red;
-   display:inline-block;
-   text-align:center;
-
+   display:flex;
+   justify-content: center;
   }
  

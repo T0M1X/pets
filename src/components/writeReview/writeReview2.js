@@ -48,17 +48,17 @@ export default class writeReview extends Component {
         if(this.state.timeliness==''||this.state.quality==''||this.state.price==''||this.state.overall==''||this.state.recommend==''){
           console.log(this.state.errors)
           if(this.state.timeliness==''){
-            errors.push("Timeliness")
+            errors.push(" Timeliness")
           }if(this.state.price==''){
-            errors.push("Price")
+            errors.push(" Price")
           }if(this.state.quality==''){
-            errors.push("Quality of service ")
+            errors.push(" Quality of service")
           }if(this.state.overall==''){
-            errors.push("Overall rating")
+            errors.push(" Overall rating")
           }if(this.state.recommend==''){
-            errors.push("Recommend pet sitter")
+            errors.push(" Recommend pet sitter")
           }if(this.state.title==''){
-            errors.push("Title")
+            errors.push(" Title")
           }
         
         }else{
@@ -193,7 +193,7 @@ export default class writeReview extends Component {
         </div>
         <div>
         <button type="submit" className="submitButton">Submit</button>
-        {this.state.errorCheck?<div className="p-container">Field which are empty: {this.state.errors}</div>:null}
+        {this.state.errorCheck?<div className="p-container">Empty field(s): {this.state.errors}</div>:null}
         {console.log(this.state.errors)}
         {this.state.route? <Navigate to={this.state.id}><div>{console.log(this.state.route)}</div></Navigate>:null}
         
