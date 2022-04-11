@@ -48,6 +48,7 @@
     color:white;
     background-color:black;
     margin:2%; 
+    font-size: 80%;
     padding: 16px 0px;
     padding-right: 3px;
     border-radius: 12px;
@@ -279,6 +280,7 @@ h3{
   text-align: center;
   
 }
+
 
 }
 
