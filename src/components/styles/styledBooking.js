@@ -2,17 +2,13 @@ import styled from "styled-components";
 
 const styledBooking = styled.div`
   font-family: "Avenir", Helvetica, sans-serif;
-  background: linear-gradient(
-    210deg,
-    rgba(0, 126, 126, 1) 0%,
-    #92B7CE 100%
-  );
+  background: linear-gradient(210deg, rgba(0, 126, 126, 1) 0%, #92b7ce 100%);
   color: black;
   padding-top: 20px;
   padding-bottom: 20px;
 
   .section {
-    background-color: rgb(24,26,27);
+    background-color: rgb(24, 26, 27);
     margin-left: 20vw;
     margin-right: 20vw;
     margin-top: 20px;
@@ -25,9 +21,8 @@ const styledBooking = styled.div`
     border: 10px solid #66ffffp;
   }
 
-  .tableDiv {
-    background-color: #E7E9EB;
-    margin-bottom: 20px;
+  .cardDiv {
+    margin: 0 auto;
     padding: 20px;
     text-align: center;
     display: flex;
@@ -62,13 +57,13 @@ const styledBooking = styled.div`
     cursor: pointer;
     padding: 1em;
     margin-left: 40px;
-    border: solid 2px #494E51;
+    border: solid 2px #494e51;
     border-radius: 6px;
     font-size: 15px;
   }
 
   button:hover {
-    background-color: #BAFFFB;
+    background-color: #bafffb;
   }
 `;
 
