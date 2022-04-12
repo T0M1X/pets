@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
 const Header = () => {
-  const [loginText, setLoginText] = useState({text:"", type:""});
+  const [loginText, setLoginText] = useState({text:"Sign In", type:""});
   const LoginCheck = () => {
     //console.log("LOGIN CHECK");
     if (localStorage.getItem('UserDetails')){
@@ -13,12 +13,12 @@ const Header = () => {
       type:localStorage.getItem('UserType')
       });
     }
-    else{
+    else if(loginText.text != "Sign In"){
       setLoginText({text:"Sign In"});
     }
   };
   useEffect(() => {LoginCheck()}, []) //does login check first thing to prevent showing the wrong headers on refresh
-  setInterval(LoginCheck, 500); //checks login regularly checks if user is logged in
+  setInterval(LoginCheck, 900); //checks login regularly checks if user is logged in
   
   const Logout = () => {
     localStorage.removeItem('UserDetails');

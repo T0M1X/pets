@@ -62,7 +62,7 @@ const SittersProfile = (props) => {
                     ) : (<div/>)}
                 </div>
                 <div className="line" />
-                <div classname="infocontainer">
+                <div className="infocontainer">
                     <div className="userInfo">
                         <div className="uintro"><p> Hi, I'm {user.username}! &#128021;</p></div>
                         <div className="profilebio"><p>{user.bio}</p></div>

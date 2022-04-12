@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import StyledBooking from "../styles/styledBooking";
 import { booked, BookingMethods } from "./BookingsByAllSitters";
 import { UserMethods } from "../../lib/users.js";
@@ -16,15 +16,12 @@ class eventInfoBookings extends Component {
 
   bookingStatus = (id, isAccepted) => (event) => {
     //this function checks to see if the data in the json is "Booked" or "Not Booked"
+    // ... and so changes the state
     if (isAccepted) {
-      console.log("Accept pressed");
       BookingMethods.acceptBookingById(id);
     } else {
-      console.log("Decline pressed");
       BookingMethods.declineBookingById(id);
     }
-
-    this.setState({ bookings });
     this.setState({ bookings: booked });
   };
 

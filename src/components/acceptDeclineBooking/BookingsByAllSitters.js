@@ -119,6 +119,28 @@ class BookingMethods {
   static GetLength(){
     return booked.length;
   }
+
+  static acceptBookingById(id) {
+    booked.forEach((booking, index) => {
+      if (booking.id === id) {
+          booked[index].accepted = "Booked"
+      }
+    })
+
+    console.log('updated bookings:');
+    console.log(booked)
+  }
+
+  static declineBookingById(id) {
+    booked.forEach((booking, index) => {
+      if (booking.id === id) {
+          booked[index].accepted = "Not Booked"
+      }
+    })
+
+    console.log('updated bookings:');
+    console.log(booked)
+  }
 }
 
 export { booked, BookingMethods };

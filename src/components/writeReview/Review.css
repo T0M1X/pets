@@ -201,3 +201,10 @@ a:-webkit-any-link {
     font-size: 1.2em !important;
     height: 10em !important;
   }
+
+ .p-container{
+   color:Red;
+   display:flex;
+   justify-content: center;
+  }
+ 
