@@ -66,6 +66,10 @@ const styledBooking = styled.div`
   button:hover {
     background-color: #bafffb;
   }
+  .book-error{
+    color:white;
+    text-align:center;
+  }
 `;
 
 export default styledBooking;

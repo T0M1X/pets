@@ -36,6 +36,7 @@ class eventInfoBookings extends Component {
             {console.log(this.state.sitterID)}
             <h1>List of Bookings for {this.state.user}</h1>
           </div>
+          {BookingMethods.GetBookingBySitterId(this.state.sitterID)?.id!=null?
           <div className="bookingDiv">
             <div className="cardDiv">
               <table>
@@ -104,6 +105,7 @@ class eventInfoBookings extends Component {
               </table>
             </div>
           </div>
+          :<div className="book-error">No bookings avaliable</div>}
         </div>
       </StyledBooking>
     );
