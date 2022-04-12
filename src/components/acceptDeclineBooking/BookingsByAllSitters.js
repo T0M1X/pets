@@ -20,7 +20,7 @@ let booked = [
     id: "124FG5",
     title: "Booking 2",
     start: "2022-03-29 09:30:00",
-    end: "2022-03-29T 21:30:00",
+    end: "2022-03-29 21:30:00",
     name: "yelenalane",
     Address: "60 Main Road, London, SE25 8LQ",
     Number: "07721 124541",
