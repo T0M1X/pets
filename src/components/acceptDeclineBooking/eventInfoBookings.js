@@ -1,7 +1,6 @@
 import React, { Component, useState, useEffect } from "react";
-import bookings from "../../lib/booked.json";
 import StyledBooking from "../styles/styledBooking";
-import { BookingMethods } from "./BookingsByAllSitters";
+import { booked, BookingMethods } from "./BookingsByAllSitters";
 import { UserMethods } from "../../lib/users.js";
 
 class eventInfoBookings extends Component {
@@ -9,7 +8,7 @@ class eventInfoBookings extends Component {
     super();
 
     this.state = {
-      bookings: bookings,
+      bookings: booked,
       user: UserMethods.GetUserById(localStorage.getItem("UserId")).username, // gets username of the current sitter logged in
       sitterID: UserMethods.GetUserById(localStorage.getItem("UserId")).id, //uses methods from other files to get the sitter ID
     };
@@ -17,13 +16,13 @@ class eventInfoBookings extends Component {
 
   bookingStatus = (id, isAccepted) => (event) => {
     //this function checks to see if the data in the json is "Booked" or "Not Booked"
-    const accepted = this.state.bookings[id]; // ... and so changes the state
+    // ... and so changes the state
     if (isAccepted) {
-      accepted.accepted = "Booked";
+      BookingMethods.acceptBookingById(id);
     } else {
-      accepted.accepted = "Not Booked";
+      BookingMethods.declineBookingById(id);
     }
-    this.setState({ ...this.state.bookings, ...accepted });
+    this.setState({bookings: booked});
   };
 
   render() {
