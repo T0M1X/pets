@@ -1,7 +1,6 @@
-import React, { Component, useState, useEffect } from "react";
-import bookings from "../../lib/booked.json";
+import React, { Component } from "react";
 import StyledBooking from "../styles/styledBooking";
-import { BookingMethods } from "./BookingsByAllSitters";
+import { booked, BookingMethods } from "./BookingsByAllSitters";
 import { UserMethods } from "../../lib/users.js";
 
 class eventInfoBookings extends Component {
@@ -9,7 +8,7 @@ class eventInfoBookings extends Component {
     super();
 
     this.state = {
-      bookings: bookings,
+      bookings: booked,
       user: UserMethods.GetUserById(localStorage.getItem("UserId")).username, // gets username of the current sitter logged in
       sitterID: UserMethods.GetUserById(localStorage.getItem("UserId")).id, //uses methods from other files to get the sitter ID
     };
@@ -17,13 +16,16 @@ class eventInfoBookings extends Component {
 
   bookingStatus = (id, isAccepted) => (event) => {
     //this function checks to see if the data in the json is "Booked" or "Not Booked"
-    const accepted = this.state.bookings[id]; // ... and so changes the state
     if (isAccepted) {
-      accepted.accepted = "Booked";
+      console.log("Accept pressed");
+      BookingMethods.acceptBookingById(id);
     } else {
-      accepted.accepted = "Not Booked";
+      console.log("Decline pressed");
+      BookingMethods.declineBookingById(id);
     }
-    this.setState({ ...this.state.bookings, ...accepted });
+
+    this.setState({ bookings });
+    this.setState({ bookings: booked });
   };
 
   render() {
@@ -38,54 +40,72 @@ class eventInfoBookings extends Component {
           <div className="bookingDiv">
             <div className="cardDiv">
               <table>
-                <p style={{ fontSize: "15px" }}>
-                  ID of booking:
-                  {BookingMethods.GetBookingBySitterId(this.state.sitterID).id}
-                </p>
-                <p>
-                  {
-                    BookingMethods.GetBookingBySitterId(this.state.sitterID)
-                      .name
-                  }
-                </p>
-                <p>
-                  {
-                    BookingMethods.GetBookingBySitterId(this.state.sitterID)
-                      .Address
-                  }
-                </p>
-                <p
-                  style={{
-                    color:
-                      BookingMethods.GetBookingBySitterId(this.state.sitterID)
-                        .accepted === "Booked"
-                        ? "green"
-                        : "red", // here is where the function matters, it checks if the text in bookings.accepted fits the conditions
-                  }}
-                >
-                  Is Booked? -{" "}
-                  {
-                    BookingMethods.GetBookingBySitterId(this.state.sitterID)
-                      .accepted
-                  }
-                </p>
-                <br></br>
-                <button
-                  onClick={this.bookingStatus(
-                    BookingMethods.GetBookingBySitterId(this.state.sitterID).id,
-                    true
-                  )}
-                >
-                  Accept
-                </button>
-                <button
-                  onClick={this.bookingStatus(
-                    BookingMethods.GetBookingBySitterId(this.state.sitterID).id,
-                    false
-                  )}
-                >
-                  Decline
-                </button>
+                <tbody>
+                  <tr>
+                    <td>
+                      <p style={{ fontSize: "15px" }}>
+                        ID of booking:
+                        {
+                          BookingMethods.GetBookingBySitterId(
+                            this.state.sitterID
+                          ).id
+                        }
+                      </p>
+                      <p>
+                        {
+                          BookingMethods.GetBookingBySitterId(
+                            this.state.sitterID
+                          ).name
+                        }
+                      </p>
+                      <p>
+                        {
+                          BookingMethods.GetBookingBySitterId(
+                            this.state.sitterID
+                          ).Address
+                        }
+                      </p>
+                      <p
+                        style={{
+                          color:
+                            BookingMethods.GetBookingBySitterId(
+                              this.state.sitterID
+                            ).accepted === "Booked"
+                              ? "green"
+                              : "red", // here is where the function matters, it checks if the text in bookings.accepted fits the conditions
+                        }}
+                      >
+                        Is Booked? -{" "}
+                        {
+                          BookingMethods.GetBookingBySitterId(
+                            this.state.sitterID
+                          ).accepted
+                        }
+                      </p>
+                      <br></br>
+                      <button
+                        onClick={this.bookingStatus(
+                          BookingMethods.GetBookingBySitterId(
+                            this.state.sitterID
+                          ).id,
+                          true
+                        )}
+                      >
+                        Accept
+                      </button>
+                      <button
+                        onClick={this.bookingStatus(
+                          BookingMethods.GetBookingBySitterId(
+                            this.state.sitterID
+                          ).id,
+                          false
+                        )}
+                      >
+                        Decline
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </div>
