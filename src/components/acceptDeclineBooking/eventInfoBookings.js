@@ -22,7 +22,7 @@ class eventInfoBookings extends Component {
     } else {
       BookingMethods.declineBookingById(id);
     }
-    this.setState({bookings: booked});
+    this.setState({ bookings: booked });
   };
 
   render() {
@@ -37,54 +37,72 @@ class eventInfoBookings extends Component {
           <div className="bookingDiv">
             <div className="cardDiv">
               <table>
-                <p style={{ fontSize: "15px" }}>
-                  ID of booking:
-                  {BookingMethods.GetBookingBySitterId(this.state.sitterID).id}
-                </p>
-                <p>
-                  {
-                    BookingMethods.GetBookingBySitterId(this.state.sitterID)
-                      .name
-                  }
-                </p>
-                <p>
-                  {
-                    BookingMethods.GetBookingBySitterId(this.state.sitterID)
-                      .Address
-                  }
-                </p>
-                <p
-                  style={{
-                    color:
-                      BookingMethods.GetBookingBySitterId(this.state.sitterID)
-                        .accepted === "Booked"
-                        ? "green"
-                        : "red", // here is where the function matters, it checks if the text in bookings.accepted fits the conditions
-                  }}
-                >
-                  Is Booked? -{" "}
-                  {
-                    BookingMethods.GetBookingBySitterId(this.state.sitterID)
-                      .accepted
-                  }
-                </p>
-                <br></br>
-                <button
-                  onClick={this.bookingStatus(
-                    BookingMethods.GetBookingBySitterId(this.state.sitterID).id,
-                    true
-                  )}
-                >
-                  Accept
-                </button>
-                <button
-                  onClick={this.bookingStatus(
-                    BookingMethods.GetBookingBySitterId(this.state.sitterID).id,
-                    false
-                  )}
-                >
-                  Decline
-                </button>
+                <tbody>
+                  <tr>
+                    <td>
+                      <p style={{ fontSize: "15px" }}>
+                        ID of booking:
+                        {
+                          BookingMethods.GetBookingBySitterId(
+                            this.state.sitterID
+                          ).id
+                        }
+                      </p>
+                      <p>
+                        {
+                          BookingMethods.GetBookingBySitterId(
+                            this.state.sitterID
+                          ).name
+                        }
+                      </p>
+                      <p>
+                        {
+                          BookingMethods.GetBookingBySitterId(
+                            this.state.sitterID
+                          ).Address
+                        }
+                      </p>
+                      <p
+                        style={{
+                          color:
+                            BookingMethods.GetBookingBySitterId(
+                              this.state.sitterID
+                            ).accepted === "Booked"
+                              ? "green"
+                              : "red", // here is where the function matters, it checks if the text in bookings.accepted fits the conditions
+                        }}
+                      >
+                        Is Booked? -{" "}
+                        {
+                          BookingMethods.GetBookingBySitterId(
+                            this.state.sitterID
+                          ).accepted
+                        }
+                      </p>
+                      <br></br>
+                      <button
+                        onClick={this.bookingStatus(
+                          BookingMethods.GetBookingBySitterId(
+                            this.state.sitterID
+                          ).id,
+                          true
+                        )}
+                      >
+                        Accept
+                      </button>
+                      <button
+                        onClick={this.bookingStatus(
+                          BookingMethods.GetBookingBySitterId(
+                            this.state.sitterID
+                          ).id,
+                          false
+                        )}
+                      >
+                        Decline
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
               </table>
             </div>
           </div>
