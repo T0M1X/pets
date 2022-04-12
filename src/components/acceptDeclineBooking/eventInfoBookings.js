@@ -32,6 +32,8 @@ class eventInfoBookings extends Component {
           <script></script>
           <br></br>
           <div>
+            {console.log("hello")}
+            {console.log(this.state.sitterID)}
             <h1>List of Bookings for {this.state.user}</h1>
           </div>
           <div className="bookingDiv">
@@ -43,23 +45,19 @@ class eventInfoBookings extends Component {
                       <p style={{ fontSize: "15px" }}>
                         ID of booking:
                         {
-                          BookingMethods.GetBookingBySitterId(
-                            this.state.sitterID
-                          ).id
+                          BookingMethods.GetBookingBySitterId(this.state.sitterID)?.id
+                        }
+                      </p>
+                      <p>
+                        {
+                          BookingMethods.GetBookingBySitterId(this.state.sitterID)?.name
                         }
                       </p>
                       <p>
                         {
                           BookingMethods.GetBookingBySitterId(
                             this.state.sitterID
-                          ).name
-                        }
-                      </p>
-                      <p>
-                        {
-                          BookingMethods.GetBookingBySitterId(
-                            this.state.sitterID
-                          ).Address
+                          )?.Address
                         }
                       </p>
                       <p
@@ -67,7 +65,7 @@ class eventInfoBookings extends Component {
                           color:
                             BookingMethods.GetBookingBySitterId(
                               this.state.sitterID
-                            ).accepted === "Booked"
+                            )?.accepted === "Booked"
                               ? "green"
                               : "red", // here is where the function matters, it checks if the text in bookings.accepted fits the conditions
                         }}
@@ -76,7 +74,7 @@ class eventInfoBookings extends Component {
                         {
                           BookingMethods.GetBookingBySitterId(
                             this.state.sitterID
-                          ).accepted
+                          )?.accepted
                         }
                       </p>
                       <br></br>
@@ -84,7 +82,7 @@ class eventInfoBookings extends Component {
                         onClick={this.bookingStatus(
                           BookingMethods.GetBookingBySitterId(
                             this.state.sitterID
-                          ).id,
+                          )?.id,
                           true
                         )}
                       >
@@ -94,7 +92,7 @@ class eventInfoBookings extends Component {
                         onClick={this.bookingStatus(
                           BookingMethods.GetBookingBySitterId(
                             this.state.sitterID
-                          ).id,
+                          )?.id,
                           false
                         )}
                       >
