@@ -50,6 +50,9 @@ const MakeBooking = () => {
   const redirect = useNavigate();
   const [user, setUser] = useState(null);
   const [sitter,setSitter] = useState(null);
+  const [check,setCheck] = useState(false);
+  const [check2,setCheck2] = useState(false);
+
   let { name } = useParams();
 
   const add = () => {
@@ -144,8 +147,8 @@ const MakeBooking = () => {
         <div>
           <div>
             <label htmlFor="timestart">Start date and time</label>
-            <input type="date" id="start" value={startDate} onChange={(e) => setStartDate(e.target.value)} required/>
-            <input type="time" id="timestart" name="appt" min="07:00" max="22:00" value={startTime} onChange={(e) => setStartTime(e.target.value)} required/>
+            <input type="date" id="start" value={startDate} onChange={(e) =>{ setCheck(true);setStartDate(e.target.value)}} required/>
+            <input type="time" id="timestart" name="appt" min="07:00" max="22:00" value={startTime} onChange={(e) =>{setCheck2(true);setStartTime(e.target.value)}} required/>
           </div>
           <h3>Length</h3>
           <div className='lengths'>
@@ -218,6 +221,7 @@ const MakeBooking = () => {
         <div className="dates">
           {book === "Walking" && Walking()}
           {book === "Sitting" && Sitting()}
+          {check==true && check2==true?<div>WORKS</div>}
         </div>
         <div className="Additional">
           <h3>Additional Information</h3>
