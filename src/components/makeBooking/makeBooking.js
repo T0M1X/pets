@@ -84,8 +84,8 @@ const MakeBooking = () => {
       var price = parseInt(sitter.sitprice.slice(1));
       var start = startDate + " " + startTime;
       var end = endDate + " " + endTime;
-      const d1 = new Date(start);
-      const d2 = new Date(end);
+      const d1 = new Date(end);
+      const d2 = new Date(start);
       var difference = d1.getTime() - d2.getTime();
       var days = Math.ceil(difference / (1000 * 3600 * 24));
       price = price*days;
