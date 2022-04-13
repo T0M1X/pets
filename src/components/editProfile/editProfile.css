@@ -19,13 +19,13 @@
     border-radius: 40px;
 }
 
-.userData > p {
+.userData > p , .images > p{
     font-family: 'Avenir', Helvetica, sans-serif;
     color: white;
     font-size: 150%;
 }
 
-.userData > textarea {
+.userData > textarea, .images > textarea {
     outline: none;
     width: 100%;
     overflow: visible;
