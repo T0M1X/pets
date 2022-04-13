@@ -25,6 +25,10 @@ export default class eventInfo extends Component {
                 <div><h3>Start Date: </h3>{(this.props.event.start).toString().substring(25,0)}</div>
                 <div><h3>End Date: </h3> {(this.props.event.end).toString().substring(25,0)}</div>
                 <div><h3>Booking Title: </h3>{this.props.event.title}</div>
+                <div><h3>Booking Status: </h3>{
+                (this.props.event.extendedProps.accepted != "Booked") ?
+                "Pending" : "Booked"
+              }</div>
               </div>
               <div>
                 {console.log("Check"+todayDate+" endDate:"+endDate)}
