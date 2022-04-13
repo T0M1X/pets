@@ -45,7 +45,7 @@ export default class writeReview extends Component {
         var errors=[];
         event.preventDefault();
         console.log(this.state.errors)
-        if(this.state.timeliness==''||this.state.quality==''||this.state.price==''||this.state.overall==''||this.state.recommend==''){
+        if(this.state.timeliness==''||this.state.quality==''||this.state.price==''||this.state.overall==''||this.state.recommend==''||this.state.title==''){
           console.log(this.state.errors)
           if(this.state.timeliness==''){
             errors.push(" Timeliness")
