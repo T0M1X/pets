@@ -84,9 +84,7 @@ class eventInfoBookings extends Component {
                                   </button>
                                   <button
                                     onClick={this.bookingStatus(
-                                      BookingMethods.GetBookingBySitterId(
-                                        this.state.sitterID
-                                      )?.id,
+                                      booking.id,
                                       false
                                     )}
                                   >

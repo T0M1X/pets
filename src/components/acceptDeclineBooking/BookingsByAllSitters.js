@@ -1,7 +1,7 @@
 let booked = [
   {
     sitterId: "123456",
-    ownerId:"187",
+    ownerId: "187",
     id: "DGHRT4",
     title: "Booking 1",
     start: "2022-03-05 10:30:00",
@@ -14,11 +14,11 @@ let booked = [
     amount: 1,
     other: "Give medication every 2 hours ",
     Payment: 11.5,
-    accepted: "Booked",
+    accepted: "Not Booked",
   },
   {
     sitterId: "21313",
-    ownerId:"123456",
+    ownerId: "123456",
     id: "124FG5",
     title: "Booking 2",
     start: "2022-03-29 09:30:00",
@@ -35,7 +35,7 @@ let booked = [
   },
   {
     sitterId: "99313",
-    ownerId:"123456",
+    ownerId: "123456",
     id: "1A1SF3",
     title: "Booking 3",
     start: "2022-04-01T14:30:00",
@@ -52,7 +52,7 @@ let booked = [
   },
   {
     sitterId: "12A313",
-    ownerId:"123456",
+    ownerId: "123456",
     id: "2A2DGGY",
     title: "Booking 4",
     start: "2022-04-01 12:30:00",
@@ -69,7 +69,7 @@ let booked = [
   },
   {
     sitterId: "45215",
-    ownerId:"123456",
+    ownerId: "123456",
     id: "1DSGF3",
     title: "Booking 5",
     start: "2022-04-17 10:30:00",
@@ -92,7 +92,7 @@ let booked = [
   },
   {
     sitterId: "45215",
-    ownerId:"123456",
+    ownerId: "123456",
     id: "A72NGS",
     title: "Booking 6",
     start: "2022-04-15 12:00:00",
@@ -119,36 +119,36 @@ class BookingMethods {
   }
 
   static GetBookingByUserId(id) {
-    return booked.filter((b) => b.sitterId == id ||b.ownerId ==id );
+    return booked.filter((b) => b.sitterId == id || b.ownerId == id);
   }
   static AddBooking(b) {
     booked.push(b);
-}
+  }
 
-  static GetLength(){
+  static GetLength() {
     return booked.length;
   }
 
   static acceptBookingById(id) {
     booked.forEach((booking, index) => {
       if (booking.id === id) {
-          booked[index].accepted = "Booked"
+        booked[index].accepted = "Booked";
       }
-    })
+    });
 
-    console.log('updated bookings:');
-    console.log(booked)
+    console.log("updated bookings:");
+    console.log(booked);
   }
 
   static declineBookingById(id) {
     booked.forEach((booking, index) => {
       if (booking.id === id) {
-          booked[index].accepted = "Not Booked"
+        booked[index].accepted = "Not Booked";
       }
-    })
+    });
 
-    console.log('updated bookings:');
-    console.log(booked)
+    console.log("updated bookings:");
+    console.log(booked);
   }
 }
 
