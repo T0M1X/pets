@@ -115,7 +115,7 @@ class BookingMethods {
   }
 
   static GetBookingBySitterId(sitterID) {
-    return booked.filter((b) => b.sitterId == sitterID)[0];
+    return booked.filter((b) => b.sitterId == sitterID);
   }
 
   static GetBookingByUserId(id) {
