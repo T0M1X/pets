@@ -12,7 +12,7 @@ const styledBooking = styled.div`
     margin-left: 20vw;
     margin-right: 20vw;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 20%;
     border-radius: 30px;
   }
 
