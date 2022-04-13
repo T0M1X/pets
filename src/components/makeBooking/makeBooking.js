@@ -118,14 +118,15 @@ const MakeBooking = () => {
       return false;
     } else  {
       var results = {
-        sitterId:user.id,
+        sitterId:sitter.id,
+        ownerId:user.id,
         id:makeid(5),
         title:"Booking " + (BookingMethods.GetLength()+1),
         start:d1,
         end:d2,
         name:sitter.username,
         Address:sitter.postcode,
-        Number:sitter.Number,
+        Number:sitter.number,
         typeBooking:book,
         typePet:(pets.length == 0) ? ["any"]:pets,
         amount:(pets.length == 0) ? 1:pets.length,
