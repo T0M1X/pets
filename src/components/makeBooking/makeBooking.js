@@ -53,6 +53,7 @@ const MakeBooking = () => {
   const [check,setCheck] = useState(false);
   const [check2,setCheck2] = useState(false);
   const [display,setDisplay] = useState(false);
+  const [price, setPrice] = useState();
 
   let { name } = useParams();
 
@@ -77,6 +78,12 @@ const MakeBooking = () => {
         redirect('/');
     }
 }, [user])
+
+  useEffect(() => {
+    if (sitter){ //prevents other useEffect from running first
+    setPrice(calcprice());
+    }
+  }, [check, check2])
 
   function calcprice(){
     if (book === "Walking"){
@@ -244,7 +251,7 @@ const MakeBooking = () => {
         <div className="dates">
           {book === "Walking" && Walking()}
           {book === "Sitting" && Sitting()}
-          {(check==true && check2==true)?<div>Expected Price:£{calcprice()}</div>:null}
+          {(price != null)? <div>Expected Price:£{price}</div>:<div/>}
         </div>
         <div className="Additional">
           <h3>Additional Information</h3>
