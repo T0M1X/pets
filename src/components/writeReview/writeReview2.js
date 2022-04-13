@@ -47,12 +47,14 @@ export default class writeReview extends Component {
         console.log(this.state.errors)
         if(this.state.timeliness==''||this.state.quality==''||this.state.price==''||this.state.overall==''||this.state.recommend==''||this.state.title==''){
           console.log(this.state.errors)
+          if(this.state.quality==''){
+            errors.push(" Quality of service")
+          }
+          if(this.state.price==''){
+            errors.push(" Price")
+          }
           if(this.state.timeliness==''){
             errors.push(" Timeliness")
-          }if(this.state.price==''){
-            errors.push(" Price")
-          }if(this.state.quality==''){
-            errors.push(" Quality of service")
           }if(this.state.overall==''){
             errors.push(" Overall rating")
           }if(this.state.recommend==''){
