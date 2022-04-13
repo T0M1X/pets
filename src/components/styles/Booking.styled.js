@@ -224,5 +224,6 @@ export const Booking = styled.div`
 
     .pList{
         padding:0%;
+        font-size: 120%;
     }
 `
