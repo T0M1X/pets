@@ -8,12 +8,14 @@ const Header = () => {
   const LoginCheck = () => {
     //console.log("LOGIN CHECK");
     if (localStorage.getItem('UserDetails')){
-      setLoginText({
-      text:localStorage.getItem('UserDetails'),
-      type:localStorage.getItem('UserType')
-      });
+      if(loginText == "Sign in"){
+        setLoginText({
+        text:localStorage.getItem('UserDetails'),
+        type:localStorage.getItem('UserType')
+        });
+      }
     }
-    else if(loginText.text != "Sign In"){
+    else {
       setLoginText({text:"Sign In"});
     }
   };
