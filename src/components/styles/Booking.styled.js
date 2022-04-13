@@ -28,9 +28,14 @@ export const Booking = styled.div`
         font-weight: bold;
    }
 
-    .petsSection{
+    .petsList{
         overflow: auto;
-        max-height: 35vh;
+        max-height: 24vh;
+    }
+
+    .petsList button{
+        margin-left: 1%;
+        margin-right: 1%;
     }
 
     .dates *{

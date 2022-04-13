@@ -201,6 +201,7 @@ const MakeBooking = () => {
             <textarea id="petName" name="petName" placeholder='Name of pet' value={petName} onChange={(e) => setPetName(e.target.value)}></textarea>
             <textarea id="petType" name="petTypes" placeholder='Type of pet' value={petType} onChange={(e) => setPetType(e.target.value)}></textarea>
           </div>
+          <div className='petsList'>
           <button className="addB" type="button" onClick={() => {
             let tempName = ((petName === "") ? "pet"+(all.length+1) : petName);
             let tempType = ((petType === "") ? "pet" : petType);
@@ -208,7 +209,18 @@ const MakeBooking = () => {
             add(); //resets input fields to empty
             console.log(all)
             }}>Add</button>
+            <button className="addB" type="button" onClick={() => {
+            setAll(all.slice(0, all.length-1)); 
+            add(); //resets input fields to empty
+            console.log(all)
+            }}>Remove</button>
+            <button className="addB" type="button" onClick={() => {
+            setAll([]); 
+            add(); //resets input fields to empty
+            console.log(all)
+            }}>Remove all</button>
           {all.length > 0 ? all.map((p) => (<p className='pList'>{`${p.petName}, ${p.petType}`}</p>)) : <p className='pList'>No pets</p>}
+          </div>
         </div>
         <div className="type-container"> 
           <h3>What type of booking do you need?</h3>
