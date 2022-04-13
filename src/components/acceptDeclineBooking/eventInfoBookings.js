@@ -86,23 +86,21 @@ class eventInfoBookings extends Component {
                       </p>
                       <br></br>
                       <button
-                        onClick={this.bookingStatus(
-                         booking.id,
-                          true
-                        )}
-                      >
-                        Accept
-                      </button>
-                      <button
-                        onClick={this.bookingStatus(
-                          BookingMethods.GetBookingBySitterId(
-                            this.state.sitterID
-                          )?.id,
-                          false
-                        )}
-                      >
-                        Decline
-                      </button>
+                                    onClick={this.bookingStatus(
+                                      booking.id,
+                                      true
+                                    )}
+                                  >
+                                    Accept
+                                  </button>
+                                  <button
+                                    onClick={this.bookingStatus(
+                                      booking.id,
+                                      false
+                                    )}
+                                  >
+                                    Decline
+                                  </button>
                     </td>
                   </tr>
                 </tbody>
