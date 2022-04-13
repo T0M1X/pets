@@ -49,7 +49,6 @@ class eventInfoBookings extends Component {
              {console.log(i)}
              return (
              <div key={i}>
-               hello???????
           <div className="bookingDiv">
             <div className="cardDiv">
               <table>
