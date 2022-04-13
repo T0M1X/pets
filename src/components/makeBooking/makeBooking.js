@@ -194,7 +194,7 @@ const MakeBooking = () => {
     <Booking>
       <h1>Make a booking</h1>
       <form className="bookingForm" onSubmit={handleSubmit}>
-        <h2 className='req'>Select your requirements</h2>
+        <h2 className='req'>Select Your Requirements</h2>
         <div className='petsSection'>
           <h3>Add your pets!</h3>
           <div className='addPet'>

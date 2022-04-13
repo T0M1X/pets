@@ -60,7 +60,6 @@ export const Booking = styled.div`
     }
 
     .req{
-        padding-right:60%;
     }
 
     .walkSit input[type="radio"] {
