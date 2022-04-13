@@ -77,13 +77,17 @@ const MakeBooking = () => {
     else {
         redirect('/');
     }
-}, [user])
+}, [user]);
 
   useEffect(() => {
-    if (sitter){ //prevents other useEffect from running first
+    if (sitter && length){ //prevents other useEffect from running first
     setPrice(calcprice());
     }
-  }, [check, check2])
+
+    if (sitter && endTime && endDate){
+    setPrice(calcprice());
+    }
+  }, [length, startDate, startTime, endTime, endDate]);
 
   function calcprice(){
     if (book === "Walking"){
@@ -251,7 +255,7 @@ const MakeBooking = () => {
         <div className="dates">
           {book === "Walking" && Walking()}
           {book === "Sitting" && Sitting()}
-          {(price != null)? <div>Expected Price:£{price}</div>:<div/>}
+          {(price != null)? <div>Expected Price: £{price}</div>:<div/>}
         </div>
         <div className="Additional">
           <h3>Additional Information</h3>
