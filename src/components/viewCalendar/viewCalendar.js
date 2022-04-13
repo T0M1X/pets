@@ -3,16 +3,19 @@ import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import "./Calendar.css"
 import EventInfo from "./eventInfo.js"
-import {booked} from "../acceptDeclineBooking/BookingsByAllSitters";
+import {booked,BookingMethods} from "../acceptDeclineBooking/BookingsByAllSitters";
 import {Reviews} from "../../lib/review";
+import { UserMethods } from "../../lib/users.js";
+
 export default class viewCalendar extends Component {
   constructor() {
     super();
     this.state = {
       event:"",
       display:false,
-      Events: booked   // uses json the file as an object
-      
+      Events: BookingMethods.GetBookingByUserId(UserMethods.GetUserById(localStorage.getItem("UserId")).id),   // uses json the file as an object
+
+
       
     
     };
@@ -28,7 +31,6 @@ export default class viewCalendar extends Component {
   render() {
     return (
       <div className='calendar-page'>
-        {console.log(Reviews)}
       <div className={!this.state.display ?"calendar-container":"calendar-container transparent"}>
       <FullCalendar
       plugins={[ dayGridPlugin ]}
