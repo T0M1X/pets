@@ -45,12 +45,13 @@
 .location {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly; 
+    justify-content: center;
 }
 
 .location > div {
     display: flex;
     flex-direction: row;
+    margin-left: 1em;
 }
 
 .location > div > p {
@@ -72,7 +73,7 @@
     font-family: 'Avenir', Helvetica, sans-serif;
     color: white;
     font-size: 100%;
-    resize: horizontal;
+    resize: none;
     overflow: auto;
     overflow-x: hidden;
 }

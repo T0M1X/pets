@@ -24,14 +24,24 @@ function EditProfile() {
     }, [user])
 
     const Update = () => {
-        let coords = []
-        if (!isNaN(parseInt(document.getElementById('ycoord').value)) && !isNaN(parseInt(document.getElementById('xcoord').value))) {
-            coords = [ parseInt(document.getElementById('ycoord').value),
-                       parseInt(document.getElementById('xcoord').value)]
+        let coords = [];
+        let sitValue;
+        let walkValue;
+        if (user.type != "owner"){
+            if (!isNaN(parseInt(document.getElementById('ycoord').value)) && !isNaN(parseInt(document.getElementById('xcoord').value))) {
+                coords = [ parseInt(document.getElementById('ycoord').value),
+                        parseInt(document.getElementById('xcoord').value)]
+            }
+            sitValue = document.getElementById('sit').value;
+            walkValue = document.getElementById('walk').value;
+        }
+        else{ //pet owners don't have coordinates or prices
+            coords = null;
+            sitValue = null;
+            walkValue = null;
         }
         //coords = PostcodetoLatLong(document.getElementById('postcode').value);
         console.log(document.getElementById('images').value.split('\n'))
-
         let id = user.id;
         let new_user = {
             id: user.id,
@@ -46,8 +56,8 @@ function EditProfile() {
             additionalinfo: document.getElementById('additional').value,
             badges: user.badges,
             images: document.getElementById('images') && (document.getElementById('images').value.split('\n')),
-            sitprice: document.getElementById('sit').value,
-            walkprice: document.getElementById('walk').value,
+            sitprice: sitValue,
+            walkprice: walkValue,
             number: "07486291472"
         }
 
@@ -74,14 +84,15 @@ function EditProfile() {
                             <p>Postcode:</p>
                             <textarea id='postcode' defaultValue={user.postcode} rows='1' cols='10' />
                         </div>
-                        <div>
-                            <p>X-coordinate:</p>
-                            <textarea id='xcoord' defaultValue={user.coordinates && (user.coordinates[1])} rows='1' cols='10' />
-                        </div>
-                        <div>
-                            <p>Y-coordinate:</p>
-                            <textarea id='ycoord' defaultValue={user.coordinates && (user.coordinates[0])} rows='1' cols='10' />
-                        </div>
+                        {(user.type != "owner") ? (
+                            <div>
+                                <p>X-coordinate:</p>
+                                <textarea id='xcoord' defaultValue={user.coordinates && (user.coordinates[1])} rows='1' cols='10' />
+                                <p> </p>
+                                <p>Y-coordinate:</p>
+                                <textarea id='ycoord' defaultValue={user.coordinates && (user.coordinates[0])} rows='1' cols='10' />
+                            </div>
+                        ) : (<div/>)}
                     </div>
                     <p>Images: </p>
                     <textarea className='images' id='images' rows='4' wrap='soft' defaultValue={user.images?.map((image) => image + '\n').join('')}></textarea>
