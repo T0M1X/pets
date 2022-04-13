@@ -28,6 +28,11 @@ export const Booking = styled.div`
         font-weight: bold;
    }
 
+    .petsSection{
+        overflow: auto;
+        max-height: 35vh;
+    }
+
     .dates *{
         margin: 1%;
     }
@@ -207,7 +212,7 @@ export const Booking = styled.div`
         font-weight:bold;
         background-color:rgb(102,255,255);
         color:black;
-        padding 5px 4%;
+        padding 1% 4%;
         border:solid black 3px;
         margin-bottom:1.3%;
     }

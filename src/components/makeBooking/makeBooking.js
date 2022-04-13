@@ -191,7 +191,7 @@ const MakeBooking = () => {
       <h1>Make a booking</h1>
       <form className="bookingForm" onSubmit={handleSubmit}>
         <h2 className='req'>Select your requirements</h2>
-        <div>
+        <div className='petsSection'>
           <h3>Add your pets!</h3>
           <div className='addPet'>
             <textarea id="petName" name="petName" placeholder='Name of pet' value={petName} onChange={(e) => setPetName(e.target.value)}></textarea>
