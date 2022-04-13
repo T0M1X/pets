@@ -13,10 +13,8 @@ const Header = () => {
         text:localStorage.getItem('UserDetails'),
         type:localStorage.getItem('UserType')
         });
+        //console.log(loginText.text)
       }
-    }
-    else {
-      setLoginText({text:"Sign In"});
     }
   };
   useEffect(() => {LoginCheck()}, []) //does login check first thing to prevent showing the wrong headers on refresh
@@ -26,6 +24,7 @@ const Header = () => {
     localStorage.removeItem('UserDetails');
     localStorage.removeItem('UserType');
     localStorage.removeItem('UserId')
+    setLoginText({text:"Sign In"});
   }
   return (
     <StyledHeader>
