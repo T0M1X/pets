@@ -143,10 +143,8 @@ const MakeBooking = () => {
 
   const Walking = () => {
     return(
+      
       <div>
-        {/* {setCheck(false)}
-        {setCheck2(false)}
-        {setDisplay(false)} */}
         <h3>Timing</h3>
         <div>
           <div>
@@ -176,15 +174,13 @@ const MakeBooking = () => {
   const Sitting = () => {
     return(
       <div>
-        {/* {setCheck(false)}
-        {setCheck2(false)}
-        {setDisplay(false)} */}
+       
         <h3>Timing</h3>
         <div>
           <div>
             <label htmlFor="timestart">Start date and time</label>
-            <input type="date" id="start" value={startDate} onChange={(e) => setStartDate(e.target.value)} required/>
-            <input type="time" id="timestart" name="appt" min="07:00" max="22:00" value={startTime} onChange={(e) => setStartTime(e.target.value)} required/>
+            <input type="date" id="start" value={startDate} onChange={(e) => {setCheck(true);setStartDate(e.target.value)}} required/>
+            <input type="time" id="timestart" name="appt" min="07:00" max="22:00" value={startTime} onChange={(e) =>{setCheck2(true); setStartTime(e.target.value)}} required/>
           </div>
           <div>
             <label htmlFor="timeend">End date and time</label>
@@ -228,7 +224,7 @@ const MakeBooking = () => {
         <div className="dates">
           {book === "Walking" && Walking()}
           {book === "Sitting" && Sitting()}
-          {(check==true && check2==true)?<div>Expected Price:{calcprice()}</div>:null}
+          {(check==true && check2==true)?<div>Expected Price:£{calcprice()}</div>:null}
         </div>
         <div className="Additional">
           <h3>Additional Information</h3>
