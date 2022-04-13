@@ -197,7 +197,12 @@ const MakeBooking = () => {
             <textarea id="petName" name="petName" placeholder='Name of pet' value={petName} onChange={(e) => setPetName(e.target.value)}></textarea>
             <textarea id="petType" name="petTypes" placeholder='Type of pet' value={petType} onChange={(e) => setPetType(e.target.value)}></textarea>
           </div>
-          <button className="addB" onClick={() => {setAll([...all,{petName, petType}]); add(petType);}}>Add</button>
+          <button className="addB" onClick={() => {
+            let temp = ((petName === "") ? "pet"+(all.length+1) : petName);
+            setAll([...all,{petName: temp, petType}]); 
+            add(); //resets input fields to empty
+            console.log(all)
+            }}>Add</button>
           {all.length > 0 ? all.map((p) => (<p className='pList'>{`${p.petName} : ${p.petType}`}</p>)) : <p>No pets</p>}
         </div>
         <div className="type-container"> 
