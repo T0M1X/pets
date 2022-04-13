@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
 export const Booking = styled.div`
-    background: rgb(9,9,121);
-    background: linear-gradient(210deg, rgba(9,9,121,1) 0%, rgba(1,0,19,1) 49%, rgba(0,126,126,1) 100%);
+    background: linear-gradient(
+        210deg,
+        rgba(0, 126, 126, 1) 0%,
+        #92B7CE 100%
+    );
     color: whitesmoke;
     padding-bottom:5%;
     text-align: center;
@@ -14,15 +17,20 @@ export const Booking = styled.div`
     }
 
     form {
-       padding:3%;
-       font-family:"Quicksand",sans-serif;
-       background-color:rgb(24,26,27) !important;
-       width:70%;
-       margin-left:auto;
-       margin-right:auto;
-       color:whitesmoke;
-       font-weight: bold;
+        border-radius: 60px;
+        padding:3%;
+        font-family:"Quicksand",sans-serif;
+        background-color:rgb(24,26,27) !important;
+        width:60%;
+        margin-left:auto;
+        margin-right:auto;
+        color:whitesmoke;
+        font-weight: bold;
    }
+
+    .dates *{
+        margin: 1%;
+    }
 
     h1{
         padding:2%;
@@ -56,11 +64,10 @@ export const Booking = styled.div`
         display: inline-block;
         background-color: #101010;
         font-family: sans-serif, Arial;
-        padding:1.4%;
-        padding-left:2%;
-        padding-right:2%;
+        padding:2% 3%;
         border: 2px solid #444;
         border-radius: 4px;
+        margin-top: 1%;
         margin-left:2%;
         margin-right:2%;
     }
@@ -123,6 +130,35 @@ export const Booking = styled.div`
         filter: invert(100%);
     }
 
+    input{
+        appearance: none !important;
+    
+        outline: none !important;
+    
+        font-size: 1.5em;
+        font-family: inherit;
+        padding: 10px 15px;
+        background-color: #F8F8F8;
+        border-radius: 8px;
+        transition: 0.4s;
+    }
+
+    textarea {
+        appearance: none !important;
+        border: none !important;
+        outline: none !important;
+    
+        font-size: 1.5em;
+        font-family: inherit;
+        padding: 10px 15px;
+        background-color: #F8F8F8;
+        border-radius: 8px;
+        transition: 0.4s;
+    }
+
+    .lengths{
+        display: flex;
+    }
       
     .lengths input[type="radio"] {
         opacity: 0;
@@ -135,7 +171,7 @@ export const Booking = styled.div`
           rgb(9,9,121);
           padding: 10px 20px;
           font-family: sans-serif, Arial;
-          font-size: 16px;
+          font-size: 1.2em;
           border: 1px solid #444;
           border-radius: 4px;
     }
@@ -159,17 +195,18 @@ export const Booking = styled.div`
         height: 3em;
         font-size: 1.2rem;
         resize: none;
-        width:20%;
         color:black;
         font-family: 'Avenir', Helvetica, sans-serif;
+        margin: 1%;
     }
 
     .addB{
-        border-radius:5%;
+        border-radius:16px;
         font-size:1.1rem;
         font-weight:bold;
         background-color:rgb(102,255,255);
         color:black;
+        padding 5px 4%;
         border:solid black 3px;
         margin-bottom:1.3%;
     }
