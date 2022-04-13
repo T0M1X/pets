@@ -60,11 +60,12 @@
     margin:2%; 
     font-size: 80%;
     padding: 16px 0px;
-    padding-right: 3px;
+    padding-left: 3px;
     border-radius: 12px;
   }
 
   .fc-daygrid-event-dot{
+    display: none;
     color:black;
     background-color:black;
     margin:2%;
@@ -260,7 +261,8 @@ h3{
 
 .fc-h-event {
   display: block;
-  border: 1px solid black!important;
+  border: none!important;
+  background-color: rgba(0, 0, 0, 0)!important;
 }
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
