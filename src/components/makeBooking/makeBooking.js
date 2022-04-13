@@ -82,8 +82,8 @@ const MakeBooking = () => {
     if (book === "Walking"){
       let tempLength = (length == '') ? '00:10': length; //if length is empty, set it to a default value of 10 mins
       setLength(tempLength);
-      var price = parseInt(sitter.walkprice.slice(1));
-      price = (price/(60-parseInt(length.slice(3))))*10
+      var price = parseInt(sitter.walkprice.slice(1)); //gets price from sitter profile
+      price = (price/(60-parseInt(tempLength.slice(3))))*10
     } else {
       var price = parseInt(sitter.sitprice.slice(1));
       var start = startDate + " " + startTime;
