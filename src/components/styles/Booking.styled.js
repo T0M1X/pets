@@ -55,8 +55,11 @@ export const Booking = styled.div`
 
     .walkSit input[type="radio"] {
         opacity: 0;
-        position: fixed;
+        position: relative;
+        left: 80px;
         width: 0;
+        padding: 0 !important;
+        margin: 0 !important;
       }
       
     
@@ -155,21 +158,19 @@ export const Booking = styled.div`
         border-radius: 16px;
         transition: 0.4s;
     }
-
-    .lengths{
-        display: flex;
-    }
       
     .lengths input[type="radio"] {
         opacity: 0;
-        position: fixed;
+        position: relative;
+        left: 80px;
         width: 0;
+        padding: 0 !important;
+        margin: 0 !important;
       }
       
     .lengths label {
           display: inline-block;
-          rgb(9,9,121);
-          padding: 10px 20px;
+          padding: 2%;
           font-family: sans-serif, Arial;
           font-size: 1.2em;
           border: 1px solid #444;
