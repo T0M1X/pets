@@ -85,6 +85,7 @@ function EditProfile() {
                     </div>
                     <p>Images: </p>
                     <textarea className='images' id='images' rows='4' wrap='soft' defaultValue={user.images?.map((image) => image + '\n').join('')}></textarea>
+                    {(user.type != "owner") ? (
                     <div className='location'>
                         <div>
                             <p>Sitting price:</p>
@@ -95,6 +96,7 @@ function EditProfile() {
                             <textarea id='walk' defaultValue={user.walkprice} rows='1' cols='10' />
                         </div>
                     </div>
+                    ) : (<div/>)}
                 </div>
                 <div className='save'>
                     <button className='save' onClick={Update}>Save changes</button>
