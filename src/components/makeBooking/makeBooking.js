@@ -76,8 +76,10 @@ const MakeBooking = () => {
 
   function calcprice(){
     if (book === "Walking"){
+      let tempLength = (length == '') ? '00:10': length; //if length is empty, set it to a default value of 10 mins
+      setLength(tempLength);
       var price = parseInt(sitter.walkprice.slice(1));
-      price = price/(parseInt(length.slice(3)))
+      price = price/(parseInt(tempLength.slice(3)))
     } else {
       var price = parseInt(sitter.sitprice.slice(1));
       var start = startDate + " " + startTime;
@@ -97,7 +99,9 @@ const MakeBooking = () => {
     var endtime = endTime;
     var end = "";
     if (book === "Walking") {
-      endtime = addTimes(startTime, length);
+      let tempLength = (length == '') ? '00:10': length; //if length is empty, set it to a default value of 10 mins
+      setLength(tempLength);
+      endtime = addTimes(startTime, tempLength);
       end = startDate + " " + endtime;
     } else {
       end = endDate + " " + endtime;
@@ -223,7 +227,7 @@ const MakeBooking = () => {
           <h3>Additional Information</h3>
           <br/>
           <br/>
-          <textarea id="add" name="additional" placeholder='Enter additional information...' value={additional} onChange={(e) => setAdditional(e.target.value)} required></textarea>
+          <textarea id="add" name="additional" placeholder='Enter additional information...' value={additional} onChange={(e) => setAdditional(e.target.value)}></textarea>
         </div>
         <button type="submit" className="sButton" onSubmit={(e) => handleSubmit(e)}>Book</button>
       </form>
