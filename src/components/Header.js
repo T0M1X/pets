@@ -2,9 +2,11 @@ import { StyledHeader, Nav } from "./styles/Header.styled"
 import { Button } from './styles/Button.styled'
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
+import { UserMethods } from "../lib/users";
 
 const Header = () => {
   const [loginText, setLoginText] = useState({text:"Sign In", type:""});
+  const [profilePic, setProfilePic] = useState("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
   const LoginCheck = () => {
     //console.log("LOGIN CHECK");
     if (localStorage.getItem('UserDetails')){
@@ -13,6 +15,9 @@ const Header = () => {
         text:localStorage.getItem('UserDetails'),
         type:localStorage.getItem('UserType')
         });
+        let profilePicture = UserMethods.GetUserById(localStorage.getItem('UserId')).profilePicture;
+        profilePicture = (profilePicture == "") ? "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7":profilePicture;
+        setProfilePic(profilePicture);
         //console.log(loginText.text)
       }
     }
@@ -25,6 +30,7 @@ const Header = () => {
     localStorage.removeItem('UserType');
     localStorage.removeItem('UserId')
     setLoginText({text:"Sign In"});
+    setProfilePic("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
   }
   return (
     <StyledHeader>
@@ -51,8 +57,8 @@ const Header = () => {
           <Button className="register">Sign Up</Button>
         </Link>
         )}
-        <Link to="/login">
-          <Button className="login">{loginText.text}</Button>
+        <Link to="/login" className="loginButton">
+          <Button className="login">{(profilePic != "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7") ? <img src={profilePic} alt='' /> : <div/>}{loginText.text}</Button>
         </Link>
         {(loginText.text != "Sign In") ? 
         (
