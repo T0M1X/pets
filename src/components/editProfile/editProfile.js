@@ -94,8 +94,12 @@ function EditProfile() {
                             </div>
                         ) : (<div/>)}
                     </div>
-                    <p>Images: </p>
-                    <textarea className='images' id='images' rows='4' wrap='soft' defaultValue={user.images?.map((image) => image + '\n').join('')}></textarea>
+                    {(user.type != "owner") ? (
+                    <div>
+                        <p>Images: </p>
+                        <textarea className='images' id='images' rows='4' wrap='soft' defaultValue={user.images?.map((image) => image + '\n').join('')}></textarea>
+                    </div>
+                    ) : (<div/>)}
                     {(user.type != "owner") ? (
                     <div className='location'>
                         <div>
