@@ -66,7 +66,7 @@ export const Booking = styled.div`
         font-family: sans-serif, Arial;
         padding:2% 3%;
         border: 2px solid #444;
-        border-radius: 4px;
+        border-radius: 16px;
         margin-top: 1%;
         margin-left:2%;
         margin-right:2%;
@@ -99,7 +99,7 @@ export const Booking = styled.div`
         height:33%;
         width:30%;
         padding:3%;
-        border-radius:5%;
+        border-radius:16px;
         margin-top:2%;
         font-size:1.1rem;
         font-weight:bold;
@@ -139,7 +139,7 @@ export const Booking = styled.div`
         font-family: inherit;
         padding: 10px 15px;
         background-color: #F8F8F8;
-        border-radius: 8px;
+        border-radius: 16px;
         transition: 0.4s;
     }
 
@@ -152,7 +152,7 @@ export const Booking = styled.div`
         font-family: inherit;
         padding: 10px 15px;
         background-color: #F8F8F8;
-        border-radius: 8px;
+        border-radius: 16px;
         transition: 0.4s;
     }
 
@@ -173,7 +173,7 @@ export const Booking = styled.div`
           font-family: sans-serif, Arial;
           font-size: 1.2em;
           border: 1px solid #444;
-          border-radius: 4px;
+          border-radius: 16px;
     }
       
     .lengths label:hover {
