@@ -219,7 +219,10 @@ const MakeBooking = () => {
             add(); //resets input fields to empty
             console.log(all)
             }}>Remove all</button>
-          {all.length > 0 ? all.map((p) => (<p className='pList'>{`${p.petName}, ${p.petType}`}</p>)) : <p className='pList'>No pets</p>}
+          {all.length > 0 ? all.map((p) => ((p.petType == "pet") ? 
+          <p className='pList'>{`${p.petName}`}</p> :
+          <p className='pList'>{`${p.petName}, ${p.petType}`}</p>)):
+          <p className='pList'>No pets</p>}
           </div>
         </div>
         <div className="type-container"> 
