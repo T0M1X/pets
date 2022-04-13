@@ -97,8 +97,10 @@ const MakeBooking = () => {
       let tempLength = (length == '') ? '00:10': length; //if length is empty, set it to a default value of 10 mins
       setLength(tempLength);
       //get time in mins, then divide by 60
+      let time = parseInt(tempLength.slice(3));
+      //price = mins/60 * per hour
       var price = parseInt(sitter.walkprice.slice(1)); //gets price from sitter profile
-      price = (price/(60-parseInt(tempLength.slice(3))))*10
+      price = (time/60 * price);
     } else {
       var price = parseInt(sitter.sitprice.slice(1));
       var start = startDate + " " + startTime;
