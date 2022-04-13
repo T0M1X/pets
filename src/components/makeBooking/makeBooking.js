@@ -52,6 +52,7 @@ const MakeBooking = () => {
   const [sitter,setSitter] = useState(null);
   const [check,setCheck] = useState(false);
   const [check2,setCheck2] = useState(false);
+  const [display,setDisplay] = useState(false);
 
   let { name } = useParams();
 
@@ -80,7 +81,7 @@ const MakeBooking = () => {
   function calcprice(){
     if (book === "Walking"){
       var price = parseInt(sitter.walkprice.slice(1));
-      price = price/(parseInt(length.slice(3)))
+      price = (price/(60-parseInt(length.slice(3))))*10
     } else {
       var price = parseInt(sitter.sitprice.slice(1));
       var start = startDate + " " + startTime;
@@ -143,6 +144,9 @@ const MakeBooking = () => {
   const Walking = () => {
     return(
       <div>
+        {/* {setCheck(false)}
+        {setCheck2(false)}
+        {setDisplay(false)} */}
         <h3>Timing</h3>
         <div>
           <div>
@@ -172,6 +176,9 @@ const MakeBooking = () => {
   const Sitting = () => {
     return(
       <div>
+        {/* {setCheck(false)}
+        {setCheck2(false)}
+        {setDisplay(false)} */}
         <h3>Timing</h3>
         <div>
           <div>
@@ -221,7 +228,7 @@ const MakeBooking = () => {
         <div className="dates">
           {book === "Walking" && Walking()}
           {book === "Sitting" && Sitting()}
-          {check==true && check2==true?<div>WORKS</div>}
+          {(check==true && check2==true)?<div>Expected Price:{calcprice()}</div>:null}
         </div>
         <div className="Additional">
           <h3>Additional Information</h3>
