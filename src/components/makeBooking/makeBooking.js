@@ -87,7 +87,7 @@ const MakeBooking = () => {
     if (sitter && endTime && endDate){
       let temp = calcprice();
       if (temp > 0){
-        setPrice();
+        setPrice(temp);
       }
     }
   }, [length, startDate, startTime, endTime, endDate]);
