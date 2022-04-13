@@ -14,7 +14,7 @@ let booked = [
     amount: 1,
     other: "Give medication every 2 hours ",
     Payment: 11.5,
-    accepted: "Not Booked",
+    accepted: "Booked",
   },
   {
     sitterId: "21313",
@@ -31,7 +31,7 @@ let booked = [
     amount: 1,
     other: "Give medication every 2 hours ",
     Payment: 88.12,
-    accepted: "Not Booked",
+    accepted: "Booked",
   },
   {
     sitterId: "99313",
