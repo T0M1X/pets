@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/pets/static/css/main.0ecd4b51.css",
-    "main.js": "/pets/static/js/main.442c7345.js",
-    "static/js/787.a9c81608.chunk.js": "/pets/static/js/787.a9c81608.chunk.js",
-    "static/media/Avenir Light.ttf": "/pets/static/media/Avenir Light.8f47513e72894bc6169f.ttf",
-    "static/media/AvenirLTStd-Book.otf": "/pets/static/media/AvenirLTStd-Book.813557df4c7a90b1a474.otf",
-    "static/media/AvenirLTStd-Medium.otf": "/pets/static/media/AvenirLTStd-Medium.adcbfbb892596d80fae1.otf",
-    "static/media/AvenirLTStd-Roman.otf": "/pets/static/media/AvenirLTStd-Roman.0bfb049d9455e81fd1da.otf",
-    "index.html": "/pets/index.html",
-    "main.0ecd4b51.css.map": "/pets/static/css/main.0ecd4b51.css.map",
-    "main.442c7345.js.map": "/pets/static/js/main.442c7345.js.map",
-    "787.a9c81608.chunk.js.map": "/pets/static/js/787.a9c81608.chunk.js.map"
+    "main.css": "/www.petfriends.com/static/css/main.8833e802.css",
+    "main.js": "/www.petfriends.com/static/js/main.e1521d9a.js",
+    "static/js/787.a9c81608.chunk.js": "/www.petfriends.com/static/js/787.a9c81608.chunk.js",
+    "static/media/Avenir Light.ttf": "/www.petfriends.com/static/media/Avenir Light.8f47513e72894bc6169f.ttf",
+    "static/media/AvenirLTStd-Book.otf": "/www.petfriends.com/static/media/AvenirLTStd-Book.813557df4c7a90b1a474.otf",
+    "static/media/AvenirLTStd-Medium.otf": "/www.petfriends.com/static/media/AvenirLTStd-Medium.adcbfbb892596d80fae1.otf",
+    "static/media/AvenirLTStd-Roman.otf": "/www.petfriends.com/static/media/AvenirLTStd-Roman.0bfb049d9455e81fd1da.otf",
+    "index.html": "/www.petfriends.com/index.html",
+    "main.8833e802.css.map": "/www.petfriends.com/static/css/main.8833e802.css.map",
+    "main.e1521d9a.js.map": "/www.petfriends.com/static/js/main.e1521d9a.js.map",
+    "787.a9c81608.chunk.js.map": "/www.petfriends.com/static/js/787.a9c81608.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0ecd4b51.css",
-    "static/js/main.442c7345.js"
+    "static/css/main.8833e802.css",
+    "static/js/main.e1521d9a.js"
   ]
 }
